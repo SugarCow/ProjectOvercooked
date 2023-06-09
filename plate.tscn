@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://6bn3ftrtfo6b"]
+
+[ext_resource type="Script" path="res://plate.gd" id="1_7yssj"]
+[ext_resource type="Texture2D" uid="uid://2eesqwhdyoi5" path="res://assets/Ghostpixxells_pixelfood/02_dish_2.png" id="2_y4pyr"]
+[ext_resource type="PackedScene" uid="uid://e4u2mwbndpia" path="res://object.tscn" id="3_xpys4"]
+
+[node name="Plate" type="Node2D"]
+script = ExtResource("1_7yssj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_y4pyr")
+centered = false
+offset = Vector2(-8, -8)
+
+[node name="Object" parent="." instance=ExtResource("3_xpys4")]
+
+[editable path="Object"]

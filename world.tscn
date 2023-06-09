@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmdnf537ydrqe"]
+[gd_scene load_steps=10 format=3 uid="uid://cmdnf537ydrqe"]
 
 [ext_resource type="Texture2D" uid="uid://yfuv4vvteq6e" path="res://assets/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_3m1uf"]
 [ext_resource type="PackedScene" uid="uid://cjivxvu7256ui" path="res://Player.tscn" id="1_xffki"]
 [ext_resource type="Texture2D" uid="uid://c3802fqqtfswm" path="res://assets/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="2_11drq"]
+[ext_resource type="PackedScene" uid="uid://bsmaa2w8cmymf" path="res://stove.tscn" id="4_ilqre"]
+[ext_resource type="PackedScene" uid="uid://6bn3ftrtfo6b" path="res://plate.tscn" id="5_mn52b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wnoh"]
 texture = ExtResource("1_3m1uf")
@@ -3847,5 +3849,15 @@ tile_set = SubResource("TileSet_dqug4")
 format = 2
 layer_0/tile_data = PackedInt32Array(262157, 458752, 45, 327693, 458752, 46, 393229, 458752, 47, 262158, 524288, 45, 327694, 524288, 46, 393230, 524288, 47, 262159, 589824, 45, 327695, 589824, 46, 393231, 589824, 47, 458771, 458752, 45, 524307, 458752, 46, 589843, 458752, 47, 458772, 524288, 45, 524308, 524288, 46, 589844, 524288, 47, 458773, 589824, 45, 524309, 589824, 46, 589845, 589824, 47)
 
-[node name="Player" parent="." instance=ExtResource("1_xffki")]
+[node name="Ysort" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-1, -1)
+
+[node name="Player" parent="Ysort" instance=ExtResource("1_xffki")]
 position = Vector2(1, -25)
+
+[node name="Stove" parent="Ysort" instance=ExtResource("4_ilqre")]
+position = Vector2(-82, -103)
+
+[node name="Plate" parent="Ysort" instance=ExtResource("5_mn52b")]
+position = Vector2(-3, -107)
