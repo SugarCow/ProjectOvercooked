@@ -8,10 +8,12 @@
 script = ExtResource("1_7yssj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, -7)
 texture = ExtResource("2_y4pyr")
 centered = false
 offset = Vector2(-8, -8)
 
 [node name="Object" parent="." instance=ExtResource("3_xpys4")]
+position = Vector2(0, 12)
 
 [editable path="Object"]

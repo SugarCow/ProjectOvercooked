@@ -37,7 +37,7 @@ func dropoff():
 
 	main.get_node("Ysort").add_child(my_player.my_object)
 #	var dropoff_location = my_player.dropOffPoint.position
-	get_parent().global_position = my_player.get_node("dropOffPoint").global_position
+	get_parent().global_position = my_player.get_node("pivotPoint/Grab/dropOffPoint").global_position
 	my_player.hands_full = false
 	my_player.states = WALK
 	

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmdnf537ydrqe"]
+[gd_scene load_steps=11 format=3 uid="uid://cmdnf537ydrqe"]
 
 [ext_resource type="Texture2D" uid="uid://yfuv4vvteq6e" path="res://assets/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_3m1uf"]
 [ext_resource type="PackedScene" uid="uid://cjivxvu7256ui" path="res://Player.tscn" id="1_xffki"]
 [ext_resource type="Texture2D" uid="uid://c3802fqqtfswm" path="res://assets/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="2_11drq"]
 [ext_resource type="PackedScene" uid="uid://bsmaa2w8cmymf" path="res://stove.tscn" id="4_ilqre"]
 [ext_resource type="PackedScene" uid="uid://6bn3ftrtfo6b" path="res://plate.tscn" id="5_mn52b"]
+[ext_resource type="PackedScene" uid="uid://1h67xy5s2rx1" path="res://raw_steak.tscn" id="6_bl2da"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wnoh"]
 texture = ExtResource("1_3m1uf")
@@ -3861,3 +3862,6 @@ position = Vector2(-82, -103)
 
 [node name="Plate" parent="Ysort" instance=ExtResource("5_mn52b")]
 position = Vector2(-3, -107)
+
+[node name="RawSteak" parent="Ysort" instance=ExtResource("6_bl2da")]
+position = Vector2(99, -50)

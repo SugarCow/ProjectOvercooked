@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://1h67xy5s2rx1"]
+
+[ext_resource type="Texture2D" uid="uid://jbngfoyt6xrf" path="res://assets/Ghostpixxells_pixelfood/rawSteak.png" id="1_koj6i"]
+[ext_resource type="Script" path="res://raw_steak.gd" id="1_xnfel"]
+[ext_resource type="PackedScene" uid="uid://e4u2mwbndpia" path="res://object.tscn" id="2_v3s16"]
+
+[node name="RawSteak" type="Node2D"]
+script = ExtResource("1_xnfel")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_koj6i")
+
+[node name="Object" parent="." instance=ExtResource("2_v3s16")]
+position = Vector2(0, 12)
+
+[editable path="Object"]
