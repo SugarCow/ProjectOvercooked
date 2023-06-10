@@ -3,11 +3,13 @@ extends Area2D
 
 var objectType
 var my_player
-
+@onready var main = get_tree().current_scene
 enum { 
 	WALK,
 	HOLD_PLATE,
-	DASH
+	DASH,
+	WALK_WITH_PLATE,
+	DASH_WITH_PLATE
 }
 
 enum { 
@@ -32,18 +34,26 @@ func _process(delta):
 			pass
 	
 func dropoff():
-	var main = get_tree().current_scene
-	main.add_child(get_parent())
-#	var dropoff_location = my_player.dropOffPoint.position
-	get_parent().global_position = my_player..global_position
 
+	main.get_node("Ysort").add_child(my_player.my_object)
+#	var dropoff_location = my_player.dropOffPoint.position
+	get_parent().global_position = my_player.get_node("dropOffPoint").global_position
+	my_player.hands_full = false
+	my_player.states = WALK
+	
 
 func _on_area_entered(area):
+	if my_player.hands_full == true:
+		return
 	print("object_grabbed")
 	my_player.states = HOLD_PLATE
 	my_player.my_object = get_parent()
+	my_player.get_node("pivotPoint/Grab/GrabBox").disabled = true
 	print(my_player.my_object)
 #	queue_free()
 #	get_parent().queue_free()
 
+	main.get_node("Ysort").remove_child(get_parent())
+	my_player.hands_full = true
 	
+#	get_parent().set_pause(true)

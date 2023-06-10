@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var animation_state = anim_tree.get("parameters/playback")
 @onready var grab_box = $pivotPoint/Grab/GrabBox
 @onready var my_object = $instancePlaceHolder
+@onready var disable_grab_timer = $disable_grab_timer
 
 @export var speed = 80
 @export var friction = 400
@@ -19,7 +20,9 @@ var hands_full = false
 enum { 
 	WALK,
 	HOLD_PLATE,
-	DASH
+	DASH,
+	WALK_WITH_PLATE,
+	DASH_WITH_PLATE
 }
 var states = WALK
 var input_dir = Vector2.ZERO
@@ -27,25 +30,36 @@ var roll_dir = Vector2.DOWN
 
 
 func _ready():
+	disable_grab_timer.timeout.connect(_on_disable_grab_timer_timeout)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if hands_full == true:
+		$pivotPoint/Grab/GrabBox.disabled = true
 	match states:
 		WALK:
-			walk_state(delta)
+			walk_state(delta, "walk")
 		DASH:
-			dash_state(delta)
+			dash_state(delta,"dash")
 		HOLD_PLATE:
 			hold_plate_state()
+		WALK_WITH_PLATE:
+			walk_state(delta, "hold_plate_walk")
+		DASH_WITH_PLATE:
+			dash_state(delta,"dash_plate_state")
 			
+
+func dash_plate_state():
+	pass
+
 func hold_plate_state():
 	hands_full = true
-	states = WALK
+	states = WALK_WITH_PLATE
 	
 	
-func walk_state(delta):
+func walk_state(delta, walk_state):
 
 	input_dir = Vector2(Input.get_action_raw_strength("ui_right") - Input.get_action_strength("ui_left"), 
 						Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
@@ -58,14 +72,16 @@ func walk_state(delta):
 		anim_tree.set("parameters/walk/blend_position", input_dir)
 		anim_tree.set("parameters/dash/blend_position", input_dir)
 		anim_tree.set("parameters/hold_plate_idle/blend_position", input_dir)
-		animation_state.travel("walk")
+		anim_tree.set("parameters/hold_plate_walk/blend_position", input_dir)
+		anim_tree.set("parameters/hold_plate_dash/blend_position", input_dir)
+		animation_state.travel(walk_state)
 		velocity = velocity.move_toward(input_dir * speed, acceleration * delta)
 	
 	elif hands_full == true:
 		animation_state.travel("hold_plate_idle")
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 		
-	else:
+	elif hands_full == false:
 		animation_state.travel("idle")
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 		
@@ -85,17 +101,19 @@ func walk_state(delta):
 	if Input.is_action_just_pressed("grab") and hands_full == false:
 		grab_box.disabled = false
 		print("grabbing")
+		disable_grab_timer.start()
+		
+		
 	if Input.is_action_just_pressed("grab") and hands_full == true:
-		print(my_object)
 		my_object.get_node("Object").dropoff()
-		hands_full = false
-		
+
+	
 #	if hands_full:
-#		print(my_object)
+#		print(my_object)ww
 		
-func dash_state(delta):
+func dash_state(delta, dash_state):
 	velocity = velocity.move_toward(roll_dir * roll_speed, 800)
-	animation_state.travel("dash")
+	animation_state.travel(dash_state)
 	move_and_slide()
 	dash_finished = false
 	dash_on_cooldown = true
@@ -110,3 +128,7 @@ func dash_animation_finished(delta):
 	
 	
 	
+func _on_disable_grab_timer_timeout():
+	grab_box.disabled = true
+	
+
