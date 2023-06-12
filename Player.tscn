@@ -2506,6 +2506,10 @@ disabled = true
 [node name="dropOffPoint" type="Marker2D" parent="pivotPoint/Grab"]
 position = Vector2(22, 5.53131e-05)
 
+[node name="SpriteLocation" type="Marker2D" parent="."]
+position = Vector2(-35, 9)
+rotation = 3.14159
+
 [node name="instancePlaceHolder" type="Node" parent="."]
 
 [node name="disable_grab_timer" type="Timer" parent="."]

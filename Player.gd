@@ -35,13 +35,14 @@ var roll_dir = Vector2.DOWN
 
 func _ready():
 	disable_grab_timer.timeout.connect(_on_disable_grab_timer_timeout)
-	pass # Replace with function body.
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if hands_full == true:
 		$pivotPoint/Grab/GrabBox.disabled = true
+	#state machine 
 	match states:
 		WALK:
 			walk_state(delta, "walk")
@@ -74,7 +75,6 @@ func hold_item_state():
 	
 	
 func walk_state(delta, walk_state):
-
 	input_dir = Vector2(Input.get_action_raw_strength("ui_right") - Input.get_action_strength("ui_left"), 
 						Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
 						
@@ -91,7 +91,6 @@ func walk_state(delta, walk_state):
 		anim_tree.set("parameters/hold_item_idle/blend_position", input_dir)
 		anim_tree.set("parameters/hold_item_walk/blend_position", input_dir)
 		anim_tree.set("parameters/hold_item_dash/blend_position", input_dir)
-		
 		
 		if hands_full == true and holding_plate == true:
 			states = WALK_WITH_PLATE
@@ -119,8 +118,8 @@ func walk_state(delta, walk_state):
 		
 
 	move_and_slide()
-	
-		
+
+
 	if Input.is_action_just_pressed("dash") and dash_finished == true and dash_on_cooldown == false:
 		if hands_full == true and holding_plate == true:
 			states = DASH_WITH_PLATE
@@ -142,7 +141,7 @@ func walk_state(delta, walk_state):
 		print("grabbing")
 		disable_grab_timer.start()
 		
-		
+
 	if Input.is_action_just_pressed("grab") and hands_full == true:
 		my_object.get_node("Object").dropoff()
 
@@ -158,16 +157,13 @@ func dash_state(delta, dash_state):
 	dash_on_cooldown = true
 
 
-	
 func dash_animation_finished(delta):
 	velocity = velocity.move_toward(Vector2.ZERO, 2000 )
 	move_and_slide()
 	states = WALK
 	dash_finished = true
 	
-	
-	
-	
+
 func _on_disable_grab_timer_timeout():
 	grab_box.disabled = true
 	

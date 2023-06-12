@@ -62,6 +62,8 @@ func _on_area_entered(area):
 	my_player.hands_full = true
 	if objectType == "plate":
 		my_player.holding_plate = true
-	else:my_player.holding_plate = false
-	
+	else:
+		my_player.holding_plate = false
+		my_player.get_node("SpriteLocation").add_child(get_parent())
+		get_parent().position = my_player.get_node("SpriteLocation").position
 #	get_parent().set_pause(true)
