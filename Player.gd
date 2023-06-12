@@ -16,13 +16,17 @@ const dash_cooldown = 60
 var timer = dash_cooldown
 var dash_on_cooldown = false
 var hands_full = false
+var holding_plate = false
 # Called when the node enters the scene tree for the first time.
 enum { 
 	WALK,
 	HOLD_PLATE,
+	HOLD_ITEM,
 	DASH,
 	WALK_WITH_PLATE,
-	DASH_WITH_PLATE
+	DASH_WITH_PLATE,
+	WALK_WITH_ITEM, 
+	DASH_WITH_ITEM
 }
 var states = WALK
 var input_dir = Vector2.ZERO
@@ -45,18 +49,28 @@ func _process(delta):
 			dash_state(delta,"dash")
 		HOLD_PLATE:
 			hold_plate_state()
+		HOLD_ITEM:
+			hold_item_state()
 		WALK_WITH_PLATE:
 			walk_state(delta, "hold_plate_walk")
 		DASH_WITH_PLATE:
-			dash_state(delta,"dash_plate_state")
-			
+			dash_state(delta,"hold_plate_dash")
+		WALK_WITH_ITEM:
+			walk_state(delta, "hold_item_walk")
+		DASH_WITH_ITEM: 
+			dash_state(delta, "hold_item_dash")
 
-func dash_plate_state():
-	pass
+
 
 func hold_plate_state():
 	hands_full = true
+	holding_plate = true
 	states = WALK_WITH_PLATE
+
+func hold_item_state():
+	hands_full = true
+	holding_plate = false
+	states = WALK_WITH_ITEM
 	
 	
 func walk_state(delta, walk_state):
@@ -74,11 +88,29 @@ func walk_state(delta, walk_state):
 		anim_tree.set("parameters/hold_plate_idle/blend_position", input_dir)
 		anim_tree.set("parameters/hold_plate_walk/blend_position", input_dir)
 		anim_tree.set("parameters/hold_plate_dash/blend_position", input_dir)
-		animation_state.travel(walk_state)
+		anim_tree.set("parameters/hold_item_idle/blend_position", input_dir)
+		anim_tree.set("parameters/hold_item_walk/blend_position", input_dir)
+		anim_tree.set("parameters/hold_item_dash/blend_position", input_dir)
+		
+		
+		if hands_full == true and holding_plate == true:
+			states = WALK_WITH_PLATE
+			animation_state.travel(walk_state)
+		if hands_full == true and holding_plate == false:
+			states = WALK_WITH_ITEM
+			animation_state.travel(walk_state)
+		if hands_full == false:
+			states = WALK
+			animation_state.travel(walk_state)
+			
 		velocity = velocity.move_toward(input_dir * speed, acceleration * delta)
 	
-	elif hands_full == true:
+	elif hands_full == true and holding_plate == true:
 		animation_state.travel("hold_plate_idle")
+		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+	
+	elif hands_full == true and holding_plate == false:
+		animation_state.travel("hold_item_idle")
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 		
 	elif hands_full == false:
@@ -90,7 +122,14 @@ func walk_state(delta, walk_state):
 	
 		
 	if Input.is_action_just_pressed("dash") and dash_finished == true and dash_on_cooldown == false:
-		states = DASH
+		if hands_full == true and holding_plate == true:
+			states = DASH_WITH_PLATE
+		if hands_full == true and holding_plate == false:
+			states = DASH_WITH_ITEM
+		if hands_full == false: 
+			states = DASH
+	
+	
 	if dash_on_cooldown == true:
 		timer -= 1
 		
@@ -125,6 +164,7 @@ func dash_animation_finished(delta):
 	move_and_slide()
 	states = WALK
 	dash_finished = true
+	
 	
 	
 	
