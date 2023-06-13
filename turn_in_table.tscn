@@ -1,0 +1,78 @@
+[gd_scene load_steps=16 format=3 uid="uid://bdvia7jlewypg"]
+
+[ext_resource type="Texture2D" uid="uid://cidkx6ednlbm2" path="res://assets/overcookedAssets/turnInTable/TurnInTable1.png" id="1_g10us"]
+[ext_resource type="Script" path="res://turn_in_table.gd" id="1_r71t5"]
+[ext_resource type="Texture2D" uid="uid://dmom8ouorpj3h" path="res://assets/overcookedAssets/turnInTable/TurnInTable2.png" id="2_cdxsc"]
+[ext_resource type="Texture2D" uid="uid://brb1oossitplq" path="res://assets/overcookedAssets/turnInTable/TurnInTable3.png" id="3_d86ws"]
+[ext_resource type="Texture2D" uid="uid://q75lv30ihjb6" path="res://assets/overcookedAssets/turnInTable/TurnInTable4.png" id="4_0r8rb"]
+[ext_resource type="Texture2D" uid="uid://cq8qtjmr1w46g" path="res://assets/overcookedAssets/turnInTable/TurnInTable5.png" id="5_pdaao"]
+[ext_resource type="Texture2D" uid="uid://2ruqq31k6qrc" path="res://assets/overcookedAssets/turnInTable/TurnInTable6.png" id="6_x0bcl"]
+[ext_resource type="Texture2D" uid="uid://draulxmiesuwb" path="res://assets/overcookedAssets/turnInTable/TurnInTable7.png" id="7_qrhnh"]
+[ext_resource type="Texture2D" uid="uid://b5ts0jmjm87fb" path="res://assets/overcookedAssets/turnInTable/TurnInTable8.png" id="8_gu6u8"]
+[ext_resource type="Texture2D" uid="uid://d3vi16k0oufs5" path="res://assets/overcookedAssets/turnInTable/TurnInTable9.png" id="9_ovmsl"]
+[ext_resource type="Texture2D" uid="uid://besrlbsocov13" path="res://assets/overcookedAssets/turnInTable/TurnInTable10.png" id="10_erdcp"]
+[ext_resource type="Texture2D" uid="uid://km15eap4jjiu" path="res://assets/overcookedAssets/turnInTable/TurnInTable11.png" id="11_p3kpo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kqxq4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g10us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cdxsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d86ws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0r8rb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pdaao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x0bcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qrhnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gu6u8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ovmsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_erdcp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_p3kpo")
+}],
+"loop": true,
+"name": &"animate",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63wse"]
+size = Vector2(36, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xea2r"]
+size = Vector2(36, 20)
+
+[node name="TurnInTable" type="StaticBody2D"]
+script = ExtResource("1_r71t5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kqxq4")
+animation = &"animate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 18)
+shape = SubResource("RectangleShape2D_63wse")
+
+[node name="TurnInArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurnInArea"]
+position = Vector2(0, 17)
+shape = SubResource("RectangleShape2D_xea2r")

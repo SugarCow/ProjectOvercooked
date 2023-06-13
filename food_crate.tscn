@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cajpyjo7sqy06"]
+
+[ext_resource type="Script" path="res://food_crate.gd" id="1_pjatq"]
+[ext_resource type="Texture2D" uid="uid://b2ktjcjjj0sdu" path="res://assets/overcookedAssets/foodCrate.png" id="1_pskan"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkd6g"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8i620"]
+
+[node name="FoodCrate" type="StaticBody2D"]
+script = ExtResource("1_pjatq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pskan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_nkd6g")
+
+[node name="foodImage" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="grabZone" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="grabZone"]
+shape = SubResource("RectangleShape2D_8i620")
+
+[connection signal="area_entered" from="grabZone" to="." method="_on_grab_zone_area_entered"]

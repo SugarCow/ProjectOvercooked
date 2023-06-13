@@ -8,6 +8,6 @@ func _ready():
 
 	my_object.objectType = "plate"
 	my_object.my_player = my_player
-	self.add_child(my_object)
+#	self.add_child(my_object)
 	
 	

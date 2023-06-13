@@ -37,10 +37,16 @@ func _process(delta):
 #			print("i am a steak ")
 	
 func dropoff():
+	if objectType != "plate":
+		my_player.get_node("SpriteLocation").remove_child(get_parent())
 
-	main.get_node("Ysort").add_child(my_player.my_object)
+	main.get_node("Ysort").add_child(get_parent())
 #	var dropoff_location = my_player.dropOffPoint.position
+	print(get_parent().global_position)
+	print(my_player.global_position)
 	get_parent().global_position = my_player.get_node("pivotPoint/Grab/dropOffPoint").global_position
+	print(get_parent().global_position)
+		
 	my_player.hands_full = false
 	my_player.states = WALK
 	
