@@ -3,9 +3,7 @@
 [ext_resource type="Script" path="res://plate.gd" id="1_7yssj"]
 [ext_resource type="Texture2D" uid="uid://2eesqwhdyoi5" path="res://assets/Ghostpixxells_pixelfood/02_dish_2.png" id="2_y4pyr"]
 [ext_resource type="PackedScene" uid="uid://e4u2mwbndpia" path="res://object.tscn" id="3_xpys4"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_6jdaf"]
-radius = 11.0
+[ext_resource type="PackedScene" uid="uid://b7u2dra11knq" path="res://object_holder.tscn" id="4_6o0po"]
 
 [node name="Plate" type="Node2D"]
 script = ExtResource("1_7yssj")
@@ -18,14 +16,12 @@ offset = Vector2(-8, -8)
 
 [node name="Object" parent="." instance=ExtResource("3_xpys4")]
 position = Vector2(0, 12)
+collision_layer = 18
+collision_mask = 17
 
 [node name="foodImage" type="Sprite2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 0
-
-[node name="foodCollision" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_6jdaf")
+[node name="ObjectHolder" parent="." instance=ExtResource("4_6o0po")]
 
 [editable path="Object"]
+[editable path="ObjectHolder"]

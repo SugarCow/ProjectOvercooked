@@ -12,5 +12,6 @@ texture = ExtResource("1_koj6i")
 
 [node name="Object" parent="." instance=ExtResource("2_v3s16")]
 position = Vector2(0, 12)
+collision_layer = 18
 
 [editable path="Object"]

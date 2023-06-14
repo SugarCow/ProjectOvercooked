@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://5irj60s78p6n"]
+[gd_scene load_steps=5 format=3 uid="uid://5irj60s78p6n"]
 
 [ext_resource type="Texture2D" uid="uid://bog5gfmh27hip" path="res://assets/overcookedAssets/prepTable.png" id="1_2ifb4"]
 [ext_resource type="Script" path="res://prep_table.gd" id="1_surve"]
+[ext_resource type="PackedScene" uid="uid://b7u2dra11knq" path="res://object_holder.tscn" id="3_cjgfh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkd6g"]
 size = Vector2(34, 17)
@@ -13,5 +14,9 @@ script = ExtResource("1_surve")
 texture = ExtResource("1_2ifb4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -9.5)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_nkd6g")
+
+[node name="ObjectHolder" parent="." instance=ExtResource("3_cjgfh")]
+
+[editable path="ObjectHolder"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7u2dra11knq"]
+
+[ext_resource type="Script" path="res://object_holder.gd" id="1_5s0sp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chb3x"]
+size = Vector2(20, 16)
+
+[node name="ObjectHolder" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_5s0sp")
+
+[node name="SpriteLocation" type="Marker2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_chb3x")
+
+[node name="InstancePlaceHolder" type="Node" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

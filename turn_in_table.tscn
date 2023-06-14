@@ -72,6 +72,8 @@ position = Vector2(0, 18)
 shape = SubResource("RectangleShape2D_63wse")
 
 [node name="TurnInArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TurnInArea"]
 position = Vector2(0, 17)
