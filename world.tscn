@@ -291,7 +291,7 @@ position = Vector2(-68, -109)
 [node name="RawSteak" parent="Ysort" instance=ExtResource("6_bl2da")]
 position = Vector2(81, -116)
 
-[node name="PrepTable5" parent="Ysort" instance=ExtResource("9_s8pkr")]
+[node name="FoodCrate" parent="Ysort" instance=ExtResource("9_s8pkr")]
 position = Vector2(-145, -190)
 
 [node name="PrepTable" parent="Ysort" instance=ExtResource("8_iodrk")]

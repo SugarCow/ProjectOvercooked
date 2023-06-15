@@ -5,6 +5,9 @@ extends CharacterBody2D
 @onready var grab_box = $pivotPoint/Grab/GrabBox
 @onready var my_object = $instancePlaceHolder
 @onready var disable_grab_timer = $disable_grab_timer
+@onready var main = get_tree().current_scene
+@onready var temp = $ObjectHolder/SpriteLocation
+
 
 @export var speed = 80
 @export var friction = 400
@@ -17,6 +20,7 @@ var timer = dash_cooldown
 var dash_on_cooldown = false
 var is_holding_object = false
 var holding_plate = false
+
 # Called when the node enters the scene tree for the first time.
 enum { 
 	WALK,
@@ -42,6 +46,7 @@ func _ready():
 func _process(delta):
 	if is_holding_object == true:
 		$pivotPoint/Grab/GrabBox.disabled = true
+	else: holding_plate = false
 	#state machine 
 	match states:
 		WALK:
@@ -143,8 +148,8 @@ func walk_state(delta, walk_state):
 		
 
 	if Input.is_action_just_pressed("grab") and is_holding_object == true:
-		my_object.get_node("Object").dropoff()
-
+#		my_object.get_node("Object").dropoff(self, main)
+		drop_item()
 	
 #	if is_holding_object:
 #		print(my_object)ww
@@ -166,5 +171,39 @@ func dash_animation_finished(delta):
 
 func _on_disable_grab_timer_timeout():
 	grab_box.disabled = true
+#	grab_box.set_deferred("disabled", true)
+
+
+
+func _on_grab_area_entered(area):
+	_on_disable_grab_timer_timeout()
+	my_object = area
+	print(my_object.get_parent().name)
+	if my_object.get_parent().name != "FoodCrate":
+		my_object.get_parent().remove_child(my_object)
 	
+	if my_object.name == "Plate":
+		states = HOLD_PLATE
+	elif my_object.name == "FoodCrate":
+		$Sprite2D.texture = my_object.owner.get_node("foodImage").texture
+#		my_object
+		states = HOLD_ITEM
+	else: 
+		print(my_object.name)
+		$Sprite2D.texture = my_object.get_node("Sprite2D").texture
+		states = HOLD_ITEM
+
+func drop_item():
+#	my_object.get_node("Object/CollisionShape2D").set_deferred("disabled", false)
+
+	main.get_node("Ysort").add_child(my_object)
+
+	my_object.global_position = $pivotPoint/Grab/dropOffPoint.global_position
+
+	$Sprite2D.texture = null
+	states = WALK
+	is_holding_object = false
+	holding_plate = false
+	my_object = null
+
 

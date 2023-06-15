@@ -1,7 +1,7 @@
 extends Area2D
 
 
-@onready var objectType
+@export var objectType = "none"
 var my_holder
 @onready var main = get_tree().current_scene
 enum { 
@@ -35,69 +35,102 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	match objectType:
-		"plate": 
-#			print("i am a plate")
-			pass
-		"raw steak": 
-			pass 
-#			print("i am a steak ")
+	pass
+#	match objectType:
+#		"plate": 
+##			print("i am a plate")
+#			pass
+#		"raw steak": 
+#			pass 
+##			print("i am a steak ")
 	
 #dropping off item
-func dropoff():
-	print(my_holder.name)
-	$CollisionShape2D.set_deferred("disabled", false)
-	remove_from_holder()
-
-	get_parent().global_position = my_holder.get_node("pivotPoint/Grab/dropOffPoint").global_position
-		
-	my_holder.is_holding_object = false
-	if my_holder.name == "Player":
-		my_holder.states = WALK
-	my_holder = null
+func dropoff(curr_holder, next_holder ):
+	pass
+#	if my_holder.name == "Player":
+#		$CollisionShape2D.set_deferred("disabled", false)
+#	else:
+#		my_holder.release_object()
+#	remove_from_holder(curr_holder, next_holder)
+#
+#	get_parent().global_position = my_holder.get_node("pivotPoint/Grab/dropOffPoint").global_position
+#
+#	my_holder.is_holding_object = false
+#	if my_holder.name == "Player":
+#		my_holder.states = WALK
+#	my_holder = null
 	
 #picking up item
 func _on_area_entered(area):
-	if area.owner.name == "Player":
-		my_holder = area.owner
-	else: 
-		my_holder = area
-	
-	print(area.name)
-	
-	if my_holder.is_holding_object == true:
-		return
-	my_holder.my_object = get_parent()
-		
-	if my_holder.name == "Player":
-		if objectType == "Plate":
-			remove_from_world()
-			my_holder.states = HOLD_PLATE
-			my_holder.holding_plate = true
-			my_holder.get_node("pivotPoint/Grab/GrabBox").disabled = true
-		else:
-			remove_from_world()
-			my_holder.states = HOLD_ITEM
-			my_holder.holding_plate = false
-			my_holder.get_node("SpriteLocation").add_child(get_parent())
-			get_parent().position = my_holder.get_node("SpriteLocation").position
+	pass
+#	var new_holder
+#	if area.owner.name == "Player":
+#		new_holder = area.owner
+#	else: 
+#		new_holder = area
+#
+#	print(area.name)
+#
+#	if new_holder.is_holding_object == true:
+#		return
+#	new_holder.my_object = get_parent()
+#
+#	if new_holder.name == "Player":
+#		if objectType == "Plate":
+#			my_holder = new_holder
+#			my_holder.my_object = get_parent()
+#			remove_from_holder(my_holder, main)
+#			my_holder.states = HOLD_PLATE
+#			my_holder.holding_plate = true
+#			my_holder.get_node("pivotPoint/Grab/GrabBox").disabled = true
+#		else:
+#			my_holder = new_holder
+#			my_holder.my_object = get_parent()
+#			remove_from_holder(my_holder, main)
+#			my_holder.states = HOLD_ITEM
+#			my_holder.holding_plate = false
+#			my_holder.get_node("SpriteLocation").add_child(get_parent())
+#			get_parent().position = my_holder.get_node("SpriteLocation").position
+#	else:
+#		if objectType == "Plate":
+#			my_holder = new_holder
+#			my_holder.my_object = get_parent()
+#			remove_from_holder(my_holder, main)
+#			my_holder.holding_plate = true
+##			my_holder.get_node("pivotPoint/Grab/GrabBox").disabled = true
+#		else:
+#			my_holder = new_holder
+#			my_holder.my_object = get_parent()
+#			remove_from_holder(my_holder, main)
+#			my_holder.get_node("SpriteLocation").add_child(get_parent())
+#			get_parent().position = my_holder.get_node("SpriteLocation").position
+#
+#
+#
+#	my_holder.is_holding_object = true
+#
+##	$CollisionShape2D.disabled = true
+#	if my_holder.name == "Player":
+#		$CollisionShape2D.set_deferred("disabled", true)
 
-	#disable the player's grab box  
+
+#func remove_from_holder():
+#	main.get_node("Ysort").remove_child(get_parent())
 	
-	print(my_holder.name)
-	my_holder.is_holding_object = true
+func remove_from_holder(holder, destination):
+	pass
+#	print(holder.name)
+#	print(destination.name)
+#	if objectType != "plate" and my_holder.name == "Player":
+#		holder.get_node("SpriteLocation").remove_child(get_parent())
+#	else: #removes from the holder that is not the player so this could be a prep table or stove
+#		holder.get_node("SpriteLocation").remove_child(get_parent())
+#
+#	if destination.name == "World":
+#		destination.get_node("Ysort").add_child(get_parent())
+#	else:
+#		destination.get_node("SpriteLocation").add_child(get_parent())
 
-#	$CollisionShape2D.disabled = true
-	if my_holder.name == "Player":
-		$CollisionShape2D.set_deferred("disabled", true)
-
-
-func remove_from_world():
-	main.get_node("Ysort").remove_child(get_parent())
-	
-func remove_from_holder():
-	if objectType != "plate" and my_holder.name == "Player":
-		my_holder.get_node("SpriteLocation").remove_child(get_parent())
-	else: #removes from the holder that is not the player so this could be a prep table or stove
-		my_holder.get_node("SpriteLocation").remove_child(get_parent())
-	main.get_node("Ysort").add_child(get_parent())
+func add_to_holder(holder):
+	print("hjellos")
+	holder.get_node("ObjectHolder/SpriteLocation").add_child(get_parent())
