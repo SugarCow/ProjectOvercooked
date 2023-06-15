@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsmaa2w8cmymf"]
+[gd_scene load_steps=12 format=3 uid="uid://bsmaa2w8cmymf"]
 
 [ext_resource type="Script" path="res://stove.gd" id="1_cc8p7"]
 [ext_resource type="Texture2D" uid="uid://8gxwykqni1kn" path="res://assets/overcookedAssets/stove/Stove1.png" id="2_2jrrw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dlxyyfpo8u4vg" path="res://assets/overcookedAssets/stove/Stove5.png" id="6_nh7c8"]
 [ext_resource type="Texture2D" uid="uid://8e12455wcccf" path="res://assets/overcookedAssets/stove/Stove6.png" id="7_cmb31"]
 [ext_resource type="Texture2D" uid="uid://lxgh8bsyi41l" path="res://assets/overcookedAssets/stove/Stove7.png" id="8_j2nlc"]
+[ext_resource type="PackedScene" uid="uid://b7u2dra11knq" path="res://object_holder.tscn" id="9_pbcy3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_847bm"]
 animations = [{
@@ -58,3 +59,5 @@ frame_progress = 0.193843
 position = Vector2(0, 8.5445)
 scale = Vector2(1.00485, 0.631898)
 shape = SubResource("RectangleShape2D_nl64v")
+
+[node name="ObjectHolder" parent="." instance=ExtResource("9_pbcy3")]

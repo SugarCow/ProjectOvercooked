@@ -143,7 +143,6 @@ func walk_state(delta, walk_state):
 	
 	if Input.is_action_just_pressed("grab") and is_holding_object == false:
 		grab_box.disabled = false
-		print("grabbing")
 		disable_grab_timer.start()
 		
 
@@ -170,8 +169,8 @@ func dash_animation_finished(delta):
 	
 
 func _on_disable_grab_timer_timeout():
-	grab_box.disabled = true
-#	grab_box.set_deferred("disabled", true)
+#	grab_box.disabled = true
+	grab_box.set_deferred("disabled", true)
 
 
 
@@ -187,13 +186,13 @@ func _on_grab_area_entered(area):
 	if my_object.name == "Plate":
 		states = HOLD_PLATE
 	elif my_object.name == "FoodCrateGrabBox":
-		print(my_object.owner.name)
 		
-		$Sprite2D.texture = my_object.owner.get_node("foodImage").texture
+		
+#		$Sprite2D.texture = my_object.owner.get_node("foodImage").texture
 		my_object = null
 		
 	else: 
-		print(my_object.name)
+	
 		$Sprite2D.texture = my_object.get_node("Sprite2D").texture
 		states = HOLD_ITEM
 

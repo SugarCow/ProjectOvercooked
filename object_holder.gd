@@ -3,6 +3,7 @@ extends Area2D
 @onready var my_object = $InstancePlaceHolder 
 var is_holding_object = false
 var my_player
+@onready var main = get_tree().current_scene
 enum { 
 	WALK,
 	HOLD_PLATE,
@@ -28,13 +29,12 @@ func _process(delta):
 
 func _on_area_entered(area):
 	#prevent object holder from detecting its parents object to hold it self 
-	print(area.name)
+
 	if is_holding_object == false and area.name != "Plate": 
 		my_object = area
 		my_object.get_parent().remove_child(my_object)
 		$CollisionShape2D.set_deferred("disabled", true)
-		
-		
+		$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
 		$Sprite2D.texture = my_object.get_node("Sprite2D").texture
 	
 	else:
@@ -44,6 +44,21 @@ func _on_area_entered(area):
 
 
 func release_object(area):
-	print(area.owner.name)
+
 	$CollisionShape2D.disabled = false
 	is_holding_object = false
+
+
+func _on_release_area_area_entered(area):
+	$CollisionShape2D.set_deferred("disabled", false)
+	$ReleaseArea/ReleaseCollision.set_deferred("disabled", true)
+	
+	
+	main.get_node("Ysort").add_child(my_object)
+
+	my_object.global_position = $ReleaseArea/ReleaseCollision.global_position
+
+	$Sprite2D.texture = null
+
+	is_holding_object = false
+	my_object = null

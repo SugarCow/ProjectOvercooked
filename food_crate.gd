@@ -41,8 +41,10 @@ func find_and_set_sprite(target):
 
 
 func _on_grab_zone_area_entered(area):
+	print(area.owner.name)
 	var my_object = object.instantiate()
 	var main = get_tree().current_scene
 	var temp = main.get_node("Ysort")
 	temp.add_child(my_object)
 	my_object.global_position = self.global_position
+	area.owner.get_node("pivotPoint/Grab/GrabBox").set_deferred("disabled", false)

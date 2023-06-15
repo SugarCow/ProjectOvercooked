@@ -22,6 +22,7 @@ offset = Vector2(-8, -8)
 [node name="foodImage" type="Sprite2D" parent="."]
 
 [node name="ObjectHolder" parent="." instance=ExtResource("4_6o0po")]
+position = Vector2(0, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

@@ -2516,7 +2516,7 @@ position = Vector2(22, 5.53131e-05)
 [node name="instancePlaceHolder" type="Node" parent="."]
 
 [node name="disable_grab_timer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.08
 
 [node name="ObjectHolder" type="Area2D" parent="."]
 position = Vector2(-35, 17)
