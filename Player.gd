@@ -177,17 +177,21 @@ func _on_disable_grab_timer_timeout():
 
 func _on_grab_area_entered(area):
 	_on_disable_grab_timer_timeout()
+
 	my_object = area
+	
 	print(my_object.get_parent().name)
 	if my_object.get_parent().name != "FoodCrate":
 		my_object.get_parent().remove_child(my_object)
 	
 	if my_object.name == "Plate":
 		states = HOLD_PLATE
-	elif my_object.name == "FoodCrate":
+	elif my_object.name == "FoodCrateGrabBox":
+		print(my_object.owner.name)
+		
 		$Sprite2D.texture = my_object.owner.get_node("foodImage").texture
-#		my_object
-		states = HOLD_ITEM
+		my_object = null
+		
 	else: 
 		print(my_object.name)
 		$Sprite2D.texture = my_object.get_node("Sprite2D").texture

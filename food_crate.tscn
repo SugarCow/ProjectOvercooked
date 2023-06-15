@@ -21,10 +21,10 @@ shape = SubResource("RectangleShape2D_nkd6g")
 [node name="foodImage" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
 
-[node name="FoodCrate" type="Area2D" parent="."]
+[node name="FoodCrateGrabBox" type="Area2D" parent="."]
 collision_layer = 2
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="FoodCrate"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FoodCrateGrabBox"]
 shape = SubResource("RectangleShape2D_8i620")
 
-[connection signal="area_entered" from="FoodCrate" to="." method="_on_grab_zone_area_entered"]
+[connection signal="area_entered" from="FoodCrateGrabBox" to="." method="_on_grab_zone_area_entered"]
