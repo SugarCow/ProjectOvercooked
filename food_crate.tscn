@@ -22,7 +22,7 @@ shape = SubResource("RectangleShape2D_nkd6g")
 position = Vector2(0, -8)
 
 [node name="FoodCrateGrabBox" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="FoodCrateGrabBox"]
 shape = SubResource("RectangleShape2D_8i620")

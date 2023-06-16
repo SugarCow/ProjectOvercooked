@@ -46,5 +46,6 @@ func _on_grab_zone_area_entered(area):
 	var main = get_tree().current_scene
 	var temp = main.get_node("Ysort")
 	temp.add_child(my_object)
-	my_object.global_position = self.global_position
-	area.owner.get_node("pivotPoint/Grab/GrabBox").set_deferred("disabled", false)
+#	my_object.global_position = self.global_position
+	print(my_object.name)
+	area.owner.grab_object(my_object)

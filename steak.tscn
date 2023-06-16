@@ -1,21 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://8tc1n0pvwlf6"]
 
+[ext_resource type="Script" path="res://object.gd" id="1_fv4u2"]
 [ext_resource type="Texture2D" uid="uid://whq5dopm0npx" path="res://assets/Ghostpixxells_pixelfood/95_steak.png" id="2_g2dof"]
-
-[sub_resource type="GDScript" id="GDScript_m5eyj"]
-script/source = "extends Node2D
-
-const object_type = \"steak\"
-var recipe
-@onready var my_object = $Object
-@onready var my_player = get_node(\"../Player\")
-func _ready():
-
-#	my_object.objectType = \"steak\"
-#	my_object.my_player = my_player
-#	self.add_child(my_object)
-	pass
-"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uitaq"]
 radius = 7.0
@@ -23,7 +9,7 @@ height = 16.0
 
 [node name="Steak" type="Area2D"]
 collision_layer = 2
-script = SubResource("GDScript_m5eyj")
+script = ExtResource("1_fv4u2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_g2dof")

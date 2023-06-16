@@ -172,11 +172,7 @@ func _on_disable_grab_timer_timeout():
 #	grab_box.disabled = true
 	grab_box.set_deferred("disabled", true)
 
-
-
-func _on_grab_area_entered(area):
-	_on_disable_grab_timer_timeout()
-
+func grab_object(area):
 	my_object = area
 	
 	print(my_object.get_parent().name)
@@ -185,22 +181,28 @@ func _on_grab_area_entered(area):
 	
 	if my_object.name == "Plate":
 		states = HOLD_PLATE
-	elif my_object.name == "FoodCrateGrabBox":
-		
-		
+	elif my_object.name != "FoodCrateGrabBox":
+#
+#
 #		$Sprite2D.texture = my_object.owner.get_node("foodImage").texture
-		my_object = null
-		
-	else: 
+#		my_object = null
+#		pass
+#	else: 
+		print(my_object.name) 
 	
 		$Sprite2D.texture = my_object.get_node("Sprite2D").texture
 		states = HOLD_ITEM
+	
+
+func _on_grab_area_entered(area):
+	_on_disable_grab_timer_timeout()
+	grab_object(area)
 
 func drop_item():
 #	my_object.get_node("Object/CollisionShape2D").set_deferred("disabled", false)
-
+	print(my_object.name)
 	main.get_node("Ysort").add_child(my_object)
-
+	
 	my_object.global_position = $pivotPoint/Grab/dropOffPoint.global_position
 
 	$Sprite2D.texture = null
