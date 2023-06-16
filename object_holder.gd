@@ -3,6 +3,7 @@ extends Area2D
 @onready var my_object = $InstancePlaceHolder 
 var is_holding_object = false
 var my_player
+@export var is_plate =false
 @onready var main = get_tree().current_scene
 enum { 
 	WALK,
@@ -27,17 +28,33 @@ func _ready():
 
 func _on_area_entered(area):
 	#prevent object holder from detecting its parents object to hold it self 
-
-	if is_holding_object == false and area.name != "Plate": 
-		my_object = area
-		my_object.get_parent().remove_child(my_object)
-		$CollisionShape2D.set_deferred("disabled", true)
-		$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
-		$Sprite2D.texture = my_object.get_node("Sprite2D").texture
-	
-	else:
-		print("rejected ", area.name) 
-		return
+	print(area.name)
+	if is_holding_object == false:
+		if area.name != "Plate" and is_plate == false: 
+			my_object = area
+			my_object.get_parent().remove_child(my_object)
+			$CollisionShape2D.set_deferred("disabled", true)
+			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
+			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
+		
+		elif area.name == "Plate" and is_plate == false:
+			my_object = area
+			my_object.get_parent().remove_child(my_object)
+			$CollisionShape2D.set_deferred("disabled", true)
+			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
+			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
+		
+		elif area.name != "Plate" and is_plate == true:
+			my_object = area
+			print(my_object.get_parent().name)
+			my_object.get_parent().remove_child(my_object)
+#			print(my_object.get_parent().name)
+			$CollisionShape2D.set_deferred("disabled", true)
+#			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
+			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
+		else:
+			print("rejected ", area.name) 
+			return
  
 
 
@@ -49,14 +66,16 @@ func release_object(area):
 
 func _on_release_area_area_entered(area):
 	$CollisionShape2D.set_deferred("disabled", false)
-	$ReleaseArea/ReleaseCollision.set_deferred("disabled", true)
-	
-	
-	main.get_node("Ysort").add_child(my_object)
+	if is_plate == false: 
+		$ReleaseArea/ReleaseCollision.set_deferred("disabled", true)
+		print(my_object.get_node("CollisionShape2D"))
+#		my_object.get_node("CollisionShape2D").disabled = true
+		
+#	if is_plate ==false:
+		main.get_node("Ysort").add_child(my_object)
+		my_object.global_position = $ReleaseArea/ReleaseCollision.global_position
 
-	my_object.global_position = $ReleaseArea/ReleaseCollision.global_position
+		$Sprite2D.texture = null
 
-	$Sprite2D.texture = null
-
-	is_holding_object = false
-	my_object = null
+		is_holding_object = false
+		my_object = null
