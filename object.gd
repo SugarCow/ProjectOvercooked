@@ -3,6 +3,8 @@ extends Area2D
 
 @export var objectType = "none"
 var my_holder
+var is_completed_object = false
+var current_recipe = []
 @onready var main = get_tree().current_scene
 enum { 
 	WALK,
@@ -134,3 +136,7 @@ func remove_from_holder(holder, destination):
 func add_to_holder(holder):
 	print("hjellos")
 	holder.get_node("ObjectHolder/SpriteLocation").add_child(get_parent())
+
+func add_to_recipe(ingredient):
+	current_recipe.append(ingredient)
+	print(current_recipe[0])

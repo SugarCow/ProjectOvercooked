@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba0rryjleperc"]
+
+[ext_resource type="Script" path="res://dish_rack.gd" id="1_ktnae"]
+[ext_resource type="Texture2D" uid="uid://bog5gfmh27hip" path="res://assets/overcookedAssets/prepTable.png" id="2_k34wd"]
+[ext_resource type="Texture2D" uid="uid://bryob7hl2lbx6" path="res://assets/Ghostpixxells_pixelfood/03_dish_pile.png" id="3_vq766"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkd6g"]
+size = Vector2(34, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76x33"]
+
+[node name="DishRack" type="StaticBody2D"]
+script = ExtResource("1_ktnae")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_k34wd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_nkd6g")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -17)
+texture = ExtResource("3_vq766")
+
+[node name="GrabBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabBox"]
+position = Vector2(0, -2)
+scale = Vector2(1.4, 1.00322)
+shape = SubResource("RectangleShape2D_76x33")
+
+[connection signal="area_entered" from="GrabBox" to="." method="_on_grab_box_area_entered"]

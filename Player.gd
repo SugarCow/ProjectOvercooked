@@ -200,7 +200,7 @@ func _on_grab_area_entered(area):
 
 func drop_item():
 #	my_object.get_node("Object/CollisionShape2D").set_deferred("disabled", false)
-	print(my_object.name)
+	
 	main.get_node("Ysort").add_child(my_object)
 	
 	my_object.global_position = $pivotPoint/Grab/dropOffPoint.global_position

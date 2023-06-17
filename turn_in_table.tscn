@@ -61,20 +61,29 @@ size = Vector2(36, 20)
 size = Vector2(36, 20)
 
 [node name="TurnInTable" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_r71t5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_kqxq4")
 animation = &"animate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 18)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_63wse")
 
 [node name="TurnInArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 0
+collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TurnInArea"]
-position = Vector2(0, 17)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_xea2r")
+
+[node name="OrderTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="area_entered" from="TurnInArea" to="." method="_on_turn_in_area_area_entered"]
