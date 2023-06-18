@@ -284,18 +284,6 @@ position = Vector2(81, -116)
 [node name="FoodCrate" parent="Ysort" instance=ExtResource("9_s8pkr")]
 position = Vector2(-145, -190)
 
-[node name="PrepTable" parent="Ysort" instance=ExtResource("8_iodrk")]
-position = Vector2(-73, -189)
-
-[node name="PrepTable2" parent="Ysort" instance=ExtResource("8_iodrk")]
-position = Vector2(-37, -189)
-
-[node name="PrepTable3" parent="Ysort" instance=ExtResource("8_iodrk")]
-position = Vector2(-1, -189)
-
-[node name="PrepTable4" parent="Ysort" instance=ExtResource("8_iodrk")]
-position = Vector2(35, -189)
-
 [node name="Steak" parent="Ysort" instance=ExtResource("9_byjyn")]
 position = Vector2(-146, -103)
 
@@ -304,6 +292,18 @@ position = Vector2(71, -189)
 
 [node name="DishRack" parent="Ysort" instance=ExtResource("9_2sqov")]
 position = Vector2(-183, -188)
+
+[node name="PrepTable" parent="Ysort" instance=ExtResource("8_iodrk")]
+position = Vector2(-72, -189)
+
+[node name="PrepTable2" parent="Ysort" instance=ExtResource("8_iodrk")]
+position = Vector2(-35, -189)
+
+[node name="PrepTable3" parent="Ysort" instance=ExtResource("8_iodrk")]
+position = Vector2(2, -189)
+
+[node name="PrepTable4" parent="Ysort" instance=ExtResource("8_iodrk")]
+position = Vector2(38, -189)
 
 [node name="background" type="TileMap" parent="."]
 visible = false

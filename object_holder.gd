@@ -20,7 +20,7 @@ enum {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	my_player = get_node("../../Player")
-
+	$ReleaseArea/ReleaseCollision.set_deferred("disabled", true)
 
 
 
@@ -46,7 +46,7 @@ func _on_area_entered(area):
 		
 		elif area.name.contains("Plate") == false and is_plate == true:
 			my_object = area
-			print(my_object.get_parent().name)
+			
 			my_object.get_parent().remove_child(my_object)
 #			print(my_object.get_parent().name)
 			$CollisionShape2D.set_deferred("disabled", true)
@@ -68,10 +68,13 @@ func release_object(area):
 
 
 func _on_release_area_area_entered(area):
+	print(area.name)
+	print(area.owner.name)
+	print(area.owner.owner.name)
 	$CollisionShape2D.set_deferred("disabled", false)
 	if is_plate == false: 
 		$ReleaseArea/ReleaseCollision.set_deferred("disabled", true)
-		print(my_object.get_node("CollisionShape2D"))
+#		print(my_object.get_node("CollisionShape2D"))
 #		my_object.get_node("CollisionShape2D").disabled = true
 
 		main.get_node("Ysort").add_child(my_object)
