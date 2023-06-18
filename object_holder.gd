@@ -44,7 +44,7 @@ func _on_area_entered(area):
 			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
 			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
 		
-		elif area.name != "Plate" and is_plate == true:
+		elif area.name.contains("Plate") == false and is_plate == true:
 			my_object = area
 			print(my_object.get_parent().name)
 			my_object.get_parent().remove_child(my_object)

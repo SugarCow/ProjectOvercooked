@@ -1,4 +1,4 @@
-[gd_scene load_steps=195 format=3 uid="uid://cjivxvu7256ui"]
+[gd_scene load_steps=193 format=3 uid="uid://cjivxvu7256ui"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_6nk1q"]
 [ext_resource type="Texture2D" uid="uid://ch0st2na5jh74" path="res://assets/overcookedAssets/ChefNinaIdleDown-export.png" id="2_33u1c"]
@@ -83,7 +83,6 @@
 [ext_resource type="Texture2D" uid="uid://bfp61ad4mt50t" path="res://assets/overcookedAssets/holdItemWalkUp/ChefNinawalkUp5.png" id="28_ip0ju"]
 [ext_resource type="Texture2D" uid="uid://7pwvg6niuq3a" path="res://assets/overcookedAssets/holdItemWalkUp/ChefNinawalkUp6.png" id="29_f5fkd"]
 [ext_resource type="Texture2D" uid="uid://cu6jvah3drpen" path="res://assets/overcookedAssets/plateWalkUp/ChefNinaPlateWalkUp6.png" id="29_kwhn3"]
-[ext_resource type="Script" path="res://object_holder.gd" id="84_hw10n"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g2srg"]
 load_path = "res://.godot/imported/ChefNinaIdleLeft.png-5b0731918fe4ca320457544c571da429.ctex"
@@ -2457,9 +2456,6 @@ graph_offset = Vector2(-99.4181, 46.4564)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldhdd"]
 size = Vector2(19.5, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_chb3x"]
-size = Vector2(20, 16)
-
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(1, -21)
 script = ExtResource("1_6nk1q")
@@ -2518,21 +2514,4 @@ position = Vector2(22, 5.53131e-05)
 [node name="disable_grab_timer" type="Timer" parent="."]
 wait_time = 0.08
 
-[node name="ObjectHolder" type="Area2D" parent="."]
-position = Vector2(-35, 17)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("84_hw10n")
-
-[node name="SpriteLocation" type="Marker2D" parent="ObjectHolder"]
-position = Vector2(0, -8)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectHolder"]
-position = Vector2(0, -8)
-shape = SubResource("RectangleShape2D_chb3x")
-disabled = true
-
-[node name="InstancePlaceHolder" type="Node" parent="ObjectHolder"]
-
 [connection signal="area_entered" from="pivotPoint/Grab" to="." method="_on_grab_area_entered"]
-[connection signal="area_entered" from="ObjectHolder" to="ObjectHolder" method="_on_area_entered" flags=18]
