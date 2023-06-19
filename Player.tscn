@@ -2494,6 +2494,9 @@ parameters/hold_plate_walk/blend_position = Vector2(0, 0)
 parameters/idle/blend_position = Vector2(-0.000640631, 0.0419161)
 parameters/walk/blend_position = Vector2(0, 0)
 
+[node name="FoodImage" type="Sprite2D" parent="."]
+position = Vector2(-1, 9)
+
 [node name="pivotPoint" type="Marker2D" parent="."]
 position = Vector2(-1, 9)
 rotation = 1.5708

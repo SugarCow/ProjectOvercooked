@@ -43,6 +43,7 @@ func _on_area_entered(area):
 			$CollisionShape2D.set_deferred("disabled", true)
 			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
 			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
+			$Sprite2D/FoodImage.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
 		
 		elif area.name.contains("Plate") == false and is_plate == true:
 			my_object = area
@@ -55,6 +56,9 @@ func _on_area_entered(area):
 			print(get_parent().name)
 			get_parent().add_to_recipe(my_object.name)
 			get_parent().is_completed_object = true
+			print(my_object.name)
+			$Sprite2D/FoodImage.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
+#		print($pivotPoint/FoodImage.texture)
 		
 		else:
 			print("rejected ", area.name) 

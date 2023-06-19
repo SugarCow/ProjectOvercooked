@@ -24,6 +24,8 @@ shape = SubResource("RectangleShape2D_chb3x")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
 
+[node name="FoodImage" type="Sprite2D" parent="Sprite2D"]
+
 [node name="ReleaseArea" type="Area2D" parent="."]
 
 [node name="ReleaseCollision" type="CollisionShape2D" parent="ReleaseArea"]
