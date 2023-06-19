@@ -29,7 +29,7 @@ func _ready():
 func _on_area_entered(area):
 	#prevent object holder from detecting its parents object to hold it self 
 	print(area.name)
-	if is_holding_object == false:
+	if is_holding_object == false :
 		if area.name != "Plate" and is_plate == false: 
 			my_object = area
 			my_object.get_parent().remove_child(my_object)
@@ -45,9 +45,9 @@ func _on_area_entered(area):
 			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
 			$Sprite2D/FoodImage.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
 		
-		elif area.name.contains("Plate") == false and is_plate == true:
+		elif area.name.contains("Plate") == false and is_plate == true and area.is_raw == false :
 			my_object = area
-			
+			print(area.name)
 			my_object.get_parent().remove_child(my_object)
 #			print(my_object.get_parent().name)
 			$CollisionShape2D.set_deferred("disabled", true)
@@ -57,7 +57,7 @@ func _on_area_entered(area):
 			get_parent().add_to_recipe(my_object.name)
 			get_parent().is_completed_object = true
 			print(my_object.name)
-			$Sprite2D/FoodImage.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
+			$Sprite2D/FoodImage.texture = my_object.get_node("Sprite2D").texture
 #		print($pivotPoint/FoodImage.texture)
 		
 		else:
@@ -83,6 +83,7 @@ func _on_release_area_area_entered(area):
 
 		main.get_node("Ysort").add_child(my_object)
 		my_object.global_position = $ReleaseArea/ReleaseCollision.global_position
+		$Sprite2D/FoodImage.texture = null
 		$Sprite2D.texture = null
 		is_holding_object = false
 		my_object = null

@@ -2,6 +2,7 @@ extends Area2D
 
 
 @export var objectType = "none"
+@export var is_raw = false
 var my_holder
 var is_completed_object = false
 var current_recipe = []
