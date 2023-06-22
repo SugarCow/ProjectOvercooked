@@ -1,0 +1,98 @@
+[gd_scene load_steps=14 format=3 uid="uid://cg4grq3dfku72"]
+
+[ext_resource type="Texture2D" uid="uid://bbgfryv6dl2yj" path="res://assets/overcookedAssets/trashCan.png" id="1_21tl5"]
+[ext_resource type="Script" path="res://trash_can.gd" id="1_378vh"]
+[ext_resource type="Texture2D" uid="uid://drx2w3sw3j1q5" path="res://assets/overcookedAssets/trashCanOpenClose1.png" id="2_67rdp"]
+[ext_resource type="Texture2D" uid="uid://cgp5r4v103u8i" path="res://assets/overcookedAssets/trashCanOpenClose2.png" id="3_bekkv"]
+[ext_resource type="Texture2D" uid="uid://beck8srxmo6mf" path="res://assets/overcookedAssets/trashCanOpenClose3.png" id="4_7bft4"]
+[ext_resource type="Texture2D" uid="uid://dici0kwl8kji1" path="res://assets/overcookedAssets/trashCanOpenClose4.png" id="5_3vaw8"]
+[ext_resource type="Texture2D" uid="uid://cead08j4grx1y" path="res://assets/overcookedAssets/trashCanOpenClose5.png" id="6_af8us"]
+[ext_resource type="Texture2D" uid="uid://c3lgnvvimccgy" path="res://assets/overcookedAssets/trashCanOpenClose6.png" id="7_jg22k"]
+[ext_resource type="Texture2D" uid="uid://dytnerg8r0jfq" path="res://assets/overcookedAssets/trashCanOpenClose7.png" id="8_jqm6c"]
+[ext_resource type="Texture2D" uid="uid://bp1sbyj8bhmg6" path="res://assets/overcookedAssets/trashCanOpenClose8.png" id="9_30og3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_edh50"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_67rdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bekkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7bft4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3vaw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_af8us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jg22k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jqm6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_30og3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jqm6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jg22k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_af8us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3vaw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7bft4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_67rdp")
+}],
+"loop": false,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nxj2"]
+size = Vector2(21.1111, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huvwg"]
+size = Vector2(24, 21.9982)
+
+[node name="TrashCan" type="StaticBody2D"]
+script = ExtResource("1_378vh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_21tl5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-10, -6)
+sprite_frames = SubResource("SpriteFrames_edh50")
+frame = 13
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.800001, 9)
+scale = Vector2(1.44, 1.28)
+shape = SubResource("RectangleShape2D_2nxj2")
+debug_color = Color(0, 0.596078, 0.709804, 0.419608)
+
+[node name="DropOffBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropOffBox"]
+position = Vector2(0, -2)
+scale = Vector2(1.09854, 0.916804)
+shape = SubResource("RectangleShape2D_huvwg")
+
+[connection signal="area_entered" from="DropOffBox" to="." method="_on_drop_off_box_area_entered"]

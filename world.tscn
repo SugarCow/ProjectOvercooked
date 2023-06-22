@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmdnf537ydrqe"]
+[gd_scene load_steps=14 format=3 uid="uid://cmdnf537ydrqe"]
 
 [ext_resource type="Texture2D" uid="uid://yfuv4vvteq6e" path="res://assets/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_3m1uf"]
 [ext_resource type="PackedScene" uid="uid://cjivxvu7256ui" path="res://Player.tscn" id="1_xffki"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ba0rryjleperc" path="res://dish_rack.tscn" id="9_2sqov"]
 [ext_resource type="PackedScene" uid="uid://8tc1n0pvwlf6" path="res://steak.tscn" id="9_byjyn"]
 [ext_resource type="PackedScene" uid="uid://cajpyjo7sqy06" path="res://food_crate.tscn" id="9_s8pkr"]
+[ext_resource type="PackedScene" uid="uid://cg4grq3dfku72" path="res://trash_can.tscn" id="10_sd7qu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wnoh"]
 texture = ExtResource("1_3m1uf")
@@ -304,6 +305,9 @@ position = Vector2(2, -189)
 
 [node name="PrepTable4" parent="Ysort" instance=ExtResource("8_iodrk")]
 position = Vector2(38, -189)
+
+[node name="TrashCan" parent="Ysort" instance=ExtResource("10_sd7qu")]
+position = Vector2(107, -194)
 
 [node name="background" type="TileMap" parent="."]
 visible = false
