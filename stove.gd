@@ -19,6 +19,7 @@ func _process(delta):
 	pass
 	
 func _on_timer_timeout():
-	print($ObjectHolder.my_object.name)
-	$ObjectHolder.my_object.get_node("Object").cook_time += 1
-	print($ObjectHolder.my_object.get_node("Object").cook_time)
+	if $ObjectHolder.my_object != null:
+		print($ObjectHolder.my_object)
+		$ObjectHolder.my_object.get_node("Object").cook_time += 1
+		print($ObjectHolder.my_object.get_node("Object").cook_time)

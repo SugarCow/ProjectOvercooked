@@ -2,7 +2,7 @@ extends Node2D
 
 
 @export var objectType = "none"
-@export var is_raw = false
+@export var is_raw = true
 var my_holder
 var is_completed_object = false
 var current_recipe = []
@@ -39,9 +39,12 @@ func _ready():
 func _process(delta):
 	if cook_time == 5:
 		print("food is done")
+		is_raw = false
 	elif  cook_time >10:
 		print("food is burnt")
-
+	
+	if is_raw == false: 
+		self.owner.get_node("Sprite2D").texture = self.owner.cooked
 
 func add_to_holder(holder):
 	print("hjellos")

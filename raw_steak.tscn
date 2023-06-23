@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://1h67xy5s2rx1"]
+[gd_scene load_steps=5 format=3 uid="uid://1h67xy5s2rx1"]
 
+[ext_resource type="Script" path="res://raw_steak.gd" id="1_1y6xw"]
 [ext_resource type="Texture2D" uid="uid://jbngfoyt6xrf" path="res://assets/Ghostpixxells_pixelfood/rawSteak.png" id="1_koj6i"]
 [ext_resource type="Script" path="res://object.gd" id="1_omwi5"]
 
@@ -9,6 +10,7 @@ height = 22.0
 [node name="RawSteak" type="Area2D"]
 collision_layer = 2
 collision_mask = 8
+script = ExtResource("1_1y6xw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_koj6i")
