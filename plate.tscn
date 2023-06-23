@@ -16,8 +16,6 @@ texture = ExtResource("2_y4pyr")
 centered = false
 offset = Vector2(-8, -8)
 
-[node name="foodImage" type="Sprite2D" parent="."]
-
 [node name="ObjectHolder" parent="." instance=ExtResource("4_6o0po")]
 position = Vector2(0, 9)
 is_plate = true

@@ -37,7 +37,7 @@ func _ready():
 	
 
 func _process(delta):
-	if cook_time == 5:
+	if cook_time == 2:
 		print("food is done")
 		self.owner.is_raw = false 
 		self.owner.is_cooked = true

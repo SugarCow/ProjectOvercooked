@@ -9,9 +9,7 @@ func _ready():
 	$OrderTimer.timeout.connect(_new_order)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
 
 
 func _on_turn_in_area_area_entered(area):

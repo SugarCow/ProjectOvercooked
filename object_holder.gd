@@ -39,15 +39,22 @@ func _on_area_entered(area):
 			my_object.get_parent().remove_child(my_object)
 			$CollisionShape2D.set_deferred("disabled", true)
 			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
+			print(my_object.name)
+			print(my_object.get_node("Sprite2D").texture)
+			print(self.name)
 			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
+			is_holding_object = true
 		
 		elif area.name == "Plate" and is_plate == false:
 			my_object = area
-			my_object.get_parent().remove_child(my_object)
+#			my_object.get_parent().remove_child(my_object)
+#			my_object.global_position = Vector2(self.global_position.x, self.global_position.y + 15)
 			$CollisionShape2D.set_deferred("disabled", true)
 			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
+			print(my_object.name)
 			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
-			$Sprite2D/FoodImage.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
+			$Sprite2D/FoodImage.texture = my_object.get_node("ObjectHolder/Sprite2D/FoodImage").texture
+			is_holding_object = true
 		
 		elif area.name.contains("Plate") == false and is_plate == true and area.is_raw == false :
 			my_object = area
@@ -56,10 +63,13 @@ func _on_area_entered(area):
 #			print(my_object.get_parent().name)
 			$CollisionShape2D.set_deferred("disabled", true)
 #			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
-			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
-
-			get_parent().add_to_recipe(my_object.name)
-			get_parent().is_completed_object = true
+#			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
+			print(get_parent().name)
+			print(my_object.name)
+			my_object.get_node("Object").add_to_recipe(my_object.name)
+#			get_parent().get_node("Object").add_to_recipe(my_object.name)
+#			get_parent().is_completed_object = true
+			my_object.get_node("Object").is_completed_object = true
 
 			$Sprite2D/FoodImage.texture = my_object.get_node("Sprite2D").texture
 #		print($pivotPoint/FoodImage.texture)
@@ -72,7 +82,8 @@ func _on_area_entered(area):
 		if area.name != "Plate" and is_plate == false:
 			is_holding_object = true 
 			my_object = area
-			my_object.global_position = Vector2(self.global_position.x, self.global_position.y - 15)
+			my_object.global_position = Vector2(self.global_position.x, self.global_position.y - 500)
+			
 #			my_object.get_parent().remove_child(my_object)
 			$CollisionShape2D.set_deferred("disabled", true)
 			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
