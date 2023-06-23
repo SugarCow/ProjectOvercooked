@@ -26,6 +26,8 @@ func _ready():
 func _process(delta):
 	if is_holding_object == true: 
 		$Sprite2D.texture = my_object.get_node("Sprite2D").texture
+	else: 
+		$Sprite2D.texture = null
 	
 
 func _on_area_entered(area):
@@ -70,7 +72,7 @@ func _on_area_entered(area):
 		if area.name != "Plate" and is_plate == false:
 			is_holding_object = true 
 			my_object = area
-			my_object.global_position = Vector2(self.global_position.x, self.global_position.y - 5)
+			my_object.global_position = Vector2(self.global_position.x, self.global_position.y - 15)
 #			my_object.get_parent().remove_child(my_object)
 			$CollisionShape2D.set_deferred("disabled", true)
 			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
@@ -87,16 +89,18 @@ func release_object(area):
 
 
 func _on_release_area_area_entered(area):
+#	if self.owner.name = "Stove":
+#
+#	else:
+		$CollisionShape2D.set_deferred("disabled", false)
+		if is_plate == false: 
+			$ReleaseArea/ReleaseCollision.set_deferred("disabled", true)
+	#		print(my_object.get_node("CollisionShape2D"))
+	#		my_object.get_node("CollisionShape2D").disabled = true
 
-	$CollisionShape2D.set_deferred("disabled", false)
-	if is_plate == false: 
-		$ReleaseArea/ReleaseCollision.set_deferred("disabled", true)
-#		print(my_object.get_node("CollisionShape2D"))
-#		my_object.get_node("CollisionShape2D").disabled = true
-
-		main.get_node("Ysort").add_child(my_object)
-		my_object.global_position = $ReleaseArea/ReleaseCollision.global_position
-		$Sprite2D/FoodImage.texture = null
-		$Sprite2D.texture = null
-		is_holding_object = false
-		my_object = null
+			main.get_node("Ysort").add_child(my_object)
+			my_object.global_position = $ReleaseArea/ReleaseCollision.global_position
+			$Sprite2D/FoodImage.texture = null
+			$Sprite2D.texture = null
+			is_holding_object = false
+			my_object = null
