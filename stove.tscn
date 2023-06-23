@@ -47,8 +47,6 @@ script = ExtResource("1_cc8p7")
 
 [node name="CookTime" type="Timer" parent="."]
 process_callback = 0
-wait_time = 3.0
-one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_847bm")
@@ -61,3 +59,5 @@ scale = Vector2(1.00485, 0.631898)
 shape = SubResource("RectangleShape2D_nl64v")
 
 [node name="ObjectHolder" parent="." instance=ExtResource("9_pbcy3")]
+
+[editable path="ObjectHolder"]

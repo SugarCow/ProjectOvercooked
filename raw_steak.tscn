@@ -9,8 +9,6 @@ height = 22.0
 [node name="RawSteak" type="Area2D"]
 collision_layer = 2
 collision_mask = 8
-script = ExtResource("1_omwi5")
-is_raw = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_koj6i")
@@ -19,3 +17,14 @@ texture = ExtResource("1_koj6i")
 rotation = -1.56907
 scale = Vector2(0.681123, 0.854127)
 shape = SubResource("CapsuleShape2D_8310g")
+
+[node name="Object" type="Node2D" parent="."]
+position = Vector2(8, 19)
+script = ExtResource("1_omwi5")
+
+[node name="CookTime" type="Timer" parent="Object"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Object/CookTime" to="Object" method="_on_cook_time_timeout"]

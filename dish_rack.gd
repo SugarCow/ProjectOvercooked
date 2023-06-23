@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @onready var object_type = "dish_pile"
 var recipe
-@onready var food_image = $foodImage
+#@onready var food_image = $foodImage
 @onready var object 
 
 enum { 

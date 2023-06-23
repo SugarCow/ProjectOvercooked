@@ -18,7 +18,7 @@ func _on_turn_in_area_area_entered(area):
 	print(area.name)
 	
 	if area.is_completed_object == true:
-		print(area.current_recipe)
+
 		if order_queue.has(area.current_recipe[0]) == true:
 			print("order turned in")
 			area.queue_free()
@@ -29,4 +29,4 @@ func _on_turn_in_area_area_entered(area):
 
 func _new_order():
 	order_queue.append(menu.pick_random())
-	print(order_queue)
+

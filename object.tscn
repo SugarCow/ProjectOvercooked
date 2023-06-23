@@ -1,18 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://e4u2mwbndpia"]
+[gd_scene load_steps=2 format=3 uid="uid://e4u2mwbndpia"]
 
 [ext_resource type="Script" path="res://object.gd" id="1_n2tqy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h7l88"]
-radius = 16.0
-
-[node name="Object" type="Area2D"]
+[node name="Object" type="Node2D"]
 position = Vector2(8, 19)
-collision_layer = 2
-collision_mask = 8
 script = ExtResource("1_n2tqy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
-shape = SubResource("CircleShape2D_h7l88")
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[node name="CookTime" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true

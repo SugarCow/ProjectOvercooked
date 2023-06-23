@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var my_object = $instancePlaceHolder
 @onready var disable_grab_timer = $disable_grab_timer
 @onready var main = get_tree().current_scene
-@onready var temp = $ObjectHolder/SpriteLocation
+#@onready var temp = $ObjectHolder/SpriteLocation
 
 
 @export var speed = 80

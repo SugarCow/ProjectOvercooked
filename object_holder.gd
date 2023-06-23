@@ -24,12 +24,12 @@ func _ready():
 
 
 
-
+	
 
 func _on_area_entered(area):
 	#prevent object holder from detecting its parents object to hold it self 
-	print(area.name)
-	if is_holding_object == false :
+
+	if is_holding_object == false and self.owner.name != "Stove":
 		if area.name != "Plate" and is_plate == false: 
 			my_object = area
 			my_object.get_parent().remove_child(my_object)
@@ -47,23 +47,35 @@ func _on_area_entered(area):
 		
 		elif area.name.contains("Plate") == false and is_plate == true and area.is_raw == false :
 			my_object = area
-			print(area.name)
+
 			my_object.get_parent().remove_child(my_object)
 #			print(my_object.get_parent().name)
 			$CollisionShape2D.set_deferred("disabled", true)
 #			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
 			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
-			print(get_parent().name)
+
 			get_parent().add_to_recipe(my_object.name)
 			get_parent().is_completed_object = true
-			print(my_object.name)
+
 			$Sprite2D/FoodImage.texture = my_object.get_node("Sprite2D").texture
 #		print($pivotPoint/FoodImage.texture)
 		
 		else:
 			print("rejected ", area.name) 
 			return
- 
+	
+	else: 
+		if area.name != "Plate" and is_plate == false: 
+			my_object = area
+			my_object.global_position = Vector2(self.global_position.x, self.global_position.y - 10)
+#			my_object.get_parent().remove_child(my_object)
+			$CollisionShape2D.set_deferred("disabled", true)
+			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
+			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
+			print(self.owner.name)
+			self.owner.get_node("CookTime").start()
+			print(self.owner.get_node("CookTime").time_left)
+			
 
 
 func release_object(area):
@@ -72,9 +84,7 @@ func release_object(area):
 
 
 func _on_release_area_area_entered(area):
-	print(area.name)
-	print(area.owner.name)
-	print(area.owner.owner.name)
+
 	$CollisionShape2D.set_deferred("disabled", false)
 	if is_plate == false: 
 		$ReleaseArea/ReleaseCollision.set_deferred("disabled", true)

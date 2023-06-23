@@ -68,21 +68,24 @@ size = Vector2(21.1111, 20)
 size = Vector2(24, 21.9982)
 
 [node name="TrashCan" type="StaticBody2D"]
+position = Vector2(0, -11)
 script = ExtResource("1_378vh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_21tl5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-10, -6)
+position = Vector2(-8, -3)
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_edh50")
 frame = 13
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.800001, 9)
-scale = Vector2(1.44, 1.28)
+position = Vector2(-2, 4)
+scale = Vector2(0.959999, 1.28)
 shape = SubResource("RectangleShape2D_2nxj2")
 debug_color = Color(0, 0.596078, 0.709804, 0.419608)
 
@@ -91,8 +94,8 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropOffBox"]
-position = Vector2(0, -2)
-scale = Vector2(1.09854, 0.916804)
+position = Vector2(-1, 7)
+scale = Vector2(0.938544, 0.916804)
 shape = SubResource("RectangleShape2D_huvwg")
 
 [connection signal="area_entered" from="DropOffBox" to="." method="_on_drop_off_box_area_entered"]

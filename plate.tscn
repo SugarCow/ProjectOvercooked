@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://6bn3ftrtfo6b"]
+[gd_scene load_steps=4 format=3 uid="uid://6bn3ftrtfo6b"]
 
-[ext_resource type="Script" path="res://object.gd" id="1_k6f15"]
 [ext_resource type="Texture2D" uid="uid://2eesqwhdyoi5" path="res://assets/Ghostpixxells_pixelfood/02_dish_2.png" id="2_y4pyr"]
 [ext_resource type="PackedScene" uid="uid://b7u2dra11knq" path="res://object_holder.tscn" id="4_6o0po"]
 
@@ -10,8 +9,6 @@ height = 28.0
 
 [node name="Plate" type="Area2D"]
 collision_layer = 2
-script = ExtResource("1_k6f15")
-objectType = "Plate"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-8, -7)

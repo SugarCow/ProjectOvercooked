@@ -11,7 +11,7 @@ var elapsed_time = 0
 
 func _ready():
 	cook_timer.timeout.connect(_on_timer_timeout)
-	cook_timer.start()
+	
 	anim.play("animate")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,4 +19,6 @@ func _process(delta):
 	pass
 	
 func _on_timer_timeout():
-	print("timer finished")
+	print($ObjectHolder.my_object.name)
+	$ObjectHolder.my_object.get_node("Object").cook_time += 1
+	print($ObjectHolder.my_object.get_node("Object").cook_time)

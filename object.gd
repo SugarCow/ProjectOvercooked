@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 
 @export var objectType = "none"
@@ -6,6 +6,7 @@ extends Area2D
 var my_holder
 var is_completed_object = false
 var current_recipe = []
+@onready var cook_time = 0
 @onready var main = get_tree().current_scene
 enum { 
 	WALK,
@@ -24,6 +25,7 @@ var grabable_objects = ["plate", "raw steak"]
 var state
 # Called when the node enters the scene tree for the first time.
 func _ready():
+#	cook_time.timeout.connect(_on_cook_time_timeout)
 	objectType = get_parent().name
 	match objectType:
 		"Plate":
@@ -34,94 +36,12 @@ func _ready():
 			pass
 	
 
+func _process(delta):
+	if cook_time == 5:
+		print("food is done")
+	elif  cook_time >10:
+		print("food is burnt")
 
-	
-#dropping off item
-func dropoff(curr_holder, next_holder ):
-	pass
-#	if my_holder.name == "Player":
-#		$CollisionShape2D.set_deferred("disabled", false)
-#	else:
-#		my_holder.release_object()
-#	remove_from_holder(curr_holder, next_holder)
-#
-#	get_parent().global_position = my_holder.get_node("pivotPoint/Grab/dropOffPoint").global_position
-#
-#	my_holder.is_holding_object = false
-#	if my_holder.name == "Player":
-#		my_holder.states = WALK
-#	my_holder = null
-	
-#picking up item
-func _on_area_entered(area):
-	pass
-#	var new_holder
-#	if area.owner.name == "Player":
-#		new_holder = area.owner
-#	else: 
-#		new_holder = area
-#
-#	print(area.name)
-#
-#	if new_holder.is_holding_object == true:
-#		return
-#	new_holder.my_object = get_parent()
-#
-#	if new_holder.name == "Player":
-#		if objectType == "Plate":
-#			my_holder = new_holder
-#			my_holder.my_object = get_parent()
-#			remove_from_holder(my_holder, main)
-#			my_holder.states = HOLD_PLATE
-#			my_holder.holding_plate = true
-#			my_holder.get_node("pivotPoint/Grab/GrabBox").disabled = true
-#		else:
-#			my_holder = new_holder
-#			my_holder.my_object = get_parent()
-#			remove_from_holder(my_holder, main)
-#			my_holder.states = HOLD_ITEM
-#			my_holder.holding_plate = false
-#			my_holder.get_node("SpriteLocation").add_child(get_parent())
-#			get_parent().position = my_holder.get_node("SpriteLocation").position
-#	else:
-#		if objectType == "Plate":
-#			my_holder = new_holder
-#			my_holder.my_object = get_parent()
-#			remove_from_holder(my_holder, main)
-#			my_holder.holding_plate = true
-##			my_holder.get_node("pivotPoint/Grab/GrabBox").disabled = true
-#		else:
-#			my_holder = new_holder
-#			my_holder.my_object = get_parent()
-#			remove_from_holder(my_holder, main)
-#			my_holder.get_node("SpriteLocation").add_child(get_parent())
-#			get_parent().position = my_holder.get_node("SpriteLocation").position
-#
-#
-#
-#	my_holder.is_holding_object = true
-#
-##	$CollisionShape2D.disabled = true
-#	if my_holder.name == "Player":
-#		$CollisionShape2D.set_deferred("disabled", true)
-
-
-#func remove_from_holder():
-#	main.get_node("Ysort").remove_child(get_parent())
-	
-func remove_from_holder(holder, destination):
-	pass
-#	print(holder.name)
-#	print(destination.name)
-#	if objectType != "plate" and my_holder.name == "Player":
-#		holder.get_node("SpriteLocation").remove_child(get_parent())
-#	else: #removes from the holder that is not the player so this could be a prep table or stove
-#		holder.get_node("SpriteLocation").remove_child(get_parent())
-#
-#	if destination.name == "World":
-#		destination.get_node("Ysort").add_child(get_parent())
-#	else:
-#		destination.get_node("SpriteLocation").add_child(get_parent())
 
 func add_to_holder(holder):
 	print("hjellos")
@@ -130,3 +50,12 @@ func add_to_holder(holder):
 func add_to_recipe(ingredient):
 	current_recipe.append(ingredient)
 	print(current_recipe[0])
+
+func _on_timeout():
+	print("cook timer done")
+	pass
+
+
+func _on_cook_time_timeout():
+	print("cook timer done")
+	pass # Replace with function body.
