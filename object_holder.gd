@@ -23,7 +23,9 @@ func _ready():
 	$ReleaseArea/ReleaseCollision.set_deferred("disabled", true)
 
 
-
+func _process(delta):
+	if is_holding_object == true: 
+		$Sprite2D.texture = my_object.get_node("Sprite2D").texture
 	
 
 func _on_area_entered(area):
@@ -65,9 +67,10 @@ func _on_area_entered(area):
 			return
 	
 	else: 
-		if area.name != "Plate" and is_plate == false: 
+		if area.name != "Plate" and is_plate == false:
+			is_holding_object = true 
 			my_object = area
-			my_object.global_position = Vector2(self.global_position.x, self.global_position.y - 10)
+			my_object.global_position = Vector2(self.global_position.x, self.global_position.y - 5)
 #			my_object.get_parent().remove_child(my_object)
 			$CollisionShape2D.set_deferred("disabled", true)
 			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)

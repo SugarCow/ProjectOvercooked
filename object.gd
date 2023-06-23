@@ -39,12 +39,15 @@ func _ready():
 func _process(delta):
 	if cook_time == 5:
 		print("food is done")
-		is_raw = false
+		self.owner.is_raw = false 
+		self.owner.is_cooked = true
 	elif  cook_time >10:
 		print("food is burnt")
+		self.owner.is_burnt = true
 	
-	if is_raw == false: 
-		self.owner.get_node("Sprite2D").texture = self.owner.cooked
+#	if is_raw == false: 
+#		print(self.owner.name)
+#		self.owner.get_node("Sprite2D").texture = self.owner.cooked
 
 func add_to_holder(holder):
 	print("hjellos")
