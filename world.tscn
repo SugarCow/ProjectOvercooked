@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmdnf537ydrqe"]
+[gd_scene load_steps=13 format=3 uid="uid://cmdnf537ydrqe"]
 
 [ext_resource type="Texture2D" uid="uid://yfuv4vvteq6e" path="res://assets/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_3m1uf"]
 [ext_resource type="PackedScene" uid="uid://cjivxvu7256ui" path="res://Player.tscn" id="1_xffki"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://5irj60s78p6n" path="res://prep_table.tscn" id="8_iodrk"]
 [ext_resource type="PackedScene" uid="uid://ba0rryjleperc" path="res://dish_rack.tscn" id="9_2sqov"]
 [ext_resource type="PackedScene" uid="uid://cajpyjo7sqy06" path="res://food_crate.tscn" id="9_s8pkr"]
+[ext_resource type="PackedScene" uid="uid://beo6w5heqq72j" path="res://food_display.tscn" id="10_e8atk"]
 [ext_resource type="PackedScene" uid="uid://cg4grq3dfku72" path="res://trash_can.tscn" id="10_sd7qu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wnoh"]
@@ -265,7 +266,7 @@ position = Vector2(229, 190)
 
 [node name="Ysort" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(-1, 61)
+position = Vector2(19, 61)
 
 [node name="Player" parent="Ysort" instance=ExtResource("1_xffki")]
 y_sort_enabled = true
@@ -300,6 +301,9 @@ position = Vector2(102, -189)
 
 [node name="RawSteak" parent="Ysort" instance=ExtResource("6_bl2da")]
 position = Vector2(0, -128)
+
+[node name="FoodDisplay" parent="Ysort" instance=ExtResource("10_e8atk")]
+position = Vector2(-227, -194)
 
 [node name="background" type="TileMap" parent="."]
 position = Vector2(-228, -189)

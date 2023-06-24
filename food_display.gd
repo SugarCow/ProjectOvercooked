@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 @onready var object_type = "rawSteak"
-var 
+var list_of_pastries = ["Butter Scotch Pie", "Donut", "Apricot Jelly", "Fruit Cake", "Expresso Bun", "Chocolate Chip Cookie", "Buttery Baguette" ]
 var recipe
 @onready var food_image = $foodImage
 @onready var object 
@@ -13,7 +13,22 @@ func _ready():
 	match object_type:
 		"rawSteak":
 			object = load("res://raw_steak.tscn")
+		"Butter Scotch Pie": 
+			 object = load()
+		"Donut":
+			object = load()
+		"Apricot Jelly":
+			object = load()
+		"Fruit Cake":
+			object = load()
+		"Expresso Bun":
+			object = load()
+		"Chocolate Chip Cookie":
+			object = load()
+		"Buttery Baguette":
+			object = load()
 		
+
 			
 
 
