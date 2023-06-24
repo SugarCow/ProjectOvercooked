@@ -14,9 +14,7 @@ func _ready():
 	
 	anim.play("animate")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
 	
 func _on_timer_timeout():
 	if $ObjectHolder.my_object != null:

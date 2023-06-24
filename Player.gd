@@ -44,6 +44,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if is_holding_object == true:
 		$pivotPoint/Grab/GrabBox.disabled = true
 	else: holding_plate = false
