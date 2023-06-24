@@ -14,19 +14,19 @@ func _ready():
 		"rawSteak":
 			object = load("res://raw_steak.tscn")
 		"Butter Scotch Pie": 
-			 object = load()
+			object = load("res://food/ButterScotchPie.tscn")
 		"Donut":
-			object = load()
+			object = load("res://food/Donut.tscn")
 		"Apricot Jelly":
-			object = load()
+			object = load("res://food/ApricotJelly.tscn")
 		"Fruit Cake":
-			object = load()
+			object = load("res://food/FruitCake.tscn")
 		"Expresso Bun":
-			object = load()
+			object = load("res://food/ExpressoBun.tscn")
 		"Chocolate Chip Cookie":
-			object = load()
+			object = load("res://food/ChocolateChipCookie.tscn")
 		"Buttery Baguette":
-			object = load()
+			object = load("res://food/ButteryBaguette.tscn")
 		
 
 			

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beeh6vyifc2vs"
-path="res://.godot/imported/Coin.png-f9edd39819b72868099841de45eb7631.ctex"
+uid="uid://c0wqm7fegk01j"
+path="res://.godot/imported/BurntButteryBaguette.png-459a5e40e340f5afe92cc4cad69ec244.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Coin.png"
-dest_files=["res://.godot/imported/Coin.png-f9edd39819b72868099841de45eb7631.ctex"]
+source_file="res://food/BurntButteryBaguette.png"
+dest_files=["res://.godot/imported/BurntButteryBaguette.png-459a5e40e340f5afe92cc4cad69ec244.ctex"]
 
 [params]
 

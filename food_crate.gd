@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 @onready var object_type = "rawSteak"
-var 
+
 var recipe
 @onready var food_image = $foodImage
 @onready var object 

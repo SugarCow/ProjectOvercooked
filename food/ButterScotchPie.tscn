@@ -1,19 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp1l6n5itvhli"]
+[gd_scene load_steps=4 format=3 uid="uid://7gwnsynyacle"]
 
-[ext_resource type="Script" path="res://raw_steak.gd" id="1_1y6xw"]
-[ext_resource type="Texture2D" uid="uid://jbngfoyt6xrf" path="res://assets/Ghostpixxells_pixelfood/rawSteak.png" id="1_koj6i"]
-[ext_resource type="Script" path="res://object.gd" id="1_omwi5"]
+[ext_resource type="Texture2D" uid="uid://bm65q44qqm5rr" path="res://assets/Ghostpixxells_pixelfood/05_apple_pie.png" id="1_3q1s3"]
+[ext_resource type="Script" path="res://object.gd" id="3_qfr21"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8310g"]
 height = 22.0
 
-[node name="RawSteak" type="Area2D"]
+[node name="ButterScotch" type="Area2D"]
 collision_layer = 2
 collision_mask = 8
-script = ExtResource("1_1y6xw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_koj6i")
+texture = ExtResource("1_3q1s3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.56907
@@ -22,7 +20,7 @@ shape = SubResource("CapsuleShape2D_8310g")
 
 [node name="Object" type="Node2D" parent="."]
 position = Vector2(8, 19)
-script = ExtResource("1_omwi5")
+script = ExtResource("3_qfr21")
 
 [node name="CookTime" type="Timer" parent="Object"]
 wait_time = 10.0

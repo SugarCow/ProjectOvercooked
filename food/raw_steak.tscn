@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp1l6n5itvhli"]
+[gd_scene load_steps=5 format=3 uid="uid://1h67xy5s2rx1"]
 
 [ext_resource type="Script" path="res://raw_steak.gd" id="1_1y6xw"]
 [ext_resource type="Texture2D" uid="uid://jbngfoyt6xrf" path="res://assets/Ghostpixxells_pixelfood/rawSteak.png" id="1_koj6i"]

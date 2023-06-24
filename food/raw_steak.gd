@@ -1,4 +1,5 @@
 extends Area2D
+@export var foodType = ""
 
 @onready var raw = load("res://assets/Ghostpixxells_pixelfood/rawSteak.png")
 @onready var cooked = load("res://assets/Ghostpixxells_pixelfood/95_steak.png")
