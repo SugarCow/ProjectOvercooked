@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://beo6w5heqq72j"]
+[gd_scene load_steps=5 format=3 uid="uid://beo6w5heqq72j"]
 
 [ext_resource type="Texture2D" uid="uid://umc7fnqlohw8" path="res://assets/overcookedAssets/DisplayCase.png" id="1_1pxp6"]
 [ext_resource type="Script" path="res://food_display.gd" id="1_y0ati"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67hj0"]
 size = Vector2(8.72483, 7.46377)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vuyn5"]
+size = Vector2(43, 20)
 
 [node name="FoodDisplay" type="StaticBody2D"]
 script = ExtResource("1_y0ati")
@@ -17,3 +20,12 @@ texture = ExtResource("1_1pxp6")
 position = Vector2(-1, 11.7)
 scale = Vector2(5.96, 2.76)
 shape = SubResource("RectangleShape2D_67hj0")
+
+[node name="GrabZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabZone"]
+position = Vector2(-0.5, 0)
+scale = Vector2(1.07922, 1.41261)
+shape = SubResource("RectangleShape2D_vuyn5")
+
+[connection signal="area_entered" from="GrabZone" to="." method="_on_grab_zone_area_entered"]

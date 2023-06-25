@@ -13,19 +13,19 @@ func _ready():
 	match object_type:
 		"rawSteak":
 			object = load("res://raw_steak.tscn")
-		"Butter Scotch Pie": 
+		"ButterScotch Pie": 
 			object = load("res://food/ButterScotchPie.tscn")
 		"Donut":
 			object = load("res://food/Donut.tscn")
-		"Apricot Jelly":
+		"ApricotJelly":
 			object = load("res://food/ApricotJelly.tscn")
-		"Fruit Cake":
+		"FruitCake":
 			object = load("res://food/FruitCake.tscn")
-		"Expresso Bun":
+		"ExpressoBun":
 			object = load("res://food/ExpressoBun.tscn")
-		"Chocolate Chip Cookie":
+		"ChocolateChipCookie":
 			object = load("res://food/ChocolateChipCookie.tscn")
-		"Buttery Baguette":
+		"ButteryBaguette":
 			object = load("res://food/ButteryBaguette.tscn")
 		
 
@@ -34,7 +34,7 @@ func _ready():
 
 
 func find_and_set_sprite(target):
-	var path = "res://assets/Ghostpixxells_pixelfood/"
+	var path = "res://food/"
 	var dir = DirAccess.open(path)
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
