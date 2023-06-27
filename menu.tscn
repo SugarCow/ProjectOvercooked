@@ -1,3 +1,119 @@
-[gd_scene format=3 uid="uid://qmi7yykw6vj5"]
+[gd_scene load_steps=25 format=3 uid="uid://qmi7yykw6vj5"]
 
-[node name="Menu" type="Node2D"]
+[ext_resource type="Script" path="res://menu.gd" id="1_e8hbm"]
+[ext_resource type="Texture2D" uid="uid://o78f8u4pngh0" path="res://assets/overcookedAssets/MenuStove/MenuStove1.png" id="1_y1h2l"]
+[ext_resource type="Texture2D" uid="uid://dgs4kcwkm4y1s" path="res://assets/overcookedAssets/MenuStove/MenuStove2.png" id="2_b2vkg"]
+[ext_resource type="Texture2D" uid="uid://cqlmfmra1k0pe" path="res://assets/overcookedAssets/MenuStove/MenuStove3.png" id="3_p7gwa"]
+[ext_resource type="Texture2D" uid="uid://cew35kok28m4y" path="res://assets/overcookedAssets/MenuStove/MenuStove4.png" id="4_iwr2m"]
+[ext_resource type="Texture2D" uid="uid://cdit2uv2lfd74" path="res://assets/overcookedAssets/MenuStove/MenuStove5.png" id="5_46gcf"]
+[ext_resource type="Texture2D" uid="uid://c3nstqtrv1efm" path="res://assets/overcookedAssets/MenuStove/MenuStove6.png" id="6_3aib6"]
+[ext_resource type="Texture2D" uid="uid://b7m3o44qcddjn" path="res://assets/overcookedAssets/MenuStove/MenuStove7.png" id="7_gu5el"]
+[ext_resource type="Texture2D" uid="uid://4stm4mabac4n" path="res://assets/overcookedAssets/MenuStove/MenuStove8.png" id="8_vn0op"]
+[ext_resource type="Texture2D" uid="uid://mf1almd1ilrs" path="res://assets/overcookedAssets/MenuStove/MenuStove9.png" id="9_nrf2p"]
+[ext_resource type="Texture2D" uid="uid://bs6umsmbs2x6q" path="res://assets/overcookedAssets/MenuStove/MenuStove10.png" id="10_s77lw"]
+[ext_resource type="Texture2D" uid="uid://c2wlhv6x5iryg" path="res://assets/overcookedAssets/MenuStove/MenuStove11.png" id="11_qjbye"]
+[ext_resource type="Texture2D" uid="uid://b1d7umtqryhk0" path="res://assets/overcookedAssets/MenuStove/MenuStove12.png" id="12_nvskx"]
+[ext_resource type="Texture2D" uid="uid://bjvwmugpmjgoi" path="res://assets/overcookedAssets/MenuStove/MenuStove13.png" id="13_xc2xw"]
+[ext_resource type="Texture2D" uid="uid://c7a83iu4cnw8v" path="res://assets/overcookedAssets/PlayButton/PlayButton1.png" id="14_0k3y4"]
+[ext_resource type="Texture2D" uid="uid://dmvv7jvntgqq2" path="res://assets/overcookedAssets/PlayButton/PlayButton3.png" id="15_djt1n"]
+[ext_resource type="Texture2D" uid="uid://b63jkx4kwaj3r" path="res://assets/overcookedAssets/PlayButton/PlayButton2.png" id="16_yrr66"]
+[ext_resource type="Texture2D" uid="uid://dmd01mb3su36s" path="res://assets/overcookedAssets/settingsButton/SettingsButton1.png" id="17_lj6yb"]
+[ext_resource type="Texture2D" uid="uid://cxmsdpe5sfcc7" path="res://assets/overcookedAssets/settingsButton/SettingsButton3.png" id="18_5jlf0"]
+[ext_resource type="Texture2D" uid="uid://cnh27ne0gtknr" path="res://assets/overcookedAssets/settingsButton/SettingsButton2.png" id="19_4c3jt"]
+[ext_resource type="Texture2D" uid="uid://bc1pyp5w2yv46" path="res://assets/overcookedAssets/quitButton/QuitButton1.png" id="20_qv35b"]
+[ext_resource type="Texture2D" uid="uid://dofbvu50bc1dc" path="res://assets/overcookedAssets/quitButton/QuitButton3.png" id="21_dwm4n"]
+[ext_resource type="Texture2D" uid="uid://ck8ucculg1dj" path="res://assets/overcookedAssets/quitButton/QuitButton2.png" id="22_3khhs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhm5k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y1h2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b2vkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p7gwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iwr2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_46gcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3aib6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gu5el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vn0op")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nrf2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_s77lw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qjbye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nvskx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xc2xw")
+}],
+"loop": true,
+"name": &"animate",
+"speed": 10.0
+}]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_e8hbm")
+
+[node name="MenuStove" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -6)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_dhm5k")
+animation = &"animate"
+frame_progress = 0.17286
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = -171.0
+offset_right = 214.0
+offset_bottom = -124.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("16_yrr66")
+texture_pressed = ExtResource("15_djt1n")
+texture_hover = ExtResource("14_0k3y4")
+
+[node name="Settings" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("19_4c3jt")
+texture_pressed = ExtResource("18_5jlf0")
+texture_hover = ExtResource("17_lj6yb")
+
+[node name="Quit" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("22_3khhs")
+texture_pressed = ExtResource("21_dwm4n")
+texture_hover = ExtResource("20_qv35b")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2, -115)
+zoom = Vector2(0.65, 0.65)
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
