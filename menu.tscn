@@ -81,13 +81,13 @@ position = Vector2(-2, -6)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_dhm5k")
 animation = &"animate"
-frame_progress = 0.17286
+frame_progress = 0.11235
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 26.0
+offset_left = 28.0
 offset_top = -171.0
-offset_right = 214.0
+offset_right = 216.0
 offset_bottom = -124.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]

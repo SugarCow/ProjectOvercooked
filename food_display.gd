@@ -1,7 +1,13 @@
 extends StaticBody2D
 
-@onready var object_type = "rawSteak"
-var list_of_pastries = ["Butter Scotch Pie", "Donut", "Apricot Jelly", "Fruit Cake", "Expresso Bun", "Chocolate Chip Cookie", "Buttery Baguette" ]
+@onready var object_type = "ButteryBaguette"
+var list_of_pastries = ["ButterScotchPie", 
+						"Donut", 
+						"ApricotJelly", 
+						"FruitCake", 
+						"ExpressoBun", 
+						"ChocolateChipCookie", 
+						"ButteryBaguette" ]
 var recipe
 @onready var food_image = $foodImage
 @onready var object 
@@ -13,7 +19,7 @@ func _ready():
 	match object_type:
 		"rawSteak":
 			object = load("res://raw_steak.tscn")
-		"ButterScotch Pie": 
+		"ButterScotchPie": 
 			object = load("res://food/ButterScotchPie.tscn")
 		"Donut":
 			object = load("res://food/Donut.tscn")
@@ -44,8 +50,8 @@ func find_and_set_sprite(target):
 			print("found!")
 			dir.list_dir_end()
 			var sprite_path = path + file_name
-			food_image.texture = load(sprite_path)
-			food_image.scale = Vector2(.5,.5)
+#			food_image.texture = load(sprite_path)
+#			food_image.scale = Vector2(.5,.5)
 			break
 		
 		file_name = dir.get_next()

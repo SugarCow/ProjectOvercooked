@@ -21,6 +21,7 @@ shape = SubResource("CapsuleShape2D_8310g")
 [node name="Object" type="Node2D" parent="."]
 position = Vector2(8, 19)
 script = ExtResource("3_n8w8e")
+objectType = "ApricotJelly"
 
 [node name="CookTime" type="Timer" parent="Object"]
 wait_time = 10.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvu3w2ywvjm10"]
 
-[ext_resource type="Texture2D" uid="uid://jbngfoyt6xrf" path="res://assets/Ghostpixxells_pixelfood/rawSteak.png" id="2_q81tf"]
+[ext_resource type="Texture2D" uid="uid://8cwf6h5ncct8" path="res://food/Donut.png" id="1_qlwqf"]
 [ext_resource type="Script" path="res://object.gd" id="3_l6oh0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8310g"]
@@ -11,7 +11,7 @@ collision_layer = 2
 collision_mask = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_q81tf")
+texture = ExtResource("1_qlwqf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.56907
@@ -21,6 +21,7 @@ shape = SubResource("CapsuleShape2D_8310g")
 [node name="Object" type="Node2D" parent="."]
 position = Vector2(8, 19)
 script = ExtResource("3_l6oh0")
+objectType = "Donut"
 
 [node name="CookTime" type="Timer" parent="Object"]
 wait_time = 10.0

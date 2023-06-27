@@ -54,7 +54,7 @@ func _on_area_entered(area):
 			$Sprite2D/FoodImage.texture = my_object.get_node("ObjectHolder/Sprite2D/FoodImage").texture
 			is_holding_object = true
 		
-		elif area.name.contains("Plate") == false and is_plate == true and area.is_raw == false :
+		elif area.name.contains("Plate") == false and is_plate == true :
 			my_object = area
 
 			my_object.get_parent().remove_child(my_object)
