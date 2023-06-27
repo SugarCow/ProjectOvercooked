@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beck8srxmo6mf"
-path="res://.godot/imported/trashCanOpenClose3.png-9ed1b94e65e02571e5cd5e2d42eeaefb.ctex"
+uid="uid://drx2w3sw3j1q5"
+path="res://.godot/imported/trashCanOpenClose1.png-efb8fed2a6c7ec29822d8cbdf26e6ecf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/overcookedAssets/trashCanOpenClose3.png"
-dest_files=["res://.godot/imported/trashCanOpenClose3.png-9ed1b94e65e02571e5cd5e2d42eeaefb.ctex"]
+source_file="res://assets/overcookedAssets/trashCan/trashCanOpenClose1.png"
+dest_files=["res://.godot/imported/trashCanOpenClose1.png-efb8fed2a6c7ec29822d8cbdf26e6ecf.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbgfryv6dl2yj"
-path="res://.godot/imported/trashCan.png-dcba2b6a03f275df8ef87cd3ad0d9220.ctex"
+uid="uid://dofbvu50bc1dc"
+path="res://.godot/imported/QuitButton3.png-fb4d69224962d66d7da1e01fabe574af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/overcookedAssets/trashCan.png"
-dest_files=["res://.godot/imported/trashCan.png-dcba2b6a03f275df8ef87cd3ad0d9220.ctex"]
+source_file="res://assets/overcookedAssets/quitButton/QuitButton3.png"
+dest_files=["res://.godot/imported/QuitButton3.png-fb4d69224962d66d7da1e01fabe574af.ctex"]
 
 [params]
 
