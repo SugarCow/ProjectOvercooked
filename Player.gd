@@ -116,7 +116,7 @@ func walk_state(delta, walk_state):
 	
 	elif is_holding_object == true and holding_plate == true:
 		animation_state.travel("hold_plate_idle")
-		$FoodImage.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
+		$AnimatedSprite2D/FoodImage.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
 #		print($pivotPoint/FoodImage.texture)
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 	
@@ -199,9 +199,9 @@ func grab_object(area):
 
 		
 		if my_object.name.contains("Plate") == true:
-			$Sprite2D.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
+			$AnimatedSprite2D/Sprite2D.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
 		else:
-			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
+			$AnimatedSprite2D/Sprite2D.texture = my_object.get_node("Sprite2D").texture
 		states = HOLD_ITEM
 	
 
@@ -215,8 +215,8 @@ func drop_item():
 	main.get_node("Ysort").add_child(my_object)
 	
 	my_object.global_position = $pivotPoint/Grab/dropOffPoint.global_position
-	$FoodImage.texture	= null
-	$Sprite2D.texture = null
+	$AnimatedSprite2D/FoodImage.texture	= null
+	$AnimatedSprite2D/Sprite2D.texture = null
 	states = WALK
 	is_holding_object = false
 	holding_plate = false

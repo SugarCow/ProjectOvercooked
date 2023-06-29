@@ -8,16 +8,15 @@ var time_elapsed = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if time_elapsed % 5 == 0 and time_elapsed != 0:
+	if time_elapsed % 10 == 0:
 		spawn_customer()
-		time_elapsed = 0
-	
-	
+		time_elapsed +=1
 
 
 func _on_timer_timeout():
 	time_elapsed += 1
-	
+
+
 func spawn_customer():
 	var new_customer = customer.instantiate()
 	main.get_node("Ysort").add_child(new_customer)
