@@ -2472,6 +2472,7 @@ texture = ExtResource("84_885yu")
 
 [node name="FoodImage" type="Sprite2D" parent="AnimatedSprite2D"]
 position = Vector2(0, -41)
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatedSprite2D"]
 position = Vector2(0, -41)

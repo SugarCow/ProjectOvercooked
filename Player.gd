@@ -43,7 +43,7 @@ var roll_dir = Vector2.DOWN
 
 func _ready():
 	disable_grab_timer.timeout.connect(_on_disable_grab_timer_timeout)
-
+	$AnimatedSprite2D/HoldItem.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -77,17 +77,18 @@ func hold_plate_state():
 	is_holding_object = true
 	holding_plate = true
 	states = WALK_WITH_PLATE
+	$AnimatedSprite2D/HoldItem.visible = true
 
 func hold_item_state():
 	is_holding_object = true
 	holding_plate = false
 	states = WALK_WITH_ITEM
-	
-	
+	$AnimatedSprite2D/HoldItem.visible = true
+
 func walk_state(delta, walk_state):
 	input_dir = Vector2(Input.get_action_raw_strength("ui_right") - Input.get_action_strength("ui_left"), 
 						Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
-						
+
 	input_dir = input_dir.normalized()
 	roll_dir = input_dir
 	
@@ -183,23 +184,21 @@ func grab_object(area):
 	my_object = area
 	
 	print(my_object.get_parent().name)
-	if my_object.get_parent().name != "FoodCrate":
+	
+	if my_object.get_parent().name !=  "FoodCrate":
 		my_object.get_parent().remove_child(my_object)
 	
-	if my_object.name == "Plate":
-		states = HOLD_PLATE
-	elif my_object.name != "FoodCrateGrabBox":
-#
-#
-#		$Sprite2D.texture = my_object.owner.get_node("foodImage").texture
-#		my_object = null
-#		pass
-#	else: 
-		my_object = area
+#	if my_object.name == "Plate":
+#		states = HOLD_PLATE
+#		$AnimatedSprite2D/Sprite2D.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
+	if my_object.name != "FoodCrateGrabBox":
 
-		
+		my_object = area
+		print(my_object.name)
 		if my_object.name.contains("Plate") == true:
-			$AnimatedSprite2D/Sprite2D.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
+			$AnimatedSprite2D/Sprite2D.texture = my_object.get_node("ObjectHolder/Sprite2D2").texture
+			if my_object.get_node("ObjectHolder").is_holding_object == true:
+				$AnimatedSprite2D/FoodImage	.texture =  my_object.get_node("ObjectHolder/Sprite2D/FoodImage").texture
 		else:
 			$AnimatedSprite2D/Sprite2D.texture = my_object.get_node("Sprite2D").texture
 		states = HOLD_ITEM
@@ -221,7 +220,7 @@ func drop_item():
 	is_holding_object = false
 	holding_plate = false
 	my_object = null
-
+	$AnimatedSprite2D/HoldItem.visible = false
 
 
 

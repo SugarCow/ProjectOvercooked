@@ -36,7 +36,7 @@ func _on_area_entered(area):
 	#prevent object holder from detecting its parents object to hold it self 
 
 	if is_holding_object == false and self.owner.name != "Stove":
-		if area.name != "Plate" and is_plate == false: 
+		if area.name != "Plate" and is_plate == false:
 			my_object = area
 			my_object.get_parent().remove_child(my_object)
 			$CollisionShape2D.set_deferred("disabled", true)
@@ -71,6 +71,7 @@ func _on_area_entered(area):
 			my_object.get_node("Object").is_completed_object = true
 
 			$Sprite2D/FoodImage.texture = my_object.get_node("Sprite2D").texture
+			is_holding_object = true
 #		print($pivotPoint/FoodImage.texture)
 		
 		else:

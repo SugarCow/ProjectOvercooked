@@ -4,7 +4,7 @@ extends StaticBody2D
 var recipe
 #@onready var food_image = $foodImage
 @onready var object 
-
+var my_player
 enum { 
 	WALK,
 	HOLD_PLATE,
@@ -18,7 +18,7 @@ enum {
 
 
 func _ready():
-
+	my_player = get_node("../Player")
 	find_and_set_sprite(object_type)
 	
 	match object_type:
@@ -57,7 +57,10 @@ func _on_grab_box_area_entered(area):
 	var main = get_tree().current_scene
 	var temp = main.get_node("Ysort")
 	temp.add_child(my_object)
-
+	my_player.grab_object(my_object)
+	
+	my_object.global_position = self.global_position
+	
 	if my_object.name.contains("Plate") == true:
 		area.owner.states = HOLD_PLATE
 		area.owner.my_object = my_object

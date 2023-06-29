@@ -270,7 +270,7 @@ position = Vector2(19, 61)
 
 [node name="Player" parent="Ysort" instance=ExtResource("1_xffki")]
 y_sort_enabled = true
-position = Vector2(73, -54)
+position = Vector2(-137, -145)
 
 [node name="Stove" parent="Ysort" instance=ExtResource("4_ilqre")]
 position = Vector2(-108, -189)
