@@ -24,7 +24,9 @@ func _ready():
 
 
 func _process(delta):
-	if is_holding_object == true: 
+	if is_holding_object == true and my_object.name.contains("Plate") == true: 
+		$Sprite2D.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
+	elif is_holding_object == true and my_object.name.contains("Plate") == false:
 		$Sprite2D.texture = my_object.get_node("Sprite2D").texture
 	else: 
 		$Sprite2D.texture = null
@@ -49,8 +51,8 @@ func _on_area_entered(area):
 #			my_object.global_position = Vector2(self.global_position.x, self.global_position.y + 15)
 			$CollisionShape2D.set_deferred("disabled", true)
 			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
-
-			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
+			print(my_object.name)
+			$Sprite2D.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
 			$Sprite2D/FoodImage.texture = my_object.get_node("ObjectHolder/Sprite2D/FoodImage").texture
 			is_holding_object = true
 		

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 @onready var anim_tree = $AnimationTree
 @onready var animation_state = anim_tree.get("parameters/playback")
 @onready var grab_box = $pivotPoint/Grab/GrabBox
@@ -14,6 +15,9 @@ extends CharacterBody2D
 @export var acceleration = 400
 @export var roll_speed = 500
 @export var dash_finished = true
+
+
+
 
 const dash_cooldown = 60
 var timer = dash_cooldown
@@ -55,13 +59,13 @@ func _process(delta):
 		DASH:
 			dash_state(delta,"dash")
 		HOLD_PLATE:
-			hold_plate_state()
+			hold_item_state()
 		HOLD_ITEM:
 			hold_item_state()
 		WALK_WITH_PLATE:
-			walk_state(delta, "hold_plate_walk")
+			walk_state(delta, "hold_item_walk")
 		DASH_WITH_PLATE:
-			dash_state(delta,"hold_plate_dash")
+			dash_state(delta,"hold_item_dash")
 		WALK_WITH_ITEM:
 			walk_state(delta, "hold_item_walk")
 		DASH_WITH_ITEM: 
@@ -191,9 +195,13 @@ func grab_object(area):
 #		my_object = null
 #		pass
 #	else: 
-		print(my_object.name) 
-	
-		$Sprite2D.texture = my_object.get_node("Sprite2D").texture
+		my_object = area
+
+		
+		if my_object.name.contains("Plate") == true:
+			$Sprite2D.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
+		else:
+			$Sprite2D.texture = my_object.get_node("Sprite2D").texture
 		states = HOLD_ITEM
 	
 
@@ -213,5 +221,7 @@ func drop_item():
 	is_holding_object = false
 	holding_plate = false
 	my_object = null
+
+
 
 

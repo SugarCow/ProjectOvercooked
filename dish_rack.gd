@@ -50,17 +50,14 @@ func find_and_set_sprite(target):
 
 
 func _on_grab_box_area_entered(area):
-	print(area.name)
+
 	
 	var my_object = object.instantiate()
-	print(my_object.name)
+
 	var main = get_tree().current_scene
 	var temp = main.get_node("Ysort")
 	temp.add_child(my_object)
-	print(my_object.get_children())
-#	my_object.global_position = self.global_position
-	print(my_object.name)
-	print(my_object.get_node("ObjectHolder").get_children())
+
 	if my_object.name.contains("Plate") == true:
 		area.owner.states = HOLD_PLATE
 		area.owner.my_object = my_object

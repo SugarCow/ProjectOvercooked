@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://dish_rack.gd" id="1_ktnae"]
 [ext_resource type="Texture2D" uid="uid://bog5gfmh27hip" path="res://assets/overcookedAssets/prepTable.png" id="2_k34wd"]
-[ext_resource type="Texture2D" uid="uid://bryob7hl2lbx6" path="res://assets/Ghostpixxells_pixelfood/03_dish_pile.png" id="3_vq766"]
+[ext_resource type="Texture2D" uid="uid://7t6rj26n24c8" path="res://assets/overcookedAssets/togoBox/togoBox2.png" id="3_ns3hd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkd6g"]
 size = Vector2(34, 17)
@@ -21,7 +21,8 @@ shape = SubResource("RectangleShape2D_nkd6g")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(0, -17)
-texture = ExtResource("3_vq766")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_ns3hd")
 
 [node name="GrabBox" type="Area2D" parent="."]
 

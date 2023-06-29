@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
-@onready var anim_tree = $AnimationTree
-@onready var animation_state = anim_tree.get("parameters/playback")
+#@onready var anim_tree = $AnimationTree
+#@onready var animation_state = anim_tree.get("parameters/playback")
 @onready var grab_box = $pivotPoint/Grab/GrabBox
 @onready var my_object = $instancePlaceHolder
 @onready var disable_grab_timer = $disable_grab_timer
 @onready var main = get_tree().current_scene
+@onready var animated_sprite = $AnimatedSprite2D
 #@onready var temp = $ObjectHolder/SpriteLocation
 
 
@@ -15,203 +16,92 @@ extends CharacterBody2D
 @export var roll_speed = 500
 @export var dash_finished = true
 
+
+
+
 const dash_cooldown = 60
 var timer = dash_cooldown
 var dash_on_cooldown = false
 var is_holding_object = false
 var holding_plate = false
-
+var my_waiting_spot 
+var facing_dir = Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 enum { 
-	WALK,
-	HOLD_PLATE,
-	HOLD_ITEM,
-	DASH,
-	WALK_WITH_PLATE,
-	DASH_WITH_PLATE,
-	WALK_WITH_ITEM, 
-	DASH_WITH_ITEM
+	FOllOW,
+	IDLE
+
 }
-var states = WALK
+var states = IDLE
 var input_dir = Vector2.ZERO
 var roll_dir = Vector2.DOWN
-
-
-func _ready():
-	disable_grab_timer.timeout.connect(_on_disable_grab_timer_timeout)
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	
-	if is_holding_object == true:
-		$pivotPoint/Grab/GrabBox.disabled = true
-	else: holding_plate = false
-	#state machine 
+func _physics_process(delta):
 	match states:
-		WALK:
-			walk_state(delta, "walk")
-		DASH:
-			dash_state(delta,"dash")
-		HOLD_PLATE:
-			hold_plate_state()
-		HOLD_ITEM:
-			hold_item_state()
-		WALK_WITH_PLATE:
-			walk_state(delta, "hold_plate_walk")
-		DASH_WITH_PLATE:
-			dash_state(delta,"hold_plate_dash")
-		WALK_WITH_ITEM:
-			walk_state(delta, "hold_item_walk")
-		DASH_WITH_ITEM: 
-			dash_state(delta, "hold_item_dash")
-
-
-
-func hold_plate_state():
-	is_holding_object = true
-	holding_plate = true
-	states = WALK_WITH_PLATE
-
-func hold_item_state():
-	is_holding_object = true
-	holding_plate = false
-	states = WALK_WITH_ITEM
-	
-	
-func walk_state(delta, walk_state):
-	input_dir = Vector2(Input.get_action_raw_strength("ui_right") - Input.get_action_strength("ui_left"), 
-						Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
-						
-	input_dir = input_dir.normalized()
-	roll_dir = input_dir
-	
-	if input_dir != Vector2.ZERO:
-		anim_tree.set("parameters/idle/blend_position", input_dir)
-		anim_tree.set("parameters/walk/blend_position", input_dir)
-		anim_tree.set("parameters/dash/blend_position", input_dir)
-		anim_tree.set("parameters/hold_plate_idle/blend_position", input_dir)
-		anim_tree.set("parameters/hold_plate_walk/blend_position", input_dir)
-		anim_tree.set("parameters/hold_plate_dash/blend_position", input_dir)
-		anim_tree.set("parameters/hold_item_idle/blend_position", input_dir)
-		anim_tree.set("parameters/hold_item_walk/blend_position", input_dir)
-		anim_tree.set("parameters/hold_item_dash/blend_position", input_dir)
-		
-		if is_holding_object == true and holding_plate == true:
-			states = WALK_WITH_PLATE
-			animation_state.travel(walk_state)
-		if is_holding_object == true and holding_plate == false:
-			states = WALK_WITH_ITEM
-			animation_state.travel(walk_state)
-		if is_holding_object == false:
-			states = WALK
-			animation_state.travel(walk_state)
+		FOllOW: 
+			go_to_waiting_spot()
+		IDLE: 
+			wait()
 			
-		velocity = velocity.move_toward(input_dir * speed, acceleration * delta)
-	
-	elif is_holding_object == true and holding_plate == true:
-		animation_state.travel("hold_plate_idle")
-		$FoodImage.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
-#		print($pivotPoint/FoodImage.texture)
-		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
-	
-	elif is_holding_object == true and holding_plate == false:
-		animation_state.travel("hold_item_idle")
-		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
-		
-	elif is_holding_object == false:
-		animation_state.travel("idle")
-		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
-		
-
-	move_and_slide()
-
-
-	if Input.is_action_just_pressed("dash") and dash_finished == true and dash_on_cooldown == false:
-		if is_holding_object == true and holding_plate == true:
-			states = DASH_WITH_PLATE
-		if is_holding_object == true and holding_plate == false:
-			states = DASH_WITH_ITEM
-		if is_holding_object == false: 
-			states = DASH
-	
-	
-	if dash_on_cooldown == true:
-		timer -= 1
-		
-	if timer <= 0:
-		timer = dash_cooldown
-		dash_on_cooldown = false
-	
-	if Input.is_action_just_pressed("grab") and is_holding_object == false:
-		grab_box.disabled = false
-		disable_grab_timer.start()
-		
-
-	if Input.is_action_just_pressed("grab") and is_holding_object == true:
-#		my_object.get_node("Object").dropoff(self, main)
-		drop_item()
-	
-#	if is_holding_object:
-#		print(my_object)ww
-		
-func dash_state(delta, dash_state):
-	velocity = velocity.move_toward(roll_dir * roll_speed, 800)
-	animation_state.travel(dash_state)
-	move_and_slide()
-	dash_finished = false
-	dash_on_cooldown = true
-
-
-func dash_animation_finished(delta):
-	velocity = velocity.move_toward(Vector2.ZERO, 2000 )
-	move_and_slide()
-	states = WALK
-	dash_finished = true
-	
-
-func _on_disable_grab_timer_timeout():
-#	grab_box.disabled = true
-	grab_box.set_deferred("disabled", true)
-
-func grab_object(area):
-	my_object = area
-	
-	print(my_object.get_parent().name)
-	if my_object.get_parent().name != "FoodCrate":
-		my_object.get_parent().remove_child(my_object)
-	
-	if my_object.name == "Plate":
-		states = HOLD_PLATE
-	elif my_object.name != "FoodCrateGrabBox":
+#	if velocity.x > 0:
+#		$AnimatedSprite2D.play("walk_right")
+#	elif velocity.x < 0:
+#		$AnimatedSprite2D.play("walk_left")
 #
-#
-#		$Sprite2D.texture = my_object.owner.get_node("foodImage").texture
-#		my_object = null
-#		pass
-#	else: 
-		print(my_object.name) 
-	
-		$Sprite2D.texture = my_object.get_node("Sprite2D").texture
-		states = HOLD_ITEM
-	
+#	if velocity.y > 0:
+#		$AnimatedSprite2D.play("walk_down")
+#	elif velocity.y < 0:
+#		$AnimatedSprite2D.play("walk_up")
+	var animation_playing = animated_sprite.animation
+	var new_animation = ""
 
-func _on_grab_area_entered(area):
-	_on_disable_grab_timer_timeout()
-	grab_object(area)
+	if velocity.x > 0:
+		new_animation = "walk_right"
+		facing_dir = Vector2(1,0)
+	if velocity.x < 0:
+		new_animation = "walk_left"
+		facing_dir = Vector2(-1,0)
+	if velocity.y > 0:
+		new_animation = "walk_down"
+		facing_dir = Vector2(0,1)
+	if velocity.y < 0:
+		new_animation = "walk_up"
+		facing_dir = Vector2(0,-1)
 
-func drop_item():
-#	my_object.get_node("Object/CollisionShape2D").set_deferred("disabled", false)
+	if new_animation != animation_playing:
+		animated_sprite.play(new_animation)
+		
+		
+func _on_area_2d_area_entered(area):
 	
-	main.get_node("Ysort").add_child(my_object)
+#	print("area ", area, " detected")
+	print(area.owner.occupied)
+	if area.owner.occupied == false and my_waiting_spot == null:
+		
+		my_waiting_spot = area
+		states = FOllOW
+		$Area2D/DetectWaitingArea.set_deferred("disabled", true)
+		area.owner.occupied = true
+		print(my_waiting_spot.global_position)
+		
+func wait():
+	velocity = velocity.move_toward(Vector2(0,0), 500)
+	if facing_dir == Vector2(1,0):
+		animated_sprite.play("idle_right")
+	if facing_dir == Vector2(-1,0):
+		animated_sprite.play("idle_left")
+	if facing_dir == Vector2(0,-1):
+		animated_sprite.play("idle_down")
+	if facing_dir == Vector2(0,1):
+		animated_sprite.play("idle_up")
+	move_and_slide()
 	
-	my_object.global_position = $pivotPoint/Grab/dropOffPoint.global_position
-	$FoodImage.texture	= null
-	$Sprite2D.texture = null
-	states = WALK
-	is_holding_object = false
-	holding_plate = false
-	my_object = null
+func go_to_waiting_spot():
 
-
+	var target_location = ((my_waiting_spot.global_position - self.global_position)).normalized()
+	velocity = velocity.move_toward(target_location * speed , 200)
+	move_and_slide()
+	
+	var distance_to_target = (my_waiting_spot.position - self.position).length()
+	print(distance_to_target)
+	if distance_to_target <= 1:
+		states = IDLE

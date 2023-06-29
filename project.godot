@@ -17,6 +17,8 @@ config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1980
+window/size/viewport_height=1600
 window/stretch/scale=3.0
 
 [input]
@@ -67,6 +69,7 @@ grab={
 2d_physics/layer_3="world"
 2d_physics/layer_4="dropOffBox"
 2d_physics/layer_5="object"
+2d_physics/layer_6="Customer"
 
 [rendering]
 

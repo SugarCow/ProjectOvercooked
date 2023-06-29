@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://6bn3ftrtfo6b"]
+[gd_scene load_steps=6 format=3 uid="uid://6bn3ftrtfo6b"]
 
 [ext_resource type="Script" path="res://plate.gd" id="1_wvain"]
-[ext_resource type="Texture2D" uid="uid://2eesqwhdyoi5" path="res://assets/Ghostpixxells_pixelfood/02_dish_2.png" id="2_y4pyr"]
+[ext_resource type="Texture2D" uid="uid://chx8b82siw2k6" path="res://assets/overcookedAssets/togoBox/togoBox3.png" id="2_e2b57"]
+[ext_resource type="Texture2D" uid="uid://dxjufe6rqh71f" path="res://assets/overcookedAssets/togoBox/togoBox1.png" id="2_vugrf"]
 [ext_resource type="PackedScene" uid="uid://b7u2dra11knq" path="res://object_holder.tscn" id="4_6o0po"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kanmm"]
@@ -12,18 +13,24 @@ height = 28.0
 collision_layer = 2
 script = ExtResource("1_wvain")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-8, -7)
-texture = ExtResource("2_y4pyr")
-centered = false
-offset = Vector2(-8, -8)
+[node name="TogoBox3" type="Sprite2D" parent="."]
+position = Vector2(1, -1)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_e2b57")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_kanmm")
 
 [node name="ObjectHolder" parent="." instance=ExtResource("4_6o0po")]
 position = Vector2(0, 9)
 is_plate = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("CapsuleShape2D_kanmm")
+[node name="Sprite2D2" type="Sprite2D" parent="ObjectHolder"]
+position = Vector2(-9, -17)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_vugrf")
+centered = false
+offset = Vector2(-8, -8)
 
 [editable path="ObjectHolder"]
