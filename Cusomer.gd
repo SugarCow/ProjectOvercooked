@@ -62,10 +62,10 @@ func _physics_process(delta):
 		facing_dir = Vector2(-1,0)
 	if velocity.y > 0:
 		new_animation = "walk_down"
-		facing_dir = Vector2(0,1)
+		facing_dir = Vector2(0,-1)
 	if velocity.y < 0:
 		new_animation = "walk_up"
-		facing_dir = Vector2(0,-1)
+		facing_dir = Vector2(0,1)
 
 	if new_animation != animation_playing:
 		animated_sprite.play(new_animation)
@@ -101,7 +101,7 @@ func go_to_waiting_spot():
 	velocity = velocity.move_toward(target_location * speed , 200)
 	move_and_slide()
 	
-	var distance_to_target = (my_waiting_spot.position - self.position).length()
+	var distance_to_target = (my_waiting_spot.global_position - self.global_position).length()
 	print(distance_to_target)
 	if distance_to_target <= 1:
 		states = IDLE
