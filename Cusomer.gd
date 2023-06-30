@@ -143,7 +143,7 @@ func leave(patience_level):
 func _on_area_2d_area_entered(area):
 	
 #	print("area ", area, " detected")
-
+	print(area.owner.name)
 	if area.owner.occupied == false and my_waiting_spot == null:
 		
 		my_waiting_spot = area

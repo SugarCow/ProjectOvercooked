@@ -1,4 +1,4 @@
-[gd_scene load_steps=213 format=3 uid="uid://des6u32camgoc"]
+[gd_scene load_steps=214 format=3 uid="uid://des6u32camgoc"]
 
 [ext_resource type="Script" path="res://Cusomer.gd" id="1_kkviu"]
 [ext_resource type="Texture2D" uid="uid://djf3daxtfkb7w" path="res://assets/overcookedAssets/ChefNinaIdleHoldDown.png" id="2_fmf0v"]
@@ -2598,6 +2598,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2shld"]
+size = Vector2(20, 56)
+
 [node name="Customer" type="CharacterBody2D"]
 position = Vector2(1, -21)
 collision_layer = 0
@@ -2622,8 +2625,9 @@ position = Vector2(-1, 15)
 shape = SubResource("RectangleShape2D_ecalq")
 
 [node name="pivotPoint" type="Marker2D" parent="."]
+visible = false
 position = Vector2(-1, 9)
-rotation = 3.14159
+rotation = 1.5708
 
 [node name="Grab" type="Area2D" parent="pivotPoint"]
 collision_mask = 2
@@ -2679,6 +2683,13 @@ animation = &"out_of_patience"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="GiveOrder" type="Area2D" parent="."]
+collision_layer = 128
+
+[node name="GiverOrderBox" type="CollisionShape2D" parent="GiveOrder"]
+position = Vector2(-1, -17)
+shape = SubResource("RectangleShape2D_2shld")
 
 [connection signal="area_entered" from="pivotPoint/Grab" to="." method="_on_grab_area_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

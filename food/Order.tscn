@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://p57k0p36qnii"]
+
+[ext_resource type="Texture2D" uid="uid://hc7frw4vqr3d" path="res://assets/overcookedAssets/MyOrder.png" id="1_fm6uw"]
+[ext_resource type="Script" path="res://object.gd" id="2_ubqm3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8310g"]
+height = 22.0
+
+[node name="Order" type="Area2D"]
+collision_layer = 2
+collision_mask = 8
+
+[node name="Note" type="Sprite2D" parent="."]
+texture = ExtResource("1_fm6uw")
+
+[node name="foodImage" type="Sprite2D" parent="Note"]
+position = Vector2(0, 1)
+scale = Vector2(0.4, 0.4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.56907
+scale = Vector2(0.681123, 0.854127)
+shape = SubResource("CapsuleShape2D_8310g")
+
+[node name="Object" type="Node2D" parent="."]
+position = Vector2(8, 19)
+script = ExtResource("2_ubqm3")
+
+[node name="CookTime" type="Timer" parent="Object"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Object/CookTime" to="Object" method="_on_cook_time_timeout"]

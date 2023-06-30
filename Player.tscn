@@ -1,4 +1,4 @@
-[gd_scene load_steps=194 format=3 uid="uid://cjivxvu7256ui"]
+[gd_scene load_steps=195 format=3 uid="uid://cjivxvu7256ui"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_6nk1q"]
 [ext_resource type="Texture2D" uid="uid://ch0st2na5jh74" path="res://assets/overcookedAssets/ChefNinaIdleDown-export.png" id="2_33u1c"]
@@ -2457,6 +2457,8 @@ graph_offset = Vector2(-99.4181, 46.4564)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldhdd"]
 size = Vector2(19.5, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu4eq"]
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(1, -21)
 script = ExtResource("1_6nk1q")
@@ -2509,7 +2511,7 @@ position = Vector2(-1, 9)
 rotation = 1.5708
 
 [node name="Grab" type="Area2D" parent="pivotPoint"]
-collision_mask = 2
+collision_mask = 130
 
 [node name="GrabBox" type="CollisionShape2D" parent="pivotPoint/Grab"]
 position = Vector2(10, -4.76837e-07)
@@ -2519,9 +2521,16 @@ disabled = true
 [node name="dropOffPoint" type="Marker2D" parent="pivotPoint/Grab"]
 position = Vector2(22, 5.53131e-05)
 
+[node name="TakeOrder" type="Area2D" parent="pivotPoint"]
+position = Vector2(10, 2.57492e-05)
+
+[node name="TakeOrderBox" type="CollisionShape2D" parent="pivotPoint/TakeOrder"]
+shape = SubResource("RectangleShape2D_lu4eq")
+
 [node name="instancePlaceHolder" type="Node" parent="."]
 
 [node name="disable_grab_timer" type="Timer" parent="."]
 wait_time = 0.08
 
 [connection signal="area_entered" from="pivotPoint/Grab" to="." method="_on_grab_area_entered"]
+[connection signal="area_entered" from="pivotPoint/TakeOrder" to="." method="_on_take_order_area_entered"]

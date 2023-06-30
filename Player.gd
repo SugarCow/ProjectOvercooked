@@ -24,7 +24,8 @@ var timer = dash_cooldown
 var dash_on_cooldown = false
 var is_holding_object = false
 var holding_plate = false
-
+var current_order
+var object
 # Called when the node enters the scene tree for the first time.
 enum { 
 	WALK,
@@ -181,24 +182,60 @@ func _on_disable_grab_timer_timeout():
 	grab_box.set_deferred("disabled", true)
 
 func grab_object(area):
-	my_object = area
-	
-
-	
-	if my_object.get_parent().name !=  "FoodCrate":
-		my_object.get_parent().remove_child(my_object)
-
-	if my_object.name != "FoodCrateGrabBox":
-
+	if area.name == "GiveOrder":
+		print(area.name)
+		area.get_node("GiverOrderBox").set_deferred("disabled", true)
+		var order = load("res://food/Order.tscn")
+		
+		var my_order = order.instantiate()
+		print(my_order.get_node("Object"))
+		my_order.get_node("Object").objectType = area.owner.my_order
+		match area.owner.my_order:
+			"ButterScotchPie": 
+				object = load("res://food/ButterScotchPie.png")
+				my_order.get_node("Note/foodImage").texture = object
+			"Donut":
+				object = load("res://food/Donut.png")
+				my_order.get_node("Note/foodImage").texture = object
+			"ApricotJelly":
+				object = load("res://food/ApricotJelly.png")
+				my_order.get_node("Note/foodImage").texture = object
+			"FruitCake":
+				object = load("res://food/FruitCake.png")
+				my_order.get_node("Note/foodImage").texture = object
+			"ExpressoBun":
+				object = load("res://food/ExpressoBun.png")
+				my_order.get_node("Note/foodImage").texture = object
+			"ChocolateChipCookie":
+				object = load("res://food/ChocolateChipCookies.png")
+				my_order.get_node("Note/foodImage").texture = object
+			"ButteryBaguette":
+				object = load("res://food/ButteryBaguette.png")
+				my_order.get_node("Note/foodImage").texture = object
+		main.add_child(my_order)
+		my_order.global_position = $pivotPoint/Grab/dropOffPoint.global_position
+		grab_object(my_order)
+	else:
 		my_object = area
+		
 
-		if my_object.name.contains("Plate") == true:
-			$AnimatedSprite2D/Sprite2D.texture = my_object.get_node("ObjectHolder/Sprite2D2").texture
-			if my_object.get_node("ObjectHolder").is_holding_object == true:
-				$AnimatedSprite2D/FoodImage	.texture =  my_object.get_node("ObjectHolder/Sprite2D/FoodImage").texture
-		else:
-			$AnimatedSprite2D/Sprite2D.texture = my_object.get_node("Sprite2D").texture
-		states = HOLD_ITEM
+		
+		if my_object.get_parent().name !=  "FoodCrate":
+			my_object.get_parent().remove_child(my_object)
+
+		if my_object.name != "FoodCrateGrabBox":
+
+			my_object = area
+
+			if my_object.name.contains("Plate") == true:
+				$AnimatedSprite2D/Sprite2D.texture = my_object.get_node("ObjectHolder/Sprite2D2").texture
+				if my_object.get_node("ObjectHolder").is_holding_object == true:
+					$AnimatedSprite2D/FoodImage	.texture =  my_object.get_node("ObjectHolder/Sprite2D/FoodImage").texture
+			elif my_object.name.contains("Order") == true:
+				$AnimatedSprite2D/Sprite2D.texture = my_object.get_node("Note").texture
+			else:
+				$AnimatedSprite2D/Sprite2D.texture = my_object.get_node("Sprite2D").texture
+			states = HOLD_ITEM
 	
 
 func _on_grab_area_entered(area):
@@ -221,3 +258,7 @@ func drop_item():
 
 
 
+
+
+func _on_take_order_area_entered(area):
+	pass # Replace with function body.

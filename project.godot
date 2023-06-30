@@ -70,6 +70,8 @@ grab={
 2d_physics/layer_4="dropOffBox"
 2d_physics/layer_5="object"
 2d_physics/layer_6="Customer"
+2d_physics/layer_7="findWait"
+2d_physics/layer_8="giveOrder"
 
 [rendering]
 
