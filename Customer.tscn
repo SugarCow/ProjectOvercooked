@@ -1,4 +1,4 @@
-[gd_scene load_steps=194 format=3 uid="uid://des6u32camgoc"]
+[gd_scene load_steps=213 format=3 uid="uid://des6u32camgoc"]
 
 [ext_resource type="Script" path="res://Cusomer.gd" id="1_kkviu"]
 [ext_resource type="Texture2D" uid="uid://djf3daxtfkb7w" path="res://assets/overcookedAssets/ChefNinaIdleHoldDown.png" id="2_fmf0v"]
@@ -83,6 +83,24 @@
 [ext_resource type="Texture2D" uid="uid://ddp0ydv3nphq5" path="res://assets/overcookedAssets/walkUp/ChefNinawalkUp4.png" id="81_1jtd4"]
 [ext_resource type="Texture2D" uid="uid://c1n7hrmt5wjp1" path="res://assets/overcookedAssets/walkUp/ChefNinawalkUp5.png" id="82_bm0xr"]
 [ext_resource type="Texture2D" uid="uid://7ke44ofnnvow" path="res://assets/overcookedAssets/walkUp/ChefNinawalkUp6.png" id="83_1u7i2"]
+[ext_resource type="Texture2D" uid="uid://bgnvohl32xxqv" path="res://assets/overcookedAssets/CustomerOrder.png" id="84_ukfjf"]
+[ext_resource type="Texture2D" uid="uid://b0k7l2oba8bie" path="res://assets/overcookedAssets/custoner/CustomerPatience1.png" id="85_owwkh"]
+[ext_resource type="Texture2D" uid="uid://dsol0lxxof0b5" path="res://assets/overcookedAssets/custoner/CustomerPatience2.png" id="86_ep08i"]
+[ext_resource type="Texture2D" uid="uid://271ac6u1esgq" path="res://assets/overcookedAssets/custoner/CustomerPatience3.png" id="87_k4naq"]
+[ext_resource type="Texture2D" uid="uid://dbd1q2mqbeeu" path="res://assets/overcookedAssets/custoner/CustomerPatience4.png" id="88_8k1jx"]
+[ext_resource type="Texture2D" uid="uid://bri7v42j1k634" path="res://assets/overcookedAssets/custoner/CustomerPatience5.png" id="89_74bqj"]
+[ext_resource type="Texture2D" uid="uid://cd13rraljtbwp" path="res://assets/overcookedAssets/custoner/CustomerPatience6.png" id="90_1pbyt"]
+[ext_resource type="Texture2D" uid="uid://y466tbv8cks2" path="res://assets/overcookedAssets/custoner/CustomerPatience7.png" id="91_15yrj"]
+[ext_resource type="Texture2D" uid="uid://dugwihxxer3k5" path="res://assets/overcookedAssets/custoner/CustomerPatience15.png" id="91_iijih"]
+[ext_resource type="Texture2D" uid="uid://f7p4wfoa2k2k" path="res://assets/overcookedAssets/custoner/CustomerPatience16.png" id="92_b5558"]
+[ext_resource type="Texture2D" uid="uid://xjrjm7uthswo" path="res://assets/overcookedAssets/custoner/CustomerPatience8.png" id="92_o465p"]
+[ext_resource type="Texture2D" uid="uid://def8ps0rygcbq" path="res://assets/overcookedAssets/custoner/CustomerPatience9.png" id="93_mk6sf"]
+[ext_resource type="Texture2D" uid="uid://3tqy88utjb2t" path="res://assets/overcookedAssets/custoner/CustomerPatience13.png" id="93_msexs"]
+[ext_resource type="Texture2D" uid="uid://chkrygjv41par" path="res://assets/overcookedAssets/custoner/CustomerPatience10.png" id="94_ij2ch"]
+[ext_resource type="Texture2D" uid="uid://b184meia60p4f" path="res://assets/overcookedAssets/custoner/CustomerPatience14.png" id="94_o8go0"]
+[ext_resource type="Texture2D" uid="uid://bxoi4qi2s85ti" path="res://assets/overcookedAssets/custoner/CustomerPatience11.png" id="95_pdmqq"]
+[ext_resource type="Texture2D" uid="uid://cns527x6jjay2" path="res://assets/overcookedAssets/custoner/CustomerPatience17.png" id="95_yixoc"]
+[ext_resource type="Texture2D" uid="uid://cs8p741x47f5" path="res://assets/overcookedAssets/custoner/CustomerPatience12.png" id="96_im73n"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g2srg"]
 load_path = "res://.godot/imported/ChefNinaIdleLeft.png-5b0731918fe4ca320457544c571da429.ctex"
@@ -2458,6 +2476,128 @@ graph_offset = Vector2(-99.4181, 46.4564)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_lv50x"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_hogr8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("85_owwkh")
+}],
+"loop": true,
+"name": &"Patience1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("86_ep08i")
+}],
+"loop": true,
+"name": &"Patience2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("87_k4naq")
+}],
+"loop": true,
+"name": &"Patience3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("88_8k1jx")
+}],
+"loop": true,
+"name": &"Patience4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("89_74bqj")
+}],
+"loop": true,
+"name": &"Patience5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("90_1pbyt")
+}],
+"loop": true,
+"name": &"Patience6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("91_iijih")
+}],
+"loop": true,
+"name": &"leave_content",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("92_b5558")
+}],
+"loop": true,
+"name": &"leave_happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("93_msexs")
+}],
+"loop": true,
+"name": &"leave_mad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("94_o8go0")
+}],
+"loop": true,
+"name": &"leave_unhappy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("95_yixoc")
+}],
+"loop": true,
+"name": &"leave_very_happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("96_im73n")
+}],
+"loop": true,
+"name": &"leave_very_mad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("90_1pbyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_15yrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_o465p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_mk6sf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_ij2ch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_pdmqq")
+}],
+"loop": false,
+"name": &"out_of_patience",
+"speed": 5.0
+}]
+
 [node name="Customer" type="CharacterBody2D"]
 position = Vector2(1, -21)
 collision_layer = 0
@@ -2470,18 +2610,20 @@ sprite_frames = SubResource("SpriteFrames_00ce8")
 animation = &"walk_right"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 6)
+position = Vector2(-2, -38)
+texture = ExtResource("84_ukfjf")
+
+[node name="FoodImage" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(1, 0)
+scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 15)
 shape = SubResource("RectangleShape2D_ecalq")
 
-[node name="FoodImage" type="Sprite2D" parent="."]
-position = Vector2(-1, 9)
-
 [node name="pivotPoint" type="Marker2D" parent="."]
 position = Vector2(-1, 9)
-rotation = 1.5708
+rotation = 3.14159
 
 [node name="Grab" type="Area2D" parent="pivotPoint"]
 collision_mask = 2
@@ -2529,5 +2671,15 @@ parameters/hold_plate_walk/blend_position = Vector2(0, 0)
 parameters/idle/blend_position = Vector2(-0.000640631, 0.0419161)
 parameters/walk/blend_position = Vector2(0, 0)
 
+[node name="WaitBar" type="AnimatedSprite2D" parent="."]
+position = Vector2(-18, -39)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_hogr8")
+animation = &"out_of_patience"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="area_entered" from="pivotPoint/Grab" to="." method="_on_grab_area_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

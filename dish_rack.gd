@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @onready var object_type = "dish_pile"
 var recipe
-#@onready var food_image = $foodImage
+
 @onready var object 
 var my_player
 enum { 
@@ -42,8 +42,7 @@ func find_and_set_sprite(target):
 			print("found!")
 			dir.list_dir_end()
 			var sprite_path = path + file_name
-#			food_image.texture = load(sprite_path)
-#			food_image.scale = Vector2(.5,.5)
+
 			break
 		
 		file_name = dir.get_next()

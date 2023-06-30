@@ -6,7 +6,7 @@ extends StaticBody2D
 
 
 func _on_drop_off_box_area_entered(area):
-		print(area.name)
+
 		area.queue_free()
 		$AnimatedSprite2D.play("default")
 

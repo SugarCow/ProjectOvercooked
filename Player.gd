@@ -183,18 +183,15 @@ func _on_disable_grab_timer_timeout():
 func grab_object(area):
 	my_object = area
 	
-	print(my_object.get_parent().name)
+
 	
 	if my_object.get_parent().name !=  "FoodCrate":
 		my_object.get_parent().remove_child(my_object)
-	
-#	if my_object.name == "Plate":
-#		states = HOLD_PLATE
-#		$AnimatedSprite2D/Sprite2D.texture = my_object.get_node("ObjectHolder/Sprite2D").texture
+
 	if my_object.name != "FoodCrateGrabBox":
 
 		my_object = area
-		print(my_object.name)
+
 		if my_object.name.contains("Plate") == true:
 			$AnimatedSprite2D/Sprite2D.texture = my_object.get_node("ObjectHolder/Sprite2D2").texture
 			if my_object.get_node("ObjectHolder").is_holding_object == true:
