@@ -72,6 +72,7 @@ grab={
 2d_physics/layer_6="Customer"
 2d_physics/layer_7="findWait"
 2d_physics/layer_8="giveOrder"
+2d_physics/layer_9="chargeZOne"
 
 [rendering]
 

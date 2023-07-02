@@ -9,12 +9,16 @@ var list_of_pastries = ["ButterScotchPie",
 						"ChocolateChipCookie", 
 						"ButteryBaguette" ]
 var recipe
+var charge_time = 5
+
 @onready var food_image = $foodImage
 @onready var object 
-			
+@onready var main = get_tree().current_scene
+var location_of_objects 
 func _ready():
 
 	find_and_set_sprite(object_type)
+	location_of_objects = main.get_node("Ysort")
 	
 	match object_type:
 		"rawSteak":
@@ -60,11 +64,36 @@ func find_and_set_sprite(target):
 
 
 func _on_grab_zone_area_entered(area):
-	print(area.owner.name)
-	var my_object = object.instantiate()
-	var main = get_tree().current_scene
-	var temp = main.get_node("Ysort")
-	temp.add_child(my_object)
-#	my_object.global_position = self.global_position
-	print(my_object.name)
-	area.owner.grab_object(my_object)
+	if area.name.contains("Order"):
+		object_type = area.get_node("Object").objectType
+		print(area.name)
+		location_of_objects.remove_child(area)
+		print(object_type)
+		
+	if charge_time <=0:
+		print(area.owner.name) ####this is where i left off at!!!!!
+
+		var my_object = object.instantiate()
+		var main = get_tree().current_scene
+		var temp = main.get_node("Ysort")
+		temp.add_child(my_object)
+	#	my_object.global_position = self.global_position
+		print(my_object.name)
+		area.owner._on_grab_area_entered(my_object)
+	
+
+
+func _on_timer_timeout():
+	charge_time -= 1
+	
+
+
+func _on_charge_zone_area_entered(area):
+	$Timer.start()
+	print("charge starting")
+
+
+func _on_charge_zone_area_exited(area):
+	$Timer.stop()
+	print("charging stopped")
+	

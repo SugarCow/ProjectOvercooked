@@ -2457,7 +2457,7 @@ graph_offset = Vector2(-99.4181, 46.4564)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldhdd"]
 size = Vector2(19.5, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu4eq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkqel"]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(1, -21)
@@ -2521,11 +2521,15 @@ disabled = true
 [node name="dropOffPoint" type="Marker2D" parent="pivotPoint/Grab"]
 position = Vector2(22, 5.53131e-05)
 
-[node name="TakeOrder" type="Area2D" parent="pivotPoint"]
-position = Vector2(10, 2.57492e-05)
+[node name="ChargerZone" type="Area2D" parent="pivotPoint"]
+position = Vector2(17, 9.00004)
+rotation = -3.14159
+collision_layer = 0
+collision_mask = 256
 
-[node name="TakeOrderBox" type="CollisionShape2D" parent="pivotPoint/TakeOrder"]
-shape = SubResource("RectangleShape2D_lu4eq")
+[node name="ChargerBox" type="CollisionShape2D" parent="pivotPoint/ChargerZone"]
+position = Vector2(-11, 9)
+shape = SubResource("RectangleShape2D_vkqel")
 
 [node name="instancePlaceHolder" type="Node" parent="."]
 
@@ -2533,4 +2537,4 @@ shape = SubResource("RectangleShape2D_lu4eq")
 wait_time = 0.08
 
 [connection signal="area_entered" from="pivotPoint/Grab" to="." method="_on_grab_area_entered"]
-[connection signal="area_entered" from="pivotPoint/TakeOrder" to="." method="_on_take_order_area_entered"]
+[connection signal="area_entered" from="pivotPoint/ChargerZone" to="." method="_on_charger_zone_area_entered"]

@@ -26,6 +26,7 @@ var is_holding_object = false
 var holding_plate = false
 var current_order
 var object
+var mouse_left_down: bool = false
 # Called when the node enters the scene tree for the first time.
 enum { 
 	WALK,
@@ -45,7 +46,7 @@ var roll_dir = Vector2.DOWN
 func _ready():
 	disable_grab_timer.timeout.connect(_on_disable_grab_timer_timeout)
 	$AnimatedSprite2D/HoldItem.visible = false
-
+	$pivotPoint/ChargerZone/ChargerBox.disabled = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -72,7 +73,10 @@ func _process(delta):
 		DASH_WITH_ITEM: 
 			dash_state(delta, "hold_item_dash")
 
-
+	if mouse_left_down == true:
+		$pivotPoint/ChargerZone/ChargerBox.disabled = false
+	else:
+		$pivotPoint/ChargerZone/ChargerBox.disabled = true
 
 func hold_plate_state():
 	is_holding_object = true
@@ -159,9 +163,21 @@ func walk_state(delta, walk_state):
 #		my_object.get_node("Object").dropoff(self, main)
 		drop_item()
 	
+	
+		
+		
 #	if is_holding_object:
 #		print(my_object)ww
-		
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == 1 and event.is_pressed():
+			mouse_left_down = true
+			print("down")
+		elif event.button_index ==1 and not event.is_pressed():
+			mouse_left_down = false
+			print("up")
+			
 func dash_state(delta, dash_state):
 	velocity = velocity.move_toward(roll_dir * roll_speed, 800)
 	animation_state.travel(dash_state)
@@ -194,27 +210,37 @@ func grab_object(area):
 			"ButterScotchPie": 
 				object = load("res://food/ButterScotchPie.png")
 				my_order.get_node("Note/foodImage").texture = object
+				my_order.get_node("Object").set_deferred("objectType", "ButterScotchPie")
 			"Donut":
 				object = load("res://food/Donut.png")
 				my_order.get_node("Note/foodImage").texture = object
+				my_order.get_node("Object").set_deferred("objectType", "Donut")
 			"ApricotJelly":
 				object = load("res://food/ApricotJelly.png")
 				my_order.get_node("Note/foodImage").texture = object
+				my_order.get_node("Object").set_deferred("objectType", "ApricotJelly")
 			"FruitCake":
 				object = load("res://food/FruitCake.png")
 				my_order.get_node("Note/foodImage").texture = object
+				my_order.get_node("Object").set_deferred("objectType", "FruitCake")
 			"ExpressoBun":
 				object = load("res://food/ExpressoBun.png")
 				my_order.get_node("Note/foodImage").texture = object
+				my_order.get_node("Object").set_deferred("objectType", "ExpressoBun")
 			"ChocolateChipCookie":
 				object = load("res://food/ChocolateChipCookies.png")
 				my_order.get_node("Note/foodImage").texture = object
+				my_order.get_node("Object").set_deferred("objectType", "ChocolateChipCookie")
 			"ButteryBaguette":
 				object = load("res://food/ButteryBaguette.png")
 				my_order.get_node("Note/foodImage").texture = object
+				my_order.get_node("Object").set_deferred("objectType", "ButteryBaguette")
 		main.add_child(my_order)
 		my_order.global_position = $pivotPoint/Grab/dropOffPoint.global_position
 		grab_object(my_order)
+		
+		print(my_order.name)
+		print(my_order.get_node("Object").objectType)
 	else:
 		my_object = area
 		
@@ -260,5 +286,3 @@ func drop_item():
 
 
 
-func _on_take_order_area_entered(area):
-	pass # Replace with function body.
