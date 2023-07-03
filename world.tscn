@@ -1,9 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmdnf537ydrqe"]
+[gd_scene load_steps=12 format=3 uid="uid://cmdnf537ydrqe"]
 
 [ext_resource type="Texture2D" uid="uid://yfuv4vvteq6e" path="res://assets/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_3m1uf"]
 [ext_resource type="PackedScene" uid="uid://cjivxvu7256ui" path="res://Player.tscn" id="1_xffki"]
-[ext_resource type="PackedScene" uid="uid://bsmaa2w8cmymf" path="res://stove.tscn" id="4_ilqre"]
-[ext_resource type="PackedScene" uid="uid://bdvia7jlewypg" path="res://turn_in_table.tscn" id="7_w77q2"]
 [ext_resource type="PackedScene" uid="uid://5irj60s78p6n" path="res://prep_table.tscn" id="8_iodrk"]
 [ext_resource type="PackedScene" uid="uid://cf48tc3kvvydl" path="res://waiting_area.tscn" id="9_1tq4o"]
 [ext_resource type="PackedScene" uid="uid://ba0rryjleperc" path="res://dish_rack.tscn" id="9_2sqov"]
@@ -272,12 +270,6 @@ position = Vector2(19, 61)
 [node name="Player" parent="Ysort" instance=ExtResource("1_xffki")]
 y_sort_enabled = true
 position = Vector2(-137, -145)
-
-[node name="Stove" parent="Ysort" instance=ExtResource("4_ilqre")]
-position = Vector2(-108, -189)
-
-[node name="TurnInTable" parent="Ysort" instance=ExtResource("7_w77q2")]
-position = Vector2(71, -189)
 
 [node name="DishRack" parent="Ysort" instance=ExtResource("9_2sqov")]
 position = Vector2(-183, -188)
