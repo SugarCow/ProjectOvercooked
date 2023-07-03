@@ -2524,7 +2524,7 @@ position = Vector2(22, 5.53131e-05)
 [node name="ChargerZone" type="Area2D" parent="pivotPoint"]
 position = Vector2(17, 9.00004)
 rotation = -3.14159
-collision_layer = 0
+collision_layer = 512
 collision_mask = 256
 
 [node name="ChargerBox" type="CollisionShape2D" parent="pivotPoint/ChargerZone"]

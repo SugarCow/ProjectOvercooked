@@ -28,7 +28,8 @@ var list_of_pastries = ["ButterScotchPie",
 # Called when the node enters the scene tree for the first time.
 enum { 
 	FOllOW,
-	IDLE
+	IDLE,
+	LEAVE
 
 }
 var states = IDLE
@@ -37,9 +38,10 @@ var roll_dir = Vector2.DOWN
 var my_order
 var object
 var my_waiting_spot 
+var exit_spot
 var facing_dir = Vector2.ZERO
 var have_order = false
-var wait_time: float = 6
+var wait_time: float = 30
 var patience: String
 var begin_waiting = false
 func _ready():
@@ -71,7 +73,7 @@ func _physics_process(delta):
 #		begin_waiting = false
 	match states:
 		FOllOW: 
-			go_to_waiting_spot()
+			go_to_spot(my_waiting_spot)
 		IDLE: 
 			wait()
 			if (wait_time >= 24):
@@ -96,6 +98,12 @@ func _physics_process(delta):
 			elif wait_time <0:
 				await $WaitBar.animation_finished
 				leave(patience)
+				states = LEAVE
+		LEAVE:
+			$Timer.stop()
+			go_to_spot(exit_spot)
+			if exit_spot.global_position - self.global_position <= Vector2(10,10):
+				self.queue_free()
 #	if velocity.x > 0:
 #		$AnimatedSprite2D.play("walk_right")
 #	elif velocity.x < 0:
@@ -166,13 +174,13 @@ func wait():
 	begin_waiting = true
 
 
-func go_to_waiting_spot():
+func go_to_spot(location):
 
-	var target_location = ((my_waiting_spot.global_position - self.global_position)).normalized()
+	var target_location = ((location.global_position - self.global_position)).normalized()
 	velocity = velocity.move_toward(target_location * speed , 200)
 	move_and_slide()
 	
-	var distance_to_target = (my_waiting_spot.global_position - self.global_position).length()
+	var distance_to_target = (location.global_position - self.global_position).length()
 
 	if distance_to_target <= 1:
 		states = IDLE
@@ -182,3 +190,25 @@ func _on_timer_timeout():
 	wait_time -= 1
 	print("finished")
 #	$Timer.start(-1)
+
+
+func _on_turn_in_area_area_entered(area):
+	print(area.name)
+	if area.name == my_order:
+		print("it is my order")
+		area.queue_free()
+		leave(patience)
+		states = LEAVE
+	else: 
+		patience = "very mad"
+		area.queue_free()
+		leave(patience)
+		states = LEAVE
+
+
+
+func _on_area_2d_2_area_entered(area):
+	print(area.owner.name)
+	if area.owner.name =="ExitSpot":
+		exit_spot = area
+	

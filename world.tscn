@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmdnf537ydrqe"]
+[gd_scene load_steps=14 format=3 uid="uid://cmdnf537ydrqe"]
 
 [ext_resource type="Texture2D" uid="uid://yfuv4vvteq6e" path="res://assets/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_3m1uf"]
 [ext_resource type="PackedScene" uid="uid://cjivxvu7256ui" path="res://Player.tscn" id="1_xffki"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://beo6w5heqq72j" path="res://food_display.tscn" id="10_e8atk"]
 [ext_resource type="PackedScene" uid="uid://5bnosry5pn08" path="res://customer_spawner.tscn" id="10_e33pq"]
 [ext_resource type="PackedScene" uid="uid://cg4grq3dfku72" path="res://trash_can.tscn" id="10_sd7qu"]
+[ext_resource type="PackedScene" uid="uid://u6nschcmvsff" path="res://exit_spot.tscn" id="11_vgak2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wnoh"]
 texture = ExtResource("1_3m1uf")
@@ -310,3 +311,6 @@ layer_0/tile_data = PackedInt32Array(65534, 65536, 13, 131070, 327680, 13, 19660
 
 [node name="CustomerSpawner" parent="." instance=ExtResource("10_e33pq")]
 position = Vector2(-99, 114)
+
+[node name="ExitSpot" parent="." instance=ExtResource("11_vgak2")]
+position = Vector2(-22, 70)

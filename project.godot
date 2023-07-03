@@ -73,6 +73,7 @@ grab={
 2d_physics/layer_7="findWait"
 2d_physics/layer_8="giveOrder"
 2d_physics/layer_9="chargeZOne"
+2d_physics/layer_11="findExit"
 
 [rendering]
 

@@ -239,8 +239,7 @@ func grab_object(area):
 		my_order.global_position = $pivotPoint/Grab/dropOffPoint.global_position
 		grab_object(my_order)
 		
-		print(my_order.name)
-		print(my_order.get_node("Object").objectType)
+
 	else:
 		my_object = area
 		

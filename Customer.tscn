@@ -1,4 +1,4 @@
-[gd_scene load_steps=214 format=3 uid="uid://des6u32camgoc"]
+[gd_scene load_steps=215 format=3 uid="uid://des6u32camgoc"]
 
 [ext_resource type="Script" path="res://Cusomer.gd" id="1_kkviu"]
 [ext_resource type="Texture2D" uid="uid://djf3daxtfkb7w" path="res://assets/overcookedAssets/ChefNinaIdleHoldDown.png" id="2_fmf0v"]
@@ -2601,6 +2601,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2shld"]
 size = Vector2(20, 56)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_teq38"]
+
 [node name="Customer" type="CharacterBody2D"]
 position = Vector2(1, -21)
 collision_layer = 0
@@ -2653,6 +2655,14 @@ collision_mask = 64
 scale = Vector2(28.3093, -27.0333)
 shape = SubResource("CircleShape2D_n7paf")
 
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 1024
+
+[node name="DetectExitArea" type="CollisionShape2D" parent="Area2D2"]
+scale = Vector2(28.3093, -27.0333)
+shape = SubResource("CircleShape2D_n7paf")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
 autoplay = "idle_down"
@@ -2691,6 +2701,16 @@ collision_layer = 128
 position = Vector2(-1, -17)
 shape = SubResource("RectangleShape2D_2shld")
 
+[node name="TurnInArea" type="Area2D" parent="."]
+position = Vector2(-1, -35)
+collision_layer = 8
+collision_mask = 2
+
+[node name="TurnInBox" type="CollisionShape2D" parent="TurnInArea"]
+shape = SubResource("RectangleShape2D_teq38")
+
 [connection signal="area_entered" from="pivotPoint/Grab" to="." method="_on_grab_area_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="TurnInArea" to="." method="_on_turn_in_area_area_entered"]
