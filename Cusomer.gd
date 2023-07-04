@@ -8,7 +8,9 @@ extends CharacterBody2D
 @onready var main = get_tree().current_scene
 @onready var animated_sprite = $AnimatedSprite2D
 #@onready var temp = $ObjectHolder/SpriteLocation
-
+@onready var correct = $correctOrder
+@onready var wrong = $wrongOrder
+@onready var leaving = $leave
 
 @export var speed = 80
 @export var friction = 400
@@ -102,17 +104,10 @@ func _physics_process(delta):
 		LEAVE:
 			$Timer.stop()
 			go_to_spot(exit_spot)
-			if exit_spot.global_position - self.global_position <= Vector2(10,10):
+			if exit_spot.global_position - self.global_position <= Vector2(1,1):
+				leaving.play()
 				self.queue_free()
-#	if velocity.x > 0:
-#		$AnimatedSprite2D.play("walk_right")
-#	elif velocity.x < 0:
-#		$AnimatedSprite2D.play("walk_left")
-#
-#	if velocity.y > 0:
-#		$AnimatedSprite2D.play("walk_down")
-#	elif velocity.y < 0:
-#		$AnimatedSprite2D.play("walk_up")
+
 	var animation_playing = animated_sprite.animation
 	var new_animation = ""
 
@@ -149,9 +144,7 @@ func leave(patience_level):
 			$WaitBar.play("leave_very_mad")
 			
 func _on_area_2d_area_entered(area):
-	
-#	print("area ", area, " detected")
-	print(area.owner.name)
+
 	if area.owner.occupied == false and my_waiting_spot == null:
 		
 		my_waiting_spot = area
@@ -188,18 +181,16 @@ func go_to_spot(location):
 
 func _on_timer_timeout():
 	wait_time -= 1
-	print("finished")
-#	$Timer.start(-1)
-
 
 func _on_turn_in_area_area_entered(area):
-	print(area.name)
+
 	if area.name == my_order:
-		print("it is my order")
+		correct.play()
 		area.queue_free()
 		leave(patience)
 		states = LEAVE
 	else: 
+		wrong.play()
 		patience = "very mad"
 		area.queue_free()
 		leave(patience)
@@ -208,7 +199,7 @@ func _on_turn_in_area_area_entered(area):
 
 
 func _on_area_2d_2_area_entered(area):
-	print(area.owner.name)
+
 	if area.owner.name =="ExitSpot":
 		exit_spot = area
 	

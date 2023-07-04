@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://qmi7yykw6vj5"]
+[gd_scene load_steps=26 format=3 uid="uid://qmi7yykw6vj5"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_e8hbm"]
 [ext_resource type="Texture2D" uid="uid://o78f8u4pngh0" path="res://assets/overcookedAssets/MenuStove/MenuStove1.png" id="1_y1h2l"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bc1pyp5w2yv46" path="res://assets/overcookedAssets/quitButton/QuitButton1.png" id="20_qv35b"]
 [ext_resource type="Texture2D" uid="uid://dofbvu50bc1dc" path="res://assets/overcookedAssets/quitButton/QuitButton3.png" id="21_dwm4n"]
 [ext_resource type="Texture2D" uid="uid://ck8ucculg1dj" path="res://assets/overcookedAssets/quitButton/QuitButton2.png" id="22_3khhs"]
+[ext_resource type="AudioStream" uid="uid://dnm1bkunh6n44" path="res://sound/barradeen-bedtime-after-a-coffee.mp3" id="24_i62nh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dhm5k"]
 animations = [{
@@ -114,6 +115,9 @@ texture_hover = ExtResource("20_qv35b")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2, -115)
 zoom = Vector2(0.65, 0.65)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_i62nh")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

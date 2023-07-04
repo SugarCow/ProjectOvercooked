@@ -1,4 +1,4 @@
-[gd_scene load_steps=215 format=3 uid="uid://des6u32camgoc"]
+[gd_scene load_steps=217 format=3 uid="uid://des6u32camgoc"]
 
 [ext_resource type="Script" path="res://Cusomer.gd" id="1_kkviu"]
 [ext_resource type="Texture2D" uid="uid://djf3daxtfkb7w" path="res://assets/overcookedAssets/ChefNinaIdleHoldDown.png" id="2_fmf0v"]
@@ -101,6 +101,8 @@
 [ext_resource type="Texture2D" uid="uid://bxoi4qi2s85ti" path="res://assets/overcookedAssets/custoner/CustomerPatience11.png" id="95_pdmqq"]
 [ext_resource type="Texture2D" uid="uid://cns527x6jjay2" path="res://assets/overcookedAssets/custoner/CustomerPatience17.png" id="95_yixoc"]
 [ext_resource type="Texture2D" uid="uid://cs8p741x47f5" path="res://assets/overcookedAssets/custoner/CustomerPatience12.png" id="96_im73n"]
+[ext_resource type="AudioStream" uid="uid://dcb6ac4e6efm5" path="res://sound/wrongOrder.mp3" id="102_vgh2v"]
+[ext_resource type="AudioStream" uid="uid://ct01r1rwh6sw7" path="res://sound/orderAccepted.mp3" id="103_hxykt"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g2srg"]
 load_path = "res://.godot/imported/ChefNinaIdleLeft.png-5b0731918fe4ca320457544c571da429.ctex"
@@ -2708,6 +2710,16 @@ collision_mask = 2
 
 [node name="TurnInBox" type="CollisionShape2D" parent="TurnInArea"]
 shape = SubResource("RectangleShape2D_teq38")
+
+[node name="wrongOrder" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, -35)
+stream = ExtResource("102_vgh2v")
+
+[node name="correctOrder" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("103_hxykt")
+
+[node name="leave" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, -35)
 
 [connection signal="area_entered" from="pivotPoint/Grab" to="." method="_on_grab_area_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

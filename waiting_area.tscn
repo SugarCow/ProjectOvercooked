@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bexha0qchx7wq" path="res://wating_spot.tscn" id="4_jcytm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_am2x3"]
-size = Vector2(255.5, 20)
+size = Vector2(255.5, 27.49)
 
 [node name="WaitingArea" type="StaticBody2D"]
 
@@ -24,7 +24,7 @@ position = Vector2(205.053, 10)
 texture = ExtResource("3_2l4x0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(123.25, 19.49)
+position = Vector2(123.25, 15.745)
 shape = SubResource("RectangleShape2D_am2x3")
 
 [node name="WatingSpot" parent="." instance=ExtResource("4_jcytm")]

@@ -1,7 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://beo6w5heqq72j"]
+[gd_scene load_steps=12 format=3 uid="uid://beo6w5heqq72j"]
 
 [ext_resource type="Texture2D" uid="uid://umc7fnqlohw8" path="res://assets/overcookedAssets/DisplayCase.png" id="1_1pxp6"]
 [ext_resource type="Script" path="res://food_display.gd" id="1_y0ati"]
+[ext_resource type="Texture2D" uid="uid://nsgshseq11tc" path="res://assets/overcookedAssets/Timer/timer1.png" id="3_jvt42"]
+[ext_resource type="Texture2D" uid="uid://xrryjr2hchuu" path="res://assets/overcookedAssets/Timer/timer2.png" id="4_rbpfw"]
+[ext_resource type="Texture2D" uid="uid://d4ef528dld3cn" path="res://assets/overcookedAssets/Timer/timer3.png" id="5_7tegf"]
+[ext_resource type="Texture2D" uid="uid://bvyw4vovxicay" path="res://assets/overcookedAssets/Timer/timer4.png" id="6_f46ca"]
+[ext_resource type="AudioStream" uid="uid://ds2nxudeqtkid" path="res://sound/grab.mp3" id="7_gwair"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67hj0"]
 size = Vector2(8.72483, 7.46377)
@@ -11,6 +16,26 @@ size = Vector2(43, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_loex0"]
 size = Vector2(47, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v1nuc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jvt42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rbpfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7tegf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f46ca")
+}],
+"loop": true,
+"name": &"animate",
+"speed": 10.0
+}]
 
 [node name="FoodDisplay" type="StaticBody2D"]
 script = ExtResource("1_y0ati")
@@ -42,6 +67,14 @@ collision_mask = 512
 [node name="ChargeBox" type="CollisionShape2D" parent="ChargeZone"]
 position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_loex0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -36)
+sprite_frames = SubResource("SpriteFrames_v1nuc")
+animation = &"animate"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_gwair")
 
 [connection signal="area_entered" from="GrabZone" to="." method="_on_grab_zone_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -45,13 +45,13 @@ func _on_area_entered(area):
 		
 		elif area.name == "Plate" and is_plate == false:
 			my_object = area
-			my_object.get_parent().remove_child(my_object)
-#			my_object.global_position = Vector2(self.global_position.x, self.global_position.y + 15)
+#			my_object.get_parent().remove_child(my_object)
+			my_object.global_position = Vector2(self.global_position.x, self.global_position.y )
 			$CollisionShape2D.set_deferred("disabled", true)
 			$ReleaseArea/ReleaseCollision.set_deferred("disabled", false)
 			print(my_object.name)
-			$Sprite2D/FoodImage.texture = my_object.get_node("ObjectHolder/Sprite2D2").texture
-			$food.texture = my_object.get_node("ObjectHolder/Sprite2D/FoodImage").texture
+#			$Sprite2D/FoodImage.texture = my_object.get_node("ObjectHolder/Sprite2D2").texture
+#			$food.texture = my_object.get_node("ObjectHolder/Sprite2D/FoodImage").texture
 			is_holding_object = true
 		
 		elif area.name.contains("Plate") == false and is_plate == true :

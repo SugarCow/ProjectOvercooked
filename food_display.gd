@@ -9,26 +9,30 @@ var list_of_pastries = ["ButterScotchPie",
 						"ChocolateChipCookie", 
 						"ButteryBaguette" ]
 var recipe
-var charge_time = 3
+var max_charge_time: float = 3.0
+var charge_time = max_charge_time
 
 @onready var food_image = $foodImage
 @onready var object 
 @onready var main = get_tree().current_scene
+@onready var grab = $AudioStreamPlayer2D
 var location_of_objects 
 var player
+const TIME_INCREMENT = 0.016 
 func _ready():
 	player = get_node("../Player")
 
 	location_of_objects = main.get_node("Ysort")
-	
+	$AnimatedSprite2D.visible = false
 	
 		
 
 			
 
 func _process(delta):
-	if charge_time <=0: 
+	if charge_time <= 0: 
 		_on_grab_zone_area_entered(player)
+		$AnimatedSprite2D.visible = false
 
 func find_and_set_sprite(target):
 	var path = "res://food/"
@@ -51,6 +55,9 @@ func find_and_set_sprite(target):
 
 
 func _on_grab_zone_area_entered(area):
+	$AnimatedSprite2D.visible = true
+	$AnimatedSprite2D.play("animate")
+	
 	if area.name.contains("Order"):
 		object_type = area.get_node("Object").objectType
 
@@ -72,26 +79,38 @@ func _on_grab_zone_area_entered(area):
 			"ButteryBaguette":
 				object = load("res://food/ButteryBaguette.tscn")
 		location_of_objects.remove_child(area)
-		print(object_type)
+
 		
 	if charge_time <=0:
-		print(area.owner.name) ####this is where i left off at!!!!!
+		grab.play()
 		var my_object = object.instantiate()
 		
-		print(my_object)
+
 		var main = get_tree().current_scene
 		var temp = main.get_node("Ysort")
 		temp.add_child(my_object)
 	#	my_object.global_position = self.global_position
-		print(my_object.name)
+
 		area._on_grab_area_entered(my_object)
-		charge_time = 3
+		charge_time = 3.0
 	
 
 
 func _on_timer_timeout():
-	charge_time -= 1
+	charge_time -= 1.0
 	
+#	while true:
+#		if $Control/ChargeBar.value > 100:
+#			break
+#		if ($Control/ChargeBar.value/100) <= ( max_charge_time - charge_time/max_charge_time):
+#			print()
+#
+#			$Control/ChargeBar.value += 1
+##
+##			print("charging")
+#
+#			print($Control/ChargeBar.value, " ", 1.0/max_charge_time)
+
 
 
 func _on_charge_zone_area_entered(area):
@@ -102,4 +121,4 @@ func _on_charge_zone_area_entered(area):
 func _on_charge_zone_area_exited(area):
 	$Timer.stop()
 	print("charging stopped")
-	
+	$AnimatedSprite2D.visible = false

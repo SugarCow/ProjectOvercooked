@@ -3,6 +3,7 @@ extends Node2D
 var time_elapsed = 0
 @onready var customer = load("res://Customer.tscn")
 @onready var main = get_tree().current_scene
+@onready var enter = $AudioStreamPlayer2D
 # Called when the node enters the scene tree for the first time.
 
 
@@ -18,6 +19,7 @@ func _on_timer_timeout():
 
 
 func spawn_customer():
+	enter.play()
 	var new_customer = customer.instantiate()
 	main.get_node("Ysort").add_child(new_customer)
 	new_customer.global_position = self.global_position
