@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cuw6jdpun825b"]
+[gd_scene load_steps=57 format=3 uid="uid://cuw6jdpun825b"]
 
 [ext_resource type="Script" path="res://StartScreen.gd" id="1_v2d32"]
 [ext_resource type="Texture2D" uid="uid://dvulbntciqacu" path="res://assets/overcookedAssets/startScreen/Kitchen1.png" id="2_884rh"]
@@ -37,6 +37,23 @@
 [ext_resource type="Texture2D" uid="uid://c7a83iu4cnw8v" path="res://assets/overcookedAssets/PlayButton/PlayButton1.png" id="35_aur73"]
 [ext_resource type="Texture2D" uid="uid://dmd01mb3su36s" path="res://assets/overcookedAssets/settingsButton/SettingsButton1.png" id="36_mqcj6"]
 [ext_resource type="Texture2D" uid="uid://bc1pyp5w2yv46" path="res://assets/overcookedAssets/quitButton/QuitButton1.png" id="37_4y15y"]
+[ext_resource type="Texture2D" uid="uid://c31fx5sonw8nm" path="res://assets/overcookedAssets/startInstruction/StartInstuction1.png" id="38_w715c"]
+[ext_resource type="Texture2D" uid="uid://mj6peolkjvyu" path="res://assets/overcookedAssets/startInstruction/StartInstuction2.png" id="39_xrlur"]
+[ext_resource type="Texture2D" uid="uid://b2gyb3txqdjiw" path="res://assets/overcookedAssets/startInstruction/StartInstuction3.png" id="40_ce7u0"]
+[ext_resource type="Texture2D" uid="uid://bbpouhyb0auey" path="res://assets/overcookedAssets/startInstruction/StartInstuction4.png" id="41_uyiub"]
+[ext_resource type="Texture2D" uid="uid://r7dmaydqhn3f" path="res://assets/overcookedAssets/startInstruction/StartInstuction5.png" id="42_i7obk"]
+[ext_resource type="Texture2D" uid="uid://b27rage6xxwie" path="res://assets/overcookedAssets/startInstruction/StartInstuction6.png" id="43_bsiqs"]
+[ext_resource type="Texture2D" uid="uid://bgm2f0nuodf26" path="res://assets/overcookedAssets/startInstruction/StartInstuction7.png" id="44_c5wd7"]
+[ext_resource type="Texture2D" uid="uid://c1rcl4ng25p20" path="res://assets/overcookedAssets/startInstruction/StartInstuction8.png" id="45_7abxl"]
+[ext_resource type="Texture2D" uid="uid://dpv0ts735spm7" path="res://assets/overcookedAssets/startInstruction/StartInstuction9.png" id="46_sb18x"]
+[ext_resource type="Texture2D" uid="uid://dqhv8ehlcftmv" path="res://assets/overcookedAssets/startInstruction/StartInstuction10.png" id="47_o5chs"]
+[ext_resource type="Texture2D" uid="uid://cd8tgoof1yvs3" path="res://assets/overcookedAssets/startInstruction/StartInstuction14.png" id="48_28wjw"]
+[ext_resource type="Texture2D" uid="uid://bw6ru2g6151xg" path="res://assets/overcookedAssets/startInstruction/StartInstuction11.png" id="48_jq2a1"]
+[ext_resource type="Texture2D" uid="uid://camvy3pvrw5qg" path="res://assets/overcookedAssets/startInstruction/StartInstuction12.png" id="49_514lu"]
+[ext_resource type="Texture2D" uid="uid://dapfopmt6udc" path="res://assets/overcookedAssets/startInstruction/StartInstuction15.png" id="49_yeucw"]
+[ext_resource type="Texture2D" uid="uid://dlfo4u5polxri" path="res://assets/overcookedAssets/startInstruction/StartInstuction16.png" id="50_83rd6"]
+[ext_resource type="Texture2D" uid="uid://id1tx8lid7vy" path="res://assets/overcookedAssets/startInstruction/StartInstuction13.png" id="50_oksfu"]
+[ext_resource type="Texture2D" uid="uid://ewa2qshgsh65" path="res://assets/overcookedAssets/startInstruction/StartInstuction17.png" id="51_kcf63"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sof7m"]
 animations = [{
@@ -142,6 +159,110 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_e8dgx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_w715c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_xrlur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ce7u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_uyiub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_i7obk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_bsiqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_c5wd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_7abxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_sb18x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_o5chs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_28wjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_yeucw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_83rd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_kcf63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_yeucw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_83rd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_kcf63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_jq2a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_514lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_oksfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_514lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_jq2a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_o5chs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_sb18x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_7abxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_c5wd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_bsiqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_i7obk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_uyiub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ce7u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_xrlur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_w715c")
+}],
+"loop": true,
+"name": &"animate",
+"speed": 12.0
+}]
+
 [node name="StartScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -182,3 +303,9 @@ texture = ExtResource("36_mqcj6")
 [node name="QuitButton1" type="Sprite2D" parent="HBoxContainer"]
 position = Vector2(154, 18)
 texture = ExtResource("37_4y15y")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 81)
+sprite_frames = SubResource("SpriteFrames_e8dgx")
+animation = &"animate"
+frame_progress = 0.561614

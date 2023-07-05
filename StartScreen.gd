@@ -4,6 +4,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play()
+	$AnimatedSprite2D2.play("animate")
 	pass # Replace with function body.
 
 
