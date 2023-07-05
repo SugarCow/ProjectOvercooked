@@ -1,0 +1,184 @@
+[gd_scene load_steps=39 format=3 uid="uid://cuw6jdpun825b"]
+
+[ext_resource type="Script" path="res://StartScreen.gd" id="1_v2d32"]
+[ext_resource type="Texture2D" uid="uid://dvulbntciqacu" path="res://assets/overcookedAssets/startScreen/Kitchen1.png" id="2_884rh"]
+[ext_resource type="Texture2D" uid="uid://5fm8lrvtlhnl" path="res://assets/overcookedAssets/startScreen/Kitchen2.png" id="3_lnmvm"]
+[ext_resource type="Texture2D" uid="uid://bhkucy0p0cahe" path="res://assets/overcookedAssets/startScreen/Kitchen3.png" id="4_75ddt"]
+[ext_resource type="Texture2D" uid="uid://bfj2bmun5cdd3" path="res://assets/overcookedAssets/startScreen/Kitchen4.png" id="5_e8pd6"]
+[ext_resource type="Texture2D" uid="uid://bufta566fojbu" path="res://assets/overcookedAssets/startScreen/Kitchen5.png" id="6_i48eh"]
+[ext_resource type="Texture2D" uid="uid://7w8pascywrdu" path="res://assets/overcookedAssets/startScreen/Kitchen6.png" id="7_ih2s7"]
+[ext_resource type="Texture2D" uid="uid://d8tf38bc1e65" path="res://assets/overcookedAssets/startScreen/Kitchen7.png" id="8_t2wju"]
+[ext_resource type="Texture2D" uid="uid://ckn4vpe3ofbr6" path="res://assets/overcookedAssets/startScreen/Kitchen8.png" id="9_xkwko"]
+[ext_resource type="Texture2D" uid="uid://jllf5iq82383" path="res://assets/overcookedAssets/startScreen/Kitchen9.png" id="10_7ubbq"]
+[ext_resource type="Texture2D" uid="uid://bbd4glls7c0dt" path="res://assets/overcookedAssets/startScreen/Kitchen10.png" id="11_vu5h0"]
+[ext_resource type="Texture2D" uid="uid://4hb03cjeylxb" path="res://assets/overcookedAssets/startScreen/Kitchen11.png" id="12_dkivr"]
+[ext_resource type="Texture2D" uid="uid://c4yagshltie0v" path="res://assets/overcookedAssets/startScreen/Kitchen12.png" id="13_0xf2c"]
+[ext_resource type="Texture2D" uid="uid://s74igqet52gm" path="res://assets/overcookedAssets/startScreen/Kitchen13.png" id="14_wcvbd"]
+[ext_resource type="Texture2D" uid="uid://b6t1ujm0fuefo" path="res://assets/overcookedAssets/startScreen/Kitchen14.png" id="15_qtyrc"]
+[ext_resource type="Texture2D" uid="uid://doyrbml3pi37d" path="res://assets/overcookedAssets/startScreen/Kitchen15.png" id="16_odkwo"]
+[ext_resource type="Texture2D" uid="uid://dtdbjryv7oom5" path="res://assets/overcookedAssets/startScreen/Kitchen16.png" id="17_sauar"]
+[ext_resource type="Texture2D" uid="uid://dh1vq2fnnome5" path="res://assets/overcookedAssets/startScreen/Kitchen17.png" id="18_yj1kp"]
+[ext_resource type="Texture2D" uid="uid://bhb2qgym5djct" path="res://assets/overcookedAssets/startScreen/Kitchen18.png" id="19_640vx"]
+[ext_resource type="Texture2D" uid="uid://bon8jgcmg7t67" path="res://assets/overcookedAssets/startScreen/Kitchen19.png" id="20_irure"]
+[ext_resource type="Texture2D" uid="uid://cayxi3i1tb8c2" path="res://assets/overcookedAssets/startScreen/Kitchen20.png" id="21_8hdvx"]
+[ext_resource type="Texture2D" uid="uid://dm8i2ujxm8pk1" path="res://assets/overcookedAssets/startScreen/Kitchen21.png" id="22_m3kru"]
+[ext_resource type="Texture2D" uid="uid://d3utwt85w7i6a" path="res://assets/overcookedAssets/startScreen/Kitchen22.png" id="23_lm2k2"]
+[ext_resource type="Texture2D" uid="uid://c25f2hfawq567" path="res://assets/overcookedAssets/startScreen/Kitchen23.png" id="24_vw1ko"]
+[ext_resource type="Texture2D" uid="uid://dyl5btggi3dk2" path="res://assets/overcookedAssets/startScreen/Kitchen24.png" id="25_uedbi"]
+[ext_resource type="Texture2D" uid="uid://dvlyo267381ta" path="res://assets/overcookedAssets/startScreen/Kitchen25.png" id="26_vqpkm"]
+[ext_resource type="Texture2D" uid="uid://4sasfs4d7wio" path="res://assets/overcookedAssets/startScreen/Kitchen26.png" id="27_lfe1o"]
+[ext_resource type="Texture2D" uid="uid://11gnc3f2v3e0" path="res://assets/overcookedAssets/startScreen/Kitchen27.png" id="28_vmvgj"]
+[ext_resource type="Texture2D" uid="uid://c0vjrjvfheodh" path="res://assets/overcookedAssets/startScreen/Kitchen28.png" id="29_wydpc"]
+[ext_resource type="Texture2D" uid="uid://ilvh7owrrx8x" path="res://assets/overcookedAssets/startScreen/Kitchen29.png" id="30_ym15y"]
+[ext_resource type="Texture2D" uid="uid://dl7rnqvyf4a25" path="res://assets/overcookedAssets/startScreen/Kitchen30.png" id="31_entak"]
+[ext_resource type="Texture2D" uid="uid://bbqwh72507unt" path="res://assets/overcookedAssets/startScreen/Kitchen31.png" id="32_6xs8s"]
+[ext_resource type="Texture2D" uid="uid://icolahnh1524" path="res://assets/overcookedAssets/startScreen/Kitchen32.png" id="33_n8oxo"]
+[ext_resource type="Texture2D" uid="uid://cos1cbewgmoaw" path="res://assets/overcookedAssets/NightBlossomPictureFrame.png" id="34_ajj8x"]
+[ext_resource type="Texture2D" uid="uid://c7a83iu4cnw8v" path="res://assets/overcookedAssets/PlayButton/PlayButton1.png" id="35_aur73"]
+[ext_resource type="Texture2D" uid="uid://dmd01mb3su36s" path="res://assets/overcookedAssets/settingsButton/SettingsButton1.png" id="36_mqcj6"]
+[ext_resource type="Texture2D" uid="uid://bc1pyp5w2yv46" path="res://assets/overcookedAssets/quitButton/QuitButton1.png" id="37_4y15y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sof7m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_884rh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lnmvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_75ddt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e8pd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i48eh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ih2s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t2wju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xkwko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7ubbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vu5h0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dkivr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0xf2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wcvbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qtyrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_odkwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_sauar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_yj1kp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_640vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_irure")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8hdvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_m3kru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lm2k2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vw1ko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_uedbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_vqpkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lfe1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vmvgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_wydpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ym15y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_entak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_6xs8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_n8oxo")
+}],
+"loop": true,
+"name": &"animate",
+"speed": 5.0
+}]
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v2d32")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sof7m")
+animation = &"animate"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="NightBlossomPictureFrame" type="Sprite2D" parent="."]
+position = Vector2(-77, -96)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("34_ajj8x")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -47.0
+offset_right = 15.0
+offset_bottom = -7.00001
+scale = Vector2(0.1, 0.116)
+alignment = 1
+
+[node name="PlayButton1" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(22, 19)
+texture = ExtResource("35_aur73")
+
+[node name="SettingsButton1" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(96, 18)
+texture = ExtResource("36_mqcj6")
+
+[node name="QuitButton1" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(154, 18)
+texture = ExtResource("37_4y15y")
