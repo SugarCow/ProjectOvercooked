@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cmdnf537ydrqe"]
+[gd_scene load_steps=38 format=3 uid="uid://cmdnf537ydrqe"]
 
 [ext_resource type="Texture2D" uid="uid://yfuv4vvteq6e" path="res://assets/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_3m1uf"]
 [ext_resource type="Script" path="res://world.gd" id="1_5tvjk"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://c2wlhv6x5iryg" path="res://assets/overcookedAssets/MenuStove/MenuStove11.png" id="28_qp016"]
 [ext_resource type="Texture2D" uid="uid://b1d7umtqryhk0" path="res://assets/overcookedAssets/MenuStove/MenuStove12.png" id="29_vn3o3"]
 [ext_resource type="Texture2D" uid="uid://bjvwmugpmjgoi" path="res://assets/overcookedAssets/MenuStove/MenuStove13.png" id="30_hlxqw"]
+[ext_resource type="PackedScene" uid="uid://jj11lb7cg2mk" path="res://money.tscn" id="33_7otc4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ox10s"]
 animations = [{
@@ -440,3 +441,10 @@ position = Vector2(-99, 114)
 
 [node name="ExitSpot" parent="." instance=ExtResource("11_vgak2")]
 position = Vector2(-22, 70)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-61, -83)
+zoom = Vector2(0.85, 0.85)
+
+[node name="Money" parent="." instance=ExtResource("33_7otc4")]
+position = Vector2(-192, -69)

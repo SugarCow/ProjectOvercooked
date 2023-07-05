@@ -27,6 +27,7 @@ var holding_plate = false
 var current_order
 var object
 var mouse_left_down: bool = false
+var coin: float = 0.0
 # Called when the node enters the scene tree for the first time.
 enum { 
 	WALK,
@@ -239,12 +240,12 @@ func grab_object(area):
 		my_order.global_position = $pivotPoint/Grab/dropOffPoint.global_position
 		grab_object(my_order)
 		
-
+	elif area.name == "Money":
+		$MoneySound.play()
+		area.queue_free()
 	else:
 		my_object = area
-		
 
-		
 		if my_object.get_parent().name !=  "FoodCrate":
 			my_object.get_parent().remove_child(my_object)
 

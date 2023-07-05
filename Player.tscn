@@ -1,4 +1,4 @@
-[gd_scene load_steps=195 format=3 uid="uid://cjivxvu7256ui"]
+[gd_scene load_steps=196 format=3 uid="uid://cjivxvu7256ui"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_6nk1q"]
 [ext_resource type="Texture2D" uid="uid://ch0st2na5jh74" path="res://assets/overcookedAssets/ChefNinaIdleDown-export.png" id="2_33u1c"]
@@ -84,6 +84,7 @@
 [ext_resource type="Texture2D" uid="uid://7pwvg6niuq3a" path="res://assets/overcookedAssets/holdItemWalkUp/ChefNinawalkUp6.png" id="29_f5fkd"]
 [ext_resource type="Texture2D" uid="uid://cu6jvah3drpen" path="res://assets/overcookedAssets/plateWalkUp/ChefNinaPlateWalkUp6.png" id="29_kwhn3"]
 [ext_resource type="Texture2D" uid="uid://d3iosb3e5280a" path="res://assets/overcookedAssets/PlayerHoldItem1.png" id="84_885yu"]
+[ext_resource type="AudioStream" uid="uid://k2tnrmxm2ab1" path="res://sound/coin.mp3" id="85_3yhho"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g2srg"]
 load_path = "res://.godot/imported/ChefNinaIdleLeft.png-5b0731918fe4ca320457544c571da429.ctex"
@@ -2511,7 +2512,7 @@ position = Vector2(-1, 9)
 rotation = 1.5708
 
 [node name="Grab" type="Area2D" parent="pivotPoint"]
-collision_mask = 130
+collision_mask = 2178
 
 [node name="GrabBox" type="CollisionShape2D" parent="pivotPoint/Grab"]
 position = Vector2(10, -4.76837e-07)
@@ -2535,6 +2536,9 @@ shape = SubResource("RectangleShape2D_vkqel")
 
 [node name="disable_grab_timer" type="Timer" parent="."]
 wait_time = 0.08
+
+[node name="MoneySound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("85_3yhho")
 
 [connection signal="area_entered" from="pivotPoint/Grab" to="." method="_on_grab_area_entered"]
 [connection signal="area_entered" from="pivotPoint/ChargerZone" to="." method="_on_charger_zone_area_entered"]

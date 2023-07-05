@@ -46,8 +46,10 @@ var have_order = false
 var wait_time: float = 30
 var patience: String
 var begin_waiting = false
+var money
+var leave_money = false
 func _ready():
-	
+	money = load("res://money.tscn")
 	my_order = list_of_pastries.pick_random()
 	match my_order:
 		"ButterScotchPie": 
@@ -129,6 +131,11 @@ func _physics_process(delta):
 		
 		
 func leave(patience_level):
+	if leave_money == false:
+		var my_money = money.instantiate()
+		main.get_node("Ysort").add_child(my_money)
+		my_money.global_position = $TurnInArea/TurnInBox.global_position - Vector2(0,5)
+		leave_money = true
 	match patience_level:
 		"very happy":
 			$WaitBar.play("leave_very_happy")
@@ -189,12 +196,15 @@ func _on_turn_in_area_area_entered(area):
 		area.queue_free()
 		leave(patience)
 		states = LEAVE
+		$TurnInArea/TurnInBox.disabled = true
 	else: 
+		print(area.name)
 		wrong.play()
 		patience = "very mad"
 		area.queue_free()
 		leave(patience)
 		states = LEAVE
+		$TurnInArea/TurnInBox.disabled = true
 
 
 

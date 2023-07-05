@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=3 uid="uid://jj11lb7cg2mk"]
+
+[ext_resource type="Texture2D" uid="uid://bspjx8p7kqfkg" path="res://assets/overcookedAssets/DollarSign/DollarSign1.png" id="1_lpb8n"]
+[ext_resource type="Script" path="res://money.gd" id="1_p27dd"]
+[ext_resource type="Script" path="res://object.gd" id="2_dqtk6"]
+[ext_resource type="Texture2D" uid="uid://cj2q2gabuy53d" path="res://assets/overcookedAssets/DollarSign/DollarSign2.png" id="2_yxoij"]
+[ext_resource type="Texture2D" uid="uid://bowevf8gq8ioy" path="res://assets/overcookedAssets/DollarSign/DollarSign3.png" id="3_m7a5f"]
+[ext_resource type="Texture2D" uid="uid://btlanwojxpfol" path="res://assets/overcookedAssets/DollarSign/DollarSign4.png" id="4_avkrq"]
+[ext_resource type="Texture2D" uid="uid://dtvtm7if3p6yg" path="res://assets/overcookedAssets/DollarSign/DollarSign5.png" id="5_uy1v7"]
+[ext_resource type="Texture2D" uid="uid://b8k2nktv0r21c" path="res://assets/overcookedAssets/DollarSign/DollarSign6.png" id="6_igrdg"]
+[ext_resource type="Texture2D" uid="uid://cnt7jnvxaoebd" path="res://assets/overcookedAssets/money.png" id="7_mdv6w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsii8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lpb8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yxoij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m7a5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_avkrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uy1v7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_igrdg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8310g"]
+height = 22.0
+
+[node name="Money" type="Area2D"]
+collision_layer = 2048
+collision_mask = 8
+script = ExtResource("1_p27dd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -24)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_hsii8")
+frame_progress = 0.618672
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_mdv6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.56907
+scale = Vector2(0.681123, 0.854127)
+shape = SubResource("CapsuleShape2D_8310g")
+
+[node name="Object" type="Node2D" parent="."]
+position = Vector2(8, 19)
+script = ExtResource("2_dqtk6")
+objectType = "Money"
+
+[node name="CookTime" type="Timer" parent="Object"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Object/CookTime" to="Object" method="_on_cook_time_timeout"]

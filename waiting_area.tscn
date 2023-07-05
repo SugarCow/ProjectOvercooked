@@ -1,18 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cf48tc3kvvydl"]
+[gd_scene load_steps=5 format=3 uid="uid://cf48tc3kvvydl"]
 
-[ext_resource type="Texture2D" uid="uid://dut0dwgmy21t3" path="res://assets/overcookedAssets/leftCounter.png" id="1_o6ttd"]
 [ext_resource type="Texture2D" uid="uid://o7pgm8h2mhwv" path="res://assets/overcookedAssets/middleCounter.png" id="2_xml7g"]
 [ext_resource type="Texture2D" uid="uid://rfqgk2uw6fr6" path="res://assets/overcookedAssets/rightCounter.png" id="3_2l4x0"]
 [ext_resource type="PackedScene" uid="uid://bexha0qchx7wq" path="res://wating_spot.tscn" id="4_jcytm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_am2x3"]
-size = Vector2(255.5, 27.49)
+size = Vector2(170, 27.49)
 
 [node name="WaitingArea" type="StaticBody2D"]
-
-[node name="LeftCounter" type="Sprite2D" parent="."]
-position = Vector2(38.5, 12.49)
-texture = ExtResource("1_o6ttd")
 
 [node name="MiddleCounter" type="Sprite2D" parent="."]
 position = Vector2(123, 12.49)
@@ -24,17 +19,8 @@ position = Vector2(205.053, 10)
 texture = ExtResource("3_2l4x0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(123.25, 15.745)
+position = Vector2(166, 15.745)
 shape = SubResource("RectangleShape2D_am2x3")
-
-[node name="WatingSpot" parent="." instance=ExtResource("4_jcytm")]
-position = Vector2(15, 43)
-
-[node name="WatingSpot2" parent="." instance=ExtResource("4_jcytm")]
-position = Vector2(45, 44)
-
-[node name="WatingSpot3" parent="." instance=ExtResource("4_jcytm")]
-position = Vector2(77, 44)
 
 [node name="WatingSpot4" parent="." instance=ExtResource("4_jcytm")]
 position = Vector2(108, 44)
@@ -44,9 +30,3 @@ position = Vector2(139, 44)
 
 [node name="WatingSpot6" parent="." instance=ExtResource("4_jcytm")]
 position = Vector2(170, 45)
-
-[node name="WatingSpot7" parent="." instance=ExtResource("4_jcytm")]
-position = Vector2(202, 45)
-
-[node name="WatingSpot8" parent="." instance=ExtResource("4_jcytm")]
-position = Vector2(236, 45)
