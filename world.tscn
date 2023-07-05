@@ -1,8 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://cmdnf537ydrqe"]
+[gd_scene load_steps=77 format=3 uid="uid://cmdnf537ydrqe"]
 
 [ext_resource type="Texture2D" uid="uid://yfuv4vvteq6e" path="res://assets/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_3m1uf"]
 [ext_resource type="Script" path="res://world.gd" id="1_5tvjk"]
 [ext_resource type="PackedScene" uid="uid://cjivxvu7256ui" path="res://Player.tscn" id="1_xffki"]
+[ext_resource type="Texture2D" uid="uid://bog5gfmh27hip" path="res://assets/overcookedAssets/prepTable.png" id="3_yopan"]
 [ext_resource type="Texture2D" uid="uid://sesrbo7rb08d" path="res://assets/overcookedAssets/NewsPaper.png" id="7_g4lv4"]
 [ext_resource type="PackedScene" uid="uid://5irj60s78p6n" path="res://prep_table.tscn" id="8_iodrk"]
 [ext_resource type="Texture2D" uid="uid://d3kpmh1qlpi6m" path="res://assets/overcookedAssets/mug/Mug1.png" id="8_ydlot"]
@@ -20,10 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://cw72ykcl3igf0" path="res://assets/overcookedAssets/mug/Mug8.png" id="15_w27co"]
 [ext_resource type="Texture2D" uid="uid://c75r04acb8fjn" path="res://assets/overcookedAssets/napkin.png" id="16_02koy"]
 [ext_resource type="Texture2D" uid="uid://o78f8u4pngh0" path="res://assets/overcookedAssets/MenuStove/MenuStove1.png" id="18_2qksp"]
+[ext_resource type="Texture2D" uid="uid://dknwm0exk2d6k" path="res://assets/overcookedAssets/wallpaperSpriteSheet.png" id="18_rbqwb"]
 [ext_resource type="Texture2D" uid="uid://dgs4kcwkm4y1s" path="res://assets/overcookedAssets/MenuStove/MenuStove2.png" id="19_h714b"]
 [ext_resource type="Texture2D" uid="uid://cqlmfmra1k0pe" path="res://assets/overcookedAssets/MenuStove/MenuStove3.png" id="20_2jnn7"]
 [ext_resource type="Texture2D" uid="uid://cew35kok28m4y" path="res://assets/overcookedAssets/MenuStove/MenuStove4.png" id="21_62gff"]
 [ext_resource type="Texture2D" uid="uid://cdit2uv2lfd74" path="res://assets/overcookedAssets/MenuStove/MenuStove5.png" id="22_4yyt0"]
+[ext_resource type="Texture2D" uid="uid://2des4l1mb2nv" path="res://assets/overcookedAssets/menu board.png" id="23_0c7m3"]
 [ext_resource type="Texture2D" uid="uid://c3nstqtrv1efm" path="res://assets/overcookedAssets/MenuStove/MenuStove6.png" id="23_v2vhl"]
 [ext_resource type="Texture2D" uid="uid://b7m3o44qcddjn" path="res://assets/overcookedAssets/MenuStove/MenuStove7.png" id="24_x36ob"]
 [ext_resource type="Texture2D" uid="uid://4stm4mabac4n" path="res://assets/overcookedAssets/MenuStove/MenuStove8.png" id="25_tbvmj"]
@@ -32,7 +35,42 @@
 [ext_resource type="Texture2D" uid="uid://c2wlhv6x5iryg" path="res://assets/overcookedAssets/MenuStove/MenuStove11.png" id="28_qp016"]
 [ext_resource type="Texture2D" uid="uid://b1d7umtqryhk0" path="res://assets/overcookedAssets/MenuStove/MenuStove12.png" id="29_vn3o3"]
 [ext_resource type="Texture2D" uid="uid://bjvwmugpmjgoi" path="res://assets/overcookedAssets/MenuStove/MenuStove13.png" id="30_hlxqw"]
-[ext_resource type="PackedScene" uid="uid://jj11lb7cg2mk" path="res://money.tscn" id="33_7otc4"]
+[ext_resource type="Texture2D" uid="uid://dene1sfbmfot1" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot1.png" id="37_f0am6"]
+[ext_resource type="Texture2D" uid="uid://83rad3opu36p" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot2.png" id="38_eq0er"]
+[ext_resource type="Texture2D" uid="uid://ca4yvjny657fm" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot3.png" id="39_cm3j5"]
+[ext_resource type="Texture2D" uid="uid://76glrlkix6cj" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot4.png" id="40_yet0u"]
+[ext_resource type="Texture2D" uid="uid://frdrw0l2ykue" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot5.png" id="41_1qhir"]
+[ext_resource type="Texture2D" uid="uid://botiesrrjihka" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot6.png" id="42_es275"]
+[ext_resource type="Texture2D" uid="uid://cixnnib0myk3h" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot7.png" id="43_ys0pi"]
+[ext_resource type="Texture2D" uid="uid://djwsfydepm1lu" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot8.png" id="44_0sshb"]
+[ext_resource type="Texture2D" uid="uid://bp1cbei8eqtb2" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot9.png" id="45_ypj2d"]
+[ext_resource type="Texture2D" uid="uid://biswo3pyi6lq5" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot10.png" id="46_usg1b"]
+[ext_resource type="Texture2D" uid="uid://cwfmeb4ic07s4" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot11.png" id="47_bw0od"]
+[ext_resource type="Texture2D" uid="uid://bupasnlucw378" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot12.png" id="48_yl4qy"]
+[ext_resource type="Texture2D" uid="uid://ct0u7vnvubahj" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot13.png" id="49_ig87n"]
+[ext_resource type="Texture2D" uid="uid://hbm1qtvf7mcs" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot14.png" id="50_sye2y"]
+[ext_resource type="Texture2D" uid="uid://bpms5sguuoybd" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot15.png" id="51_kc2jw"]
+[ext_resource type="Texture2D" uid="uid://diaqkqnmruyc0" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot16.png" id="52_8qw43"]
+[ext_resource type="Texture2D" uid="uid://bjta5th6rup41" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot17.png" id="53_kk1tv"]
+[ext_resource type="Texture2D" uid="uid://bwv3h2il3hr5y" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot18.png" id="54_uuwyd"]
+[ext_resource type="Texture2D" uid="uid://bfmmcqso431vl" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot19.png" id="55_g1tv6"]
+[ext_resource type="Texture2D" uid="uid://djyt4fd76f76m" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot20.png" id="56_pawe5"]
+[ext_resource type="Texture2D" uid="uid://l0xfokr2a4c4" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot21.png" id="57_va7qb"]
+[ext_resource type="Texture2D" uid="uid://baenlj0si0l48" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot22.png" id="58_218t8"]
+[ext_resource type="Texture2D" uid="uid://db5umhrky8ucu" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot23.png" id="59_cv7bl"]
+[ext_resource type="Texture2D" uid="uid://dyo3ljgsfv6lq" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot24.png" id="60_8glaj"]
+[ext_resource type="Texture2D" uid="uid://chnrl3822dpu8" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot25.png" id="61_n0jd3"]
+[ext_resource type="Texture2D" uid="uid://b50ydbrhhranh" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot26.png" id="62_bedpf"]
+[ext_resource type="Texture2D" uid="uid://xbus3p8pmd8c" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot27.png" id="63_xjeet"]
+[ext_resource type="Texture2D" uid="uid://dchlh027ladbo" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot28.png" id="64_rs7sw"]
+[ext_resource type="Texture2D" uid="uid://cxpejm0udr5nj" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot29.png" id="65_6rear"]
+[ext_resource type="Texture2D" uid="uid://cgspw1lxsdxcf" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot30.png" id="66_c7q54"]
+[ext_resource type="Texture2D" uid="uid://dul4kxodp24ky" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot31.png" id="67_rnffu"]
+[ext_resource type="Texture2D" uid="uid://bych8f0t1kb4w" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot32.png" id="68_qycx4"]
+[ext_resource type="Texture2D" uid="uid://cos1cbewgmoaw" path="res://assets/overcookedAssets/NightBlossomPictureFrame.png" id="69_nv3hv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkd6g"]
+size = Vector2(34, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ox10s"]
 animations = [{
@@ -315,6 +353,22 @@ texture = ExtResource("1_3m1uf")
 [sub_resource type="TileSet" id="TileSet_l484p"]
 sources/0 = SubResource("TileSetAtlasSource_5wnoh")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7myph"]
+texture = ExtResource("18_rbqwb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4h1gy"]
+sources/0 = SubResource("TileSetAtlasSource_7myph")
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ilny7"]
 animations = [{
 "frames": [{
@@ -362,30 +416,144 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_6clxm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_f0am6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_eq0er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_cm3j5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_yet0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_1qhir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_es275")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ys0pi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_0sshb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ypj2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_usg1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_bw0od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_yl4qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_ig87n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_sye2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_kc2jw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_8qw43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_kk1tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_uuwyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_g1tv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_pawe5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_va7qb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_218t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_cv7bl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_8glaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_n0jd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_bedpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_xjeet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rs7sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_6rear")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_c7q54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_rnffu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_qycx4")
+}],
+"loop": true,
+"name": &"animate",
+"speed": 10.0
+}]
+
 [node name="World" type="Node2D"]
-y_sort_enabled = true
 position = Vector2(229, 190)
 script = ExtResource("1_5tvjk")
 
 [node name="Ysort" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(19, 61)
+position = Vector2(7, 51)
 
 [node name="Player" parent="Ysort" instance=ExtResource("1_xffki")]
 y_sort_enabled = true
 position = Vector2(-137, -145)
 
-[node name="PrepTable" parent="Ysort" instance=ExtResource("8_iodrk")]
+[node name="PrepTable" type="StaticBody2D" parent="Ysort"]
 position = Vector2(-71, -161)
 
-[node name="PrepTable2" parent="Ysort" instance=ExtResource("8_iodrk")]
+[node name="Sprite2D" type="Sprite2D" parent="Ysort/PrepTable"]
+texture = ExtResource("3_yopan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ysort/PrepTable"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_nkd6g")
+
+[node name="PrepTable2" type="StaticBody2D" parent="Ysort"]
 position = Vector2(-34, -161)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ysort/PrepTable2"]
+texture = ExtResource("3_yopan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ysort/PrepTable2"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_nkd6g")
 
 [node name="PrepTable3" parent="Ysort" instance=ExtResource("8_iodrk")]
 position = Vector2(3, -161)
-
-[node name="PrepTable4" parent="Ysort" instance=ExtResource("8_iodrk")]
-position = Vector2(39, -161)
 
 [node name="PrepTable5" parent="Ysort" instance=ExtResource("8_iodrk")]
 position = Vector2(-218, -161)
@@ -400,7 +568,7 @@ position = Vector2(-144, -161)
 position = Vector2(-108, -161)
 
 [node name="TrashCan" parent="Ysort" instance=ExtResource("10_sd7qu")]
-position = Vector2(102, -189)
+position = Vector2(35, -165)
 
 [node name="FoodDisplay" parent="Ysort" instance=ExtResource("10_e8atk")]
 position = Vector2(33, -102)
@@ -424,27 +592,47 @@ position = Vector2(-58, -109)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("16_02koy")
 
-[node name="background" type="TileMap" parent="."]
-position = Vector2(-228, -189)
+[node name="background" type="TileMap" parent="Ysort"]
+position = Vector2(-235, -240)
 tile_set = SubResource("TileSet_l484p")
 format = 2
-layer_0/tile_data = PackedInt32Array(65534, 65536, 13, 131070, 327680, 13, 196606, 327680, 13, 262142, 327680, 13, 327678, 327680, 13, 393214, 327680, 13, 458750, 327680, 13, 524286, 327680, 13, 589822, 327680, 13, 655358, 327680, 13, 65535, 65536, 13, 131071, 327680, 13, 196607, 327680, 13, 262143, 327680, 13, 327679, 327680, 13, 393215, 327680, 13, 458751, 327680, 13, 524287, 327680, 13, 589823, 327680, 13, 655359, 327680, 13, 0, 65536, 13, 65536, 327680, 13, 131072, 327680, 13, 196608, 327680, 13, 262144, 327680, 13, 327680, 327680, 13, 393216, 327680, 13, 458752, 327680, 13, 524288, 327680, 13, 589824, 327680, 13, 1, 65536, 13, 65537, 327680, 13, 131073, 327680, 13, 196609, 327680, 13, 262145, 327680, 13, 327681, 327680, 13, 393217, 327680, 13, 458753, 327680, 13, 524289, 327680, 13, 589825, 327680, 13, 2, 65536, 13, 65538, 327680, 13, 131074, 327680, 13, 196610, 327680, 13, 262146, 327680, 13, 327682, 327680, 13, 393218, 327680, 13, 458754, 327680, 13, 524290, 327680, 13, 589826, 327680, 13, 3, 65536, 13, 65539, 327680, 13, 131075, 327680, 13, 196611, 327680, 13, 262147, 327680, 13, 327683, 327680, 13, 393219, 327680, 13, 458755, 327680, 13, 524291, 327680, 13, 589827, 327680, 13, 4, 65536, 13, 65540, 327680, 13, 131076, 327680, 13, 196612, 327680, 13, 262148, 327680, 13, 327684, 327680, 13, 393220, 327680, 13, 458756, 327680, 13, 524292, 327680, 13, 589828, 327680, 13, 5, 65536, 13, 65541, 327680, 13, 131077, 327680, 13, 196613, 327680, 13, 262149, 327680, 13, 327685, 327680, 13, 393221, 327680, 13, 458757, 327680, 13, 524293, 327680, 13, 589829, 327680, 13, 6, 65536, 13, 65542, 327680, 13, 131078, 327680, 13, 196614, 327680, 13, 262150, 327680, 13, 327686, 327680, 13, 393222, 327680, 13, 458758, 327680, 13, 524294, 327680, 13, 589830, 327680, 13, 7, 65536, 13, 65543, 327680, 13, 131079, 327680, 13, 196615, 327680, 13, 262151, 327680, 13, 327687, 327680, 13, 393223, 327680, 13, 458759, 327680, 13, 524295, 327680, 13, 589831, 327680, 13, 8, 65536, 13, 65544, 327680, 13, 131080, 327680, 13, 196616, 327680, 13, 262152, 327680, 13, 327688, 327680, 13, 393224, 327680, 13, 458760, 327680, 13, 524296, 327680, 13, 589832, 327680, 13, 9, 65536, 13, 65545, 327680, 13, 131081, 327680, 13, 196617, 327680, 13, 262153, 327680, 13, 327689, 327680, 13, 393225, 327680, 13, 458761, 327680, 13, 524297, 327680, 13, 589833, 327680, 13, 10, 65536, 13, 65546, 327680, 13, 131082, 327680, 13, 196618, 327680, 13, 262154, 327680, 13, 327690, 327680, 13, 393226, 327680, 13, 458762, 327680, 13, 524298, 327680, 13, 589834, 327680, 13, 65547, 327680, 13, 131083, 327680, 13, 196619, 327680, 13, 262155, 327680, 13, 327691, 327680, 13, 393227, 327680, 13, 458763, 327680, 13, 524299, 327680, 13, 589835, 327680, 13, 131084, 327680, 13, 196620, 327680, 13, 262156, 327680, 13, 327692, 327680, 13, 393228, 327680, 13, 458764, 327680, 13, 524300, 327680, 13, 589836, 327680, 13, 131085, 327680, 13, 196621, 327680, 13, 262157, 327680, 13, 327693, 327680, 13, 393229, 327680, 13, 458765, 327680, 13, 524301, 327680, 13, 589837, 327680, 13, 131086, 327680, 13, 196622, 327680, 13, 262158, 327680, 13, 327694, 327680, 13, 393230, 327680, 13, 458766, 327680, 13, 524302, 327680, 13, 589838, 327680, 13, 131087, 327680, 13, 196623, 327680, 13, 262159, 327680, 13, 327695, 327680, 13, 393231, 327680, 13, 458767, 327680, 13, 524303, 327680, 13, 589839, 327680, 13, 131088, 327680, 13, 196624, 327680, 13, 262160, 327680, 13, 327696, 327680, 13, 393232, 327680, 13, 458768, 327680, 13, 524304, 327680, 13, 589840, 327680, 13, 131089, 327680, 13, 196625, 327680, 13, 262161, 327680, 13, 327697, 327680, 13, 393233, 327680, 13, 458769, 327680, 13, 524305, 327680, 13, 589841, 327680, 13, 65554, 327680, 13, 131090, 327680, 13, 196626, 327680, 13, 262162, 327680, 13, 327698, 327680, 13, 393234, 327680, 13, 458770, 327680, 13, 524306, 327680, 13, 589842, 327680, 13, 19, 65536, 13, 65555, 327680, 13, 131091, 327680, 13, 196627, 327680, 13, 262163, 327680, 13, 327699, 327680, 13, 393235, 327680, 13, 458771, 327680, 13, 524307, 327680, 13, 589843, 327680, 13, 20, 65536, 13, 65556, 327680, 13, 131092, 327680, 13, 196628, 327680, 13, 262164, 327680, 13, 327700, 327680, 13, 393236, 327680, 13, 458772, 327680, 13, 524308, 327680, 13, 589844, 327680, 13, 21, 65536, 13, 65557, 327680, 13, 131093, 327680, 13, 196629, 327680, 13, 262165, 327680, 13, 327701, 327680, 13, 393237, 327680, 13, 458773, 327680, 13, 524309, 327680, 13, 589845, 327680, 13, 131069, 262144, 13, 196605, 262144, 13, 262141, 262144, 13, 327677, 262144, 13, 393213, 262144, 13, 458749, 262144, 13, 524285, 262144, 13, 589821, 262144, 13, 655357, 262144, 13, 22, 131072, 13, 65558, 393216, 13, 131094, 393216, 13, 196630, 393216, 13, 262166, 393216, 13, 327702, 393216, 13, 393238, 393216, 13, 458774, 393216, 13, 524310, 393216, 13, 589846, 393216, 13, 720894, 327680, 13, 786430, 327680, 13, 720895, 327680, 13, 786431, 327680, 13, 655360, 327680, 13, 720896, 327680, 13, 655361, 327680, 13, 720897, 327680, 13, 655362, 327680, 13, 720898, 327680, 13, 655363, 327680, 13, 720899, 327680, 13, 655364, 327680, 13, 720900, 327680, 13, 655365, 327680, 13, 720901, 327680, 13, 655366, 327680, 13, 720902, 327680, 13, 655367, 327680, 13, 720903, 327680, 13, 655368, 327680, 13, 720904, 327680, 13, 655369, 327680, 13, 720905, 327680, 13, 655370, 327680, 13, 720906, 327680, 13, 655371, 327680, 13, 720907, 327680, 13, 655372, 327680, 13, 720908, 327680, 13, 655373, 327680, 13, 720909, 327680, 13, 655374, 327680, 13, 720910, 327680, 13, 655375, 327680, 13, 720911, 327680, 13, 655376, 327680, 13, 720912, 327680, 13, 655377, 327680, 13, 720913, 327680, 13, 655378, 327680, 13, 720914, 327680, 13, 655379, 327680, 13, 720915, 327680, 13, 655380, 327680, 13, 720916, 327680, 13, 655381, 327680, 13, 720917, 327680, 13, 720893, 262144, 13, 786429, 262144, 13, 655382, 393216, 13, 720918, 393216, 13, 18, 65536, 13, 17, 65536, 13, 65548, 327680, 13, 11, 65536, 13, 12, 65536, 13, 65553, 327680, 13, 15, 65536, 13, 16, 65536, 13, 65552, 327680, 13, 65551, 327680, 13, 65550, 327680, 13, 65549, 327680, 13, 14, 65536, 13, 13, 65536, 13, 65533, 0, 13, 851966, 327680, 13, 917502, 327680, 13, 851967, 327680, 13, 917503, 327680, 13, 786432, 327680, 13, 851968, 327680, 13, 786433, 327680, 13, 851969, 327680, 13, 786434, 327680, 13, 851970, 327680, 13, 786435, 327680, 13, 851971, 327680, 13, 786436, 327680, 13, 851972, 327680, 13, 786437, 327680, 13, 851973, 327680, 13, 786438, 327680, 13, 851974, 327680, 13, 786439, 327680, 13, 851975, 327680, 13, 786440, 327680, 13, 851976, 327680, 13, 786441, 327680, 13, 851977, 327680, 13, 786442, 327680, 13, 851978, 327680, 13, 786443, 327680, 13, 851979, 327680, 13, 786444, 327680, 13, 851980, 327680, 13, 786445, 327680, 13, 851981, 327680, 13, 786446, 327680, 13, 851982, 327680, 13, 786447, 327680, 13, 851983, 327680, 13, 786448, 327680, 13, 851984, 327680, 13, 786449, 327680, 13, 851985, 327680, 13, 786450, 327680, 13, 851986, 327680, 13, 786451, 327680, 13, 851987, 327680, 13, 786452, 327680, 13, 851988, 327680, 13, 786453, 327680, 13, 851989, 327680, 13, 851965, 262144, 13, 917501, 262144, 13, 786454, 393216, 13, 851990, 393216, 13)
+layer_0/tile_data = PackedInt32Array(131070, 327680, 13, 196606, 327680, 13, 262142, 327680, 13, 327678, 327680, 13, 393214, 327680, 13, 458750, 327680, 13, 524286, 327680, 13, 589822, 327680, 13, 655358, 327680, 13, 131071, 327680, 13, 196607, 327680, 13, 262143, 327680, 13, 327679, 327680, 13, 393215, 327680, 13, 458751, 327680, 13, 524287, 327680, 13, 589823, 327680, 13, 655359, 327680, 13, 65536, 327680, 13, 131072, 327680, 13, 196608, 327680, 13, 262144, 327680, 13, 327680, 327680, 13, 393216, 327680, 13, 458752, 327680, 13, 524288, 327680, 13, 589824, 327680, 13, 65537, 327680, 13, 131073, 327680, 13, 196609, 327680, 13, 262145, 327680, 13, 327681, 327680, 13, 393217, 327680, 13, 458753, 327680, 13, 524289, 327680, 13, 589825, 327680, 13, 65538, 327680, 13, 131074, 327680, 13, 196610, 327680, 13, 262146, 327680, 13, 327682, 327680, 13, 393218, 327680, 13, 458754, 327680, 13, 524290, 327680, 13, 589826, 327680, 13, 65539, 327680, 13, 131075, 327680, 13, 196611, 327680, 13, 262147, 327680, 13, 327683, 327680, 13, 393219, 327680, 13, 458755, 327680, 13, 524291, 327680, 13, 589827, 327680, 13, 65540, 327680, 13, 131076, 327680, 13, 196612, 327680, 13, 262148, 327680, 13, 327684, 327680, 13, 393220, 327680, 13, 458756, 327680, 13, 524292, 327680, 13, 589828, 327680, 13, 65541, 327680, 13, 131077, 327680, 13, 196613, 327680, 13, 262149, 327680, 13, 327685, 327680, 13, 393221, 327680, 13, 458757, 327680, 13, 524293, 327680, 13, 589829, 327680, 13, 65542, 327680, 13, 131078, 327680, 13, 196614, 327680, 13, 262150, 327680, 13, 327686, 327680, 13, 393222, 327680, 13, 458758, 327680, 13, 524294, 327680, 13, 589830, 327680, 13, 65543, 327680, 13, 131079, 327680, 13, 196615, 327680, 13, 262151, 327680, 13, 327687, 327680, 13, 393223, 327680, 13, 458759, 327680, 13, 524295, 327680, 13, 589831, 327680, 13, 65544, 327680, 13, 131080, 327680, 13, 196616, 327680, 13, 262152, 327680, 13, 327688, 327680, 13, 393224, 327680, 13, 458760, 327680, 13, 524296, 327680, 13, 589832, 327680, 13, 65545, 327680, 13, 131081, 327680, 13, 196617, 327680, 13, 262153, 327680, 13, 327689, 327680, 13, 393225, 327680, 13, 458761, 327680, 13, 524297, 327680, 13, 589833, 327680, 13, 65546, 327680, 13, 131082, 327680, 13, 196618, 327680, 13, 262154, 327680, 13, 327690, 327680, 13, 393226, 327680, 13, 458762, 327680, 13, 524298, 327680, 13, 589834, 327680, 13, 65547, 327680, 13, 131083, 327680, 13, 196619, 327680, 13, 262155, 327680, 13, 327691, 327680, 13, 393227, 327680, 13, 458763, 327680, 13, 524299, 327680, 13, 589835, 327680, 13, 131084, 327680, 13, 196620, 327680, 13, 262156, 327680, 13, 327692, 327680, 13, 393228, 327680, 13, 458764, 327680, 13, 524300, 327680, 13, 589836, 327680, 13, 131085, 327680, 13, 196621, 327680, 13, 262157, 327680, 13, 327693, 327680, 13, 393229, 327680, 13, 458765, 327680, 13, 524301, 327680, 13, 589837, 327680, 13, 131086, 327680, 13, 196622, 327680, 13, 262158, 327680, 13, 327694, 327680, 13, 393230, 327680, 13, 458766, 327680, 13, 524302, 327680, 13, 589838, 327680, 13, 131087, 327680, 13, 196623, 327680, 13, 262159, 327680, 13, 327695, 327680, 13, 393231, 327680, 13, 458767, 327680, 13, 524303, 327680, 13, 589839, 327680, 13, 131088, 327680, 13, 196624, 327680, 13, 262160, 327680, 13, 327696, 327680, 13, 393232, 327680, 13, 458768, 327680, 13, 524304, 327680, 13, 589840, 327680, 13, 131089, 327680, 13, 196625, 327680, 13, 262161, 327680, 13, 327697, 327680, 13, 393233, 327680, 13, 458769, 327680, 13, 524305, 327680, 13, 589841, 327680, 13, 65554, 327680, 13, 131090, 327680, 13, 196626, 327680, 13, 262162, 327680, 13, 327698, 327680, 13, 393234, 327680, 13, 458770, 327680, 13, 524306, 327680, 13, 589842, 327680, 13, 65555, 327680, 13, 131091, 327680, 13, 196627, 327680, 13, 262163, 327680, 13, 327699, 327680, 13, 393235, 327680, 13, 458771, 327680, 13, 524307, 327680, 13, 589843, 327680, 13, 327700, 327680, 13, 393236, 327680, 13, 458772, 327680, 13, 524308, 327680, 13, 589844, 327680, 13, 327701, 327680, 13, 393237, 327680, 13, 458773, 327680, 13, 524309, 327680, 13, 589845, 327680, 13, 196605, 262144, 13, 262141, 262144, 13, 327677, 262144, 13, 393213, 262144, 13, 458749, 262144, 13, 524285, 262144, 13, 589821, 262144, 13, 655357, 262144, 13, 327702, 393216, 13, 393238, 393216, 13, 458774, 393216, 13, 524310, 393216, 13, 589846, 393216, 13, 720894, 327680, 13, 786430, 327680, 13, 720895, 327680, 13, 786431, 327680, 13, 655360, 327680, 13, 720896, 327680, 13, 655361, 327680, 13, 720897, 327680, 13, 655362, 327680, 13, 720898, 327680, 13, 655363, 327680, 13, 720899, 327680, 13, 655364, 327680, 13, 720900, 327680, 13, 655365, 327680, 13, 720901, 327680, 13, 655366, 327680, 13, 720902, 327680, 13, 655367, 327680, 13, 720903, 327680, 13, 655368, 327680, 13, 720904, 327680, 13, 655369, 327680, 13, 720905, 327680, 13, 655370, 327680, 13, 720906, 327680, 13, 655371, 327680, 13, 720907, 327680, 13, 655372, 327680, 13, 720908, 327680, 13, 655373, 327680, 13, 720909, 327680, 13, 655374, 327680, 13, 720910, 327680, 13, 655375, 327680, 13, 720911, 327680, 13, 655376, 327680, 13, 720912, 327680, 13, 655377, 327680, 13, 720913, 327680, 13, 655378, 327680, 13, 720914, 327680, 13, 655379, 327680, 13, 720915, 327680, 13, 655380, 327680, 13, 720916, 327680, 13, 655381, 327680, 13, 720917, 327680, 13, 720893, 262144, 13, 786429, 262144, 13, 655382, 393216, 13, 720918, 393216, 13, 65548, 327680, 13, 65553, 327680, 13, 65552, 327680, 13, 65551, 327680, 13, 65550, 327680, 13, 65549, 327680, 13, 851966, 327680, 13, 917502, 327680, 13, 851967, 327680, 13, 917503, 327680, 13, 786432, 327680, 13, 851968, 327680, 13, 786433, 327680, 13, 851969, 327680, 13, 786434, 327680, 13, 851970, 327680, 13, 786435, 327680, 13, 851971, 327680, 13, 786436, 327680, 13, 851972, 327680, 13, 786437, 327680, 13, 851973, 327680, 13, 786438, 327680, 13, 851974, 327680, 13, 786439, 327680, 13, 851975, 327680, 13, 786440, 327680, 13, 851976, 327680, 13, 786441, 327680, 13, 851977, 327680, 13, 786442, 327680, 13, 851978, 327680, 13, 786443, 327680, 13, 851979, 327680, 13, 786444, 327680, 13, 851980, 327680, 13, 786445, 327680, 13, 851981, 327680, 13, 786446, 327680, 13, 851982, 327680, 13, 786447, 327680, 13, 851983, 327680, 13, 786448, 327680, 13, 851984, 327680, 13, 786449, 327680, 13, 851985, 327680, 13, 786450, 327680, 13, 851986, 327680, 13, 786451, 327680, 13, 851987, 327680, 13, 786452, 327680, 13, 851988, 327680, 13, 786453, 327680, 13, 851989, 327680, 13, 851965, 262144, 13, 917501, 262144, 13, 786454, 393216, 13, 851990, 393216, 13)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-54, -99)
+[node name="TileMap" type="TileMap" parent="Ysort"]
+position = Vector2(-235, -240)
+tile_set = SubResource("TileSet_4h1gy")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(131069, 0, 0, 131071, 65536, 0, 65536, 65536, 0, 65537, 65536, 0, 65538, 65536, 0, 65540, 65536, 0, 65541, 65536, 0, 65542, 65536, 0, 65543, 65536, 0, 65544, 65536, 0, 65545, 65536, 0, 65546, 65536, 0, 65547, 65536, 0, 65548, 65536, 0, 65549, 65536, 0, 65550, 65536, 0, 65551, 65536, 0, 65552, 65536, 0, 65553, 65536, 0, 65554, 65536, 0, 65555, 131072, 0, 262141, 0, 2, 262142, 65536, 2, 262143, 65536, 2, 196608, 65536, 2, 196609, 65536, 2, 196610, 65536, 2, 196611, 65536, 2, 196612, 65536, 2, 196613, 65536, 2, 196614, 65536, 2, 196615, 65536, 2, 196616, 65536, 2, 196617, 65536, 2, 196618, 65536, 2, 196619, 65536, 2, 196620, 65536, 2, 196621, 65536, 2, 196622, 65536, 2, 196623, 65536, 2, 196624, 65536, 2, 196625, 65536, 2, 196627, 131072, 2)
+
+[node name="CustomerSpawner" parent="Ysort" instance=ExtResource("10_e33pq")]
+position = Vector2(-106, 63)
+
+[node name="ExitSpot" parent="Ysort" instance=ExtResource("11_vgak2")]
+position = Vector2(-29, 19)
+
+[node name="Camera2D" type="Camera2D" parent="Ysort"]
+position = Vector2(-68, -134)
+zoom = Vector2(0.85, 0.85)
+
+[node name="MenuBoard" type="Sprite2D" parent="Ysort"]
+position = Vector2(-57, -200)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("23_0c7m3")
+
+[node name="Stove" type="AnimatedSprite2D" parent="."]
+position = Vector2(-66, -124)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ilny7")
 animation = &"animate"
 
-[node name="CustomerSpawner" parent="." instance=ExtResource("10_e33pq")]
-position = Vector2(-99, 114)
+[node name="CoffeePot" type="AnimatedSprite2D" parent="."]
+position = Vector2(-27, -125)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_6clxm")
+animation = &"animate"
 
-[node name="ExitSpot" parent="." instance=ExtResource("11_vgak2")]
-position = Vector2(-22, 70)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-61, -83)
-zoom = Vector2(0.85, 0.85)
-
-[node name="Money" parent="." instance=ExtResource("33_7otc4")]
-position = Vector2(-192, -69)
+[node name="NightBlossomPictureFrame" type="Sprite2D" parent="."]
+position = Vector2(-103, -150)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("69_nv3hv")

@@ -131,11 +131,8 @@ func _physics_process(delta):
 		
 		
 func leave(patience_level):
-	if leave_money == false:
-		var my_money = money.instantiate()
-		main.get_node("Ysort").add_child(my_money)
-		my_money.global_position = $TurnInArea/TurnInBox.global_position - Vector2(0,5)
-		leave_money = true
+	$TurnInArea/TurnInBox.disabled = true
+	my_waiting_spot.owner.occupied = false
 	match patience_level:
 		"very happy":
 			$WaitBar.play("leave_very_happy")
@@ -197,6 +194,11 @@ func _on_turn_in_area_area_entered(area):
 		leave(patience)
 		states = LEAVE
 		$TurnInArea/TurnInBox.disabled = true
+		if leave_money == false:
+			var my_money = money.instantiate()
+			main.get_node("Ysort").add_child(my_money)
+			my_money.global_position = $TurnInArea/TurnInBox.global_position - Vector2(0,5)
+			leave_money = true
 	else: 
 		print(area.name)
 		wrong.play()

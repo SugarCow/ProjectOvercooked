@@ -48,7 +48,7 @@ script = ExtResource("1_p27dd")
 position = Vector2(-3, -24)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_hsii8")
-frame_progress = 0.618672
+frame_progress = 0.236526
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
