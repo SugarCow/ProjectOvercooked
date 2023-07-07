@@ -1,6 +1,5 @@
-[gd_scene load_steps=77 format=3 uid="uid://cmdnf537ydrqe"]
+[gd_scene load_steps=51 format=3 uid="uid://cjnxjxkowniau"]
 
-[ext_resource type="Texture2D" uid="uid://yfuv4vvteq6e" path="res://assets/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_3m1uf"]
 [ext_resource type="Script" path="res://world.gd" id="1_5tvjk"]
 [ext_resource type="PackedScene" uid="uid://cjivxvu7256ui" path="res://Player.tscn" id="1_xffki"]
 [ext_resource type="Texture2D" uid="uid://bog5gfmh27hip" path="res://assets/overcookedAssets/prepTable.png" id="3_yopan"]
@@ -20,57 +19,61 @@
 [ext_resource type="Texture2D" uid="uid://bcshmvr1ewrtk" path="res://assets/overcookedAssets/mug/Mug7.png" id="14_y0vi6"]
 [ext_resource type="Texture2D" uid="uid://cw72ykcl3igf0" path="res://assets/overcookedAssets/mug/Mug8.png" id="15_w27co"]
 [ext_resource type="Texture2D" uid="uid://c75r04acb8fjn" path="res://assets/overcookedAssets/napkin.png" id="16_02koy"]
-[ext_resource type="Texture2D" uid="uid://o78f8u4pngh0" path="res://assets/overcookedAssets/MenuStove/MenuStove1.png" id="18_2qksp"]
 [ext_resource type="Texture2D" uid="uid://dknwm0exk2d6k" path="res://assets/overcookedAssets/wallpaperSpriteSheet.png" id="18_rbqwb"]
-[ext_resource type="Texture2D" uid="uid://dgs4kcwkm4y1s" path="res://assets/overcookedAssets/MenuStove/MenuStove2.png" id="19_h714b"]
-[ext_resource type="Texture2D" uid="uid://cqlmfmra1k0pe" path="res://assets/overcookedAssets/MenuStove/MenuStove3.png" id="20_2jnn7"]
-[ext_resource type="Texture2D" uid="uid://cew35kok28m4y" path="res://assets/overcookedAssets/MenuStove/MenuStove4.png" id="21_62gff"]
-[ext_resource type="Texture2D" uid="uid://cdit2uv2lfd74" path="res://assets/overcookedAssets/MenuStove/MenuStove5.png" id="22_4yyt0"]
+[ext_resource type="Texture2D" uid="uid://biadll46mxn1s" path="res://assets/overcookedAssets/CAFETILE.png" id="19_s1ahn"]
+[ext_resource type="PackedScene" uid="uid://cp7pk6x3cq243" path="res://tabletop_animations.tscn" id="20_mdnw7"]
 [ext_resource type="Texture2D" uid="uid://2des4l1mb2nv" path="res://assets/overcookedAssets/menu board.png" id="23_0c7m3"]
-[ext_resource type="Texture2D" uid="uid://c3nstqtrv1efm" path="res://assets/overcookedAssets/MenuStove/MenuStove6.png" id="23_v2vhl"]
-[ext_resource type="Texture2D" uid="uid://b7m3o44qcddjn" path="res://assets/overcookedAssets/MenuStove/MenuStove7.png" id="24_x36ob"]
-[ext_resource type="Texture2D" uid="uid://4stm4mabac4n" path="res://assets/overcookedAssets/MenuStove/MenuStove8.png" id="25_tbvmj"]
-[ext_resource type="Texture2D" uid="uid://mf1almd1ilrs" path="res://assets/overcookedAssets/MenuStove/MenuStove9.png" id="26_uav6w"]
-[ext_resource type="Texture2D" uid="uid://bs6umsmbs2x6q" path="res://assets/overcookedAssets/MenuStove/MenuStove10.png" id="27_p2m63"]
-[ext_resource type="Texture2D" uid="uid://c2wlhv6x5iryg" path="res://assets/overcookedAssets/MenuStove/MenuStove11.png" id="28_qp016"]
-[ext_resource type="Texture2D" uid="uid://b1d7umtqryhk0" path="res://assets/overcookedAssets/MenuStove/MenuStove12.png" id="29_vn3o3"]
-[ext_resource type="Texture2D" uid="uid://bjvwmugpmjgoi" path="res://assets/overcookedAssets/MenuStove/MenuStove13.png" id="30_hlxqw"]
-[ext_resource type="Texture2D" uid="uid://dene1sfbmfot1" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot1.png" id="37_f0am6"]
-[ext_resource type="Texture2D" uid="uid://83rad3opu36p" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot2.png" id="38_eq0er"]
-[ext_resource type="Texture2D" uid="uid://ca4yvjny657fm" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot3.png" id="39_cm3j5"]
-[ext_resource type="Texture2D" uid="uid://76glrlkix6cj" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot4.png" id="40_yet0u"]
-[ext_resource type="Texture2D" uid="uid://frdrw0l2ykue" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot5.png" id="41_1qhir"]
-[ext_resource type="Texture2D" uid="uid://botiesrrjihka" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot6.png" id="42_es275"]
-[ext_resource type="Texture2D" uid="uid://cixnnib0myk3h" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot7.png" id="43_ys0pi"]
-[ext_resource type="Texture2D" uid="uid://djwsfydepm1lu" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot8.png" id="44_0sshb"]
-[ext_resource type="Texture2D" uid="uid://bp1cbei8eqtb2" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot9.png" id="45_ypj2d"]
-[ext_resource type="Texture2D" uid="uid://biswo3pyi6lq5" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot10.png" id="46_usg1b"]
-[ext_resource type="Texture2D" uid="uid://cwfmeb4ic07s4" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot11.png" id="47_bw0od"]
-[ext_resource type="Texture2D" uid="uid://bupasnlucw378" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot12.png" id="48_yl4qy"]
-[ext_resource type="Texture2D" uid="uid://ct0u7vnvubahj" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot13.png" id="49_ig87n"]
-[ext_resource type="Texture2D" uid="uid://hbm1qtvf7mcs" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot14.png" id="50_sye2y"]
-[ext_resource type="Texture2D" uid="uid://bpms5sguuoybd" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot15.png" id="51_kc2jw"]
-[ext_resource type="Texture2D" uid="uid://diaqkqnmruyc0" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot16.png" id="52_8qw43"]
-[ext_resource type="Texture2D" uid="uid://bjta5th6rup41" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot17.png" id="53_kk1tv"]
-[ext_resource type="Texture2D" uid="uid://bwv3h2il3hr5y" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot18.png" id="54_uuwyd"]
-[ext_resource type="Texture2D" uid="uid://bfmmcqso431vl" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot19.png" id="55_g1tv6"]
-[ext_resource type="Texture2D" uid="uid://djyt4fd76f76m" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot20.png" id="56_pawe5"]
-[ext_resource type="Texture2D" uid="uid://l0xfokr2a4c4" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot21.png" id="57_va7qb"]
-[ext_resource type="Texture2D" uid="uid://baenlj0si0l48" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot22.png" id="58_218t8"]
-[ext_resource type="Texture2D" uid="uid://db5umhrky8ucu" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot23.png" id="59_cv7bl"]
-[ext_resource type="Texture2D" uid="uid://dyo3ljgsfv6lq" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot24.png" id="60_8glaj"]
-[ext_resource type="Texture2D" uid="uid://chnrl3822dpu8" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot25.png" id="61_n0jd3"]
-[ext_resource type="Texture2D" uid="uid://b50ydbrhhranh" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot26.png" id="62_bedpf"]
-[ext_resource type="Texture2D" uid="uid://xbus3p8pmd8c" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot27.png" id="63_xjeet"]
-[ext_resource type="Texture2D" uid="uid://dchlh027ladbo" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot28.png" id="64_rs7sw"]
-[ext_resource type="Texture2D" uid="uid://cxpejm0udr5nj" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot29.png" id="65_6rear"]
-[ext_resource type="Texture2D" uid="uid://cgspw1lxsdxcf" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot30.png" id="66_c7q54"]
-[ext_resource type="Texture2D" uid="uid://dul4kxodp24ky" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot31.png" id="67_rnffu"]
-[ext_resource type="Texture2D" uid="uid://bych8f0t1kb4w" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot32.png" id="68_qycx4"]
+[ext_resource type="Texture2D" uid="uid://xib1aw8omg1" path="res://assets/overcookedAssets/Door.png" id="24_v6y3p"]
+[ext_resource type="Texture2D" uid="uid://bbk7nncv3lpw3" path="res://assets/overcookedAssets/honey.png" id="25_gw46y"]
+[ext_resource type="Texture2D" uid="uid://pesprcvwdbqx" path="res://assets/overcookedAssets/jellyBlue.png" id="26_7otyr"]
+[ext_resource type="Texture2D" uid="uid://bas2p31h45nm" path="res://assets/overcookedAssets/jellyGreen.png" id="27_a48r3"]
+[ext_resource type="Texture2D" uid="uid://5ian27jjgbqy" path="res://assets/overcookedAssets/jellyRed.png" id="28_pcw7g"]
+[ext_resource type="Texture2D" uid="uid://4e0ae2ijj6wn" path="res://assets/overcookedAssets/wooden spoon sets.png" id="29_djlry"]
+[ext_resource type="Texture2D" uid="uid://bh5k1y02w33li" path="res://assets/overcookedAssets/shelf.png" id="30_xo0xy"]
+[ext_resource type="Texture2D" uid="uid://j108b11ep0g0" path="res://assets/overcookedAssets/milkcarton/milkcartoon 8.png" id="31_brgy3"]
+[ext_resource type="Texture2D" uid="uid://b6svgnxoyha1x" path="res://assets/overcookedAssets/milkcarton/milkcartoon 1.png" id="32_cnc0d"]
+[ext_resource type="Texture2D" uid="uid://cmhq3rjjioe2k" path="res://assets/overcookedAssets/milkcarton/milkcartoon 2.png" id="33_mr3n0"]
+[ext_resource type="Texture2D" uid="uid://ctn0ydaoncdua" path="res://assets/overcookedAssets/milkcarton/milkcartoon 3.png" id="34_c80rl"]
+[ext_resource type="Texture2D" uid="uid://dripar5s2xicg" path="res://assets/overcookedAssets/FlowerVase2.png" id="35_758k3"]
+[ext_resource type="Texture2D" uid="uid://cgnux7d4265pv" path="res://assets/overcookedAssets/milkcarton/milkcartoon 4.png" id="35_la87l"]
+[ext_resource type="Texture2D" uid="uid://7xc2722a8xt0" path="res://assets/overcookedAssets/milkcarton/milkcartoon 5.png" id="36_dt0ei"]
+[ext_resource type="Texture2D" uid="uid://wbrib7bwmd0k" path="res://assets/overcookedAssets/milkcarton/milkcartoon 6.png" id="37_tn51j"]
+[ext_resource type="Texture2D" uid="uid://dvy8xtruijixd" path="res://assets/overcookedAssets/milkcarton/milkcartoon 7.png" id="38_veygw"]
+[ext_resource type="Texture2D" uid="uid://bdn32hpk1uxw5" path="res://assets/overcookedAssets/FlowerVase4.png" id="39_2dtur"]
+[ext_resource type="Texture2D" uid="uid://cdoe0lukp77o8" path="res://assets/overcookedAssets/FlowerVase.png" id="41_gchie"]
+[ext_resource type="Texture2D" uid="uid://5ah4v2y82hr7" path="res://assets/overcookedAssets/FlowerVase3.png" id="42_ibyam"]
 [ext_resource type="Texture2D" uid="uid://cos1cbewgmoaw" path="res://assets/overcookedAssets/NightBlossomPictureFrame.png" id="69_nv3hv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkd6g"]
-size = Vector2(34, 17)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7myph"]
+texture = ExtResource("18_rbqwb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4h1gy"]
+sources/0 = SubResource("TileSetAtlasSource_7myph")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l4544"]
+texture = ExtResource("19_s1ahn")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tqslv"]
+sources/0 = SubResource("TileSetAtlasSource_l4544")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbfgo"]
+size = Vector2(34, 24.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gw8o"]
+size = Vector2(34, 26.75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ox10s"]
 animations = [{
@@ -104,425 +107,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wnoh"]
-texture = ExtResource("1_3m1uf")
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-12:0/0 = 0
-14:0/0 = 0
-15:0/0 = 0
-16:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-10:1/0 = 0
-11:1/0 = 0
-13:1/0 = 0
-15:1/0 = 0
-16:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-11:2/0 = 0
-13:2/0 = 0
-14:2/0 = 0
-15:2/0 = 0
-16:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-11:3/0 = 0
-12:3/0 = 0
-13:3/0 = 0
-14:3/0 = 0
-15:3/0 = 0
-16:3/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-11:5/0 = 0
-12:5/0 = 0
-13:5/0 = 0
-14:5/0 = 0
-15:5/0 = 0
-16:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-11:6/0 = 0
-12:6/0 = 0
-13:6/0 = 0
-14:6/0 = 0
-15:6/0 = 0
-16:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-9:7/0 = 0
-11:7/0 = 0
-12:7/0 = 0
-13:7/0 = 0
-14:7/0 = 0
-15:7/0 = 0
-16:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-9:8/0 = 0
-11:8/0 = 0
-12:8/0 = 0
-13:8/0 = 0
-14:8/0 = 0
-15:8/0 = 0
-16:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-11:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-15:9/0 = 0
-16:9/0 = 0
-0:10/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-3:10/0 = 0
-7:10/0 = 0
-8:10/0 = 0
-9:10/0 = 0
-11:10/0 = 0
-12:10/0 = 0
-13:10/0 = 0
-14:10/0 = 0
-15:10/0 = 0
-16:10/0 = 0
-0:11/0 = 0
-1:11/0 = 0
-2:11/0 = 0
-3:11/0 = 0
-4:11/0 = 0
-5:11/0 = 0
-6:11/0 = 0
-7:11/0 = 0
-8:11/0 = 0
-9:11/0 = 0
-11:11/0 = 0
-12:11/0 = 0
-13:11/0 = 0
-14:11/0 = 0
-15:11/0 = 0
-16:11/0 = 0
-0:12/0 = 0
-1:12/0 = 0
-2:12/0 = 0
-3:12/0 = 0
-7:12/0 = 0
-8:12/0 = 0
-9:12/0 = 0
-11:12/0 = 0
-12:12/0 = 0
-13:12/0 = 0
-14:12/0 = 0
-15:12/0 = 0
-16:12/0 = 0
-0:13/0 = 0
-1:13/0 = 0
-2:13/0 = 0
-3:13/0 = 0
-4:13/0 = 0
-5:13/0 = 0
-6:13/0 = 0
-7:13/0 = 0
-8:13/0 = 0
-9:13/0 = 0
-11:13/0 = 0
-12:13/0 = 0
-13:13/0 = 0
-0:14/0 = 0
-1:14/0 = 0
-2:14/0 = 0
-3:14/0 = 0
-7:14/0 = 0
-8:14/0 = 0
-9:14/0 = 0
-11:14/0 = 0
-12:14/0 = 0
-13:14/0 = 0
-0:15/0 = 0
-1:15/0 = 0
-2:15/0 = 0
-3:15/0 = 0
-4:15/0 = 0
-5:15/0 = 0
-6:15/0 = 0
-7:15/0 = 0
-8:15/0 = 0
-9:15/0 = 0
-0:16/0 = 0
-1:16/0 = 0
-2:16/0 = 0
-3:16/0 = 0
-7:16/0 = 0
-8:16/0 = 0
-9:16/0 = 0
-0:17/0 = 0
-1:17/0 = 0
-2:17/0 = 0
-3:17/0 = 0
-4:17/0 = 0
-5:17/0 = 0
-6:17/0 = 0
-7:17/0 = 0
-8:17/0 = 0
-9:17/0 = 0
-0:18/0 = 0
-1:18/0 = 0
-2:18/0 = 0
-3:18/0 = 0
-7:18/0 = 0
-8:18/0 = 0
-9:18/0 = 0
-0:19/0 = 0
-1:19/0 = 0
-2:19/0 = 0
-3:19/0 = 0
-4:19/0 = 0
-5:19/0 = 0
-6:19/0 = 0
-7:19/0 = 0
-8:19/0 = 0
-9:19/0 = 0
-0:20/0 = 0
-1:20/0 = 0
-2:20/0 = 0
-3:20/0 = 0
-7:20/0 = 0
-8:20/0 = 0
-9:20/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_l484p"]
-sources/0 = SubResource("TileSetAtlasSource_5wnoh")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7myph"]
-texture = ExtResource("18_rbqwb")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_4h1gy"]
-sources/0 = SubResource("TileSetAtlasSource_7myph")
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ilny7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("18_2qksp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_h714b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_2jnn7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_62gff")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_4yyt0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_v2vhl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_x36ob")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_tbvmj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_uav6w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_p2m63")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_qp016")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_vn3o3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_hlxqw")
-}],
-"loop": true,
-"name": &"animate",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6clxm"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("37_f0am6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_eq0er")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_cm3j5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_yet0u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_1qhir")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_es275")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_ys0pi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_0sshb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_ypj2d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_usg1b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_bw0od")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_yl4qy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_ig87n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("50_sye2y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("51_kc2jw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("52_8qw43")
-}, {
-"duration": 1.0,
-"texture": ExtResource("53_kk1tv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("54_uuwyd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("55_g1tv6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("56_pawe5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("57_va7qb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("58_218t8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_cv7bl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60_8glaj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("61_n0jd3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("62_bedpf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("63_xjeet")
-}, {
-"duration": 1.0,
-"texture": ExtResource("64_rs7sw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65_6rear")
-}, {
-"duration": 1.0,
-"texture": ExtResource("66_c7q54")
-}, {
-"duration": 1.0,
-"texture": ExtResource("67_rnffu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("68_qycx4")
-}],
-"loop": true,
-"name": &"animate",
-"speed": 10.0
-}]
-
 [node name="World" type="Node2D"]
 position = Vector2(229, 190)
 script = ExtResource("1_5tvjk")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-228, -189)
+tile_set = SubResource("TileSet_4h1gy")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(131069, 0, 0, 131071, 65536, 0, 65536, 65536, 0, 65537, 65536, 0, 65538, 65536, 0, 65540, 65536, 0, 65541, 65536, 0, 65542, 65536, 0, 65543, 65536, 0, 65544, 65536, 0, 65545, 65536, 0, 65546, 65536, 0, 65547, 65536, 0, 65548, 65536, 0, 65549, 65536, 0, 65550, 65536, 0, 65551, 65536, 0, 65552, 65536, 0, 65553, 65536, 0, 65554, 65536, 0, 65555, 131072, 0, 262141, 0, 2, 262142, 65536, 2, 262143, 65536, 2, 196608, 65536, 2, 196609, 65536, 2, 196610, 65536, 2, 196611, 65536, 2, 196612, 65536, 2, 196613, 65536, 2, 196614, 65536, 2, 196615, 65536, 2, 196616, 65536, 2, 196617, 65536, 2, 196618, 65536, 2, 196619, 65536, 2, 196620, 65536, 2, 196621, 65536, 2, 196622, 65536, 2, 196623, 65536, 2, 196624, 65536, 2, 196625, 65536, 2, 196627, 131072, 2)
+
+[node name="CafeFloor" type="TileMap" parent="."]
+position = Vector2(7, 51)
+tile_set = SubResource("TileSet_tqslv")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-589842, 65536, 0, -589840, 65536, 0, -589838, 65536, 0, -589836, 65536, 0, -589834, 65536, 0, -589832, 65536, 0, -589830, 65536, 0, -589828, 65536, 0, -589826, 65536, 0, -655360, 65536, 0, -655358, 65536, 0, -655356, 65536, 0, -458770, 65536, 0, -458768, 65536, 0, -458766, 65536, 0, -458764, 65536, 0, -458762, 65536, 0, -458760, 65536, 0, -458758, 65536, 0, -458756, 65536, 0, -458754, 65536, 0, -524288, 65536, 0, -524286, 65536, 0, -524284, 65536, 0, -327698, 65536, 0, -327696, 65536, 0, -327694, 65536, 0, -327692, 65536, 0, -327690, 65536, 0, -327688, 65536, 0, -327686, 65536, 0, -327684, 65536, 0, -327682, 65536, 0, -393216, 65536, 0, -393214, 65536, 0, -393212, 65536, 0, -196626, 0, 0, -196624, 0, 0, -196622, 0, 0, -196620, 0, 0, -196618, 0, 0, -196616, 0, 0, -196614, 0, 0, -196612, 0, 0, -196610, 0, 0, -262144, 0, 0, -262142, 0, 0, -262140, 0, 0, -65554, 0, 0, -65552, 0, 0, -65550, 0, 0, -65548, 0, 0, -65546, 0, 0, -65544, 0, 0, -65542, 0, 0, -65540, 0, 0, -65538, 0, 0, -131072, 0, 0, -131070, 0, 0, -131068, 0, 0, 4, 0, 0, 2, 0, 0, 0, 0, 0, 65534, 0, 0, 65532, 0, 0, 65530, 0, 0, 65528, 0, 0, 65526, 0, 0, 65524, 0, 0, 65522, 0, 0, 65520, 0, 0, 65518, 0, 0)
 
 [node name="Ysort" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -530,17 +131,29 @@ position = Vector2(7, 51)
 
 [node name="Player" parent="Ysort" instance=ExtResource("1_xffki")]
 y_sort_enabled = true
-position = Vector2(-137, -145)
+position = Vector2(-38, -106)
 
 [node name="PrepTable" type="StaticBody2D" parent="Ysort"]
-position = Vector2(-71, -161)
+position = Vector2(-70, -161)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ysort/PrepTable"]
 texture = ExtResource("3_yopan")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ysort/PrepTable"]
 position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_nkd6g")
+scale = Vector2(1.266, 1.266)
+shape = SubResource("RectangleShape2D_lbfgo")
+
+[node name="PrepTable4" type="StaticBody2D" parent="Ysort"]
+position = Vector2(-142, -161)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ysort/PrepTable4"]
+texture = ExtResource("3_yopan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ysort/PrepTable4"]
+position = Vector2(0, 8)
+scale = Vector2(1.266, 1.266)
+shape = SubResource("RectangleShape2D_lbfgo")
 
 [node name="PrepTable2" type="StaticBody2D" parent="Ysort"]
 position = Vector2(-34, -161)
@@ -549,88 +162,146 @@ position = Vector2(-34, -161)
 texture = ExtResource("3_yopan")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ysort/PrepTable2"]
-position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_nkd6g")
+position = Vector2(0, 9.625)
+scale = Vector2(1.05, 1.05)
+shape = SubResource("RectangleShape2D_3gw8o")
 
 [node name="PrepTable3" parent="Ysort" instance=ExtResource("8_iodrk")]
-position = Vector2(3, -161)
-
-[node name="PrepTable5" parent="Ysort" instance=ExtResource("8_iodrk")]
-position = Vector2(-218, -161)
-
-[node name="PrepTable6" parent="Ysort" instance=ExtResource("8_iodrk")]
-position = Vector2(-181, -161)
-
-[node name="PrepTable7" parent="Ysort" instance=ExtResource("8_iodrk")]
-position = Vector2(-144, -161)
+position = Vector2(2, -161)
 
 [node name="PrepTable8" parent="Ysort" instance=ExtResource("8_iodrk")]
-position = Vector2(-108, -161)
+position = Vector2(-106, -161)
 
 [node name="TrashCan" parent="Ysort" instance=ExtResource("10_sd7qu")]
 position = Vector2(35, -165)
 
 [node name="FoodDisplay" parent="Ysort" instance=ExtResource("10_e8atk")]
-position = Vector2(33, -102)
+position = Vector2(31, -94)
 
 [node name="WaitingArea" parent="Ysort" instance=ExtResource("9_1tq4o")]
-position = Vector2(-245, -109.492)
+position = Vector2(-247, -101)
 
 [node name="NewsPaper" type="Sprite2D" parent="Ysort"]
-position = Vector2(-38, -104)
+position = Vector2(-37.6, -94.75)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_g4lv4")
 
 [node name="mug" type="AnimatedSprite2D" parent="Ysort"]
-position = Vector2(-17, -109)
+position = Vector2(-16.6, -99.75)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ox10s")
 animation = &"animate"
 
 [node name="Napkin" type="Sprite2D" parent="Ysort"]
-position = Vector2(-58, -109)
+position = Vector2(-57.6, -99.75)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("16_02koy")
 
-[node name="background" type="TileMap" parent="Ysort"]
-position = Vector2(-235, -240)
-tile_set = SubResource("TileSet_l484p")
-format = 2
-layer_0/tile_data = PackedInt32Array(131070, 327680, 13, 196606, 327680, 13, 262142, 327680, 13, 327678, 327680, 13, 393214, 327680, 13, 458750, 327680, 13, 524286, 327680, 13, 589822, 327680, 13, 655358, 327680, 13, 131071, 327680, 13, 196607, 327680, 13, 262143, 327680, 13, 327679, 327680, 13, 393215, 327680, 13, 458751, 327680, 13, 524287, 327680, 13, 589823, 327680, 13, 655359, 327680, 13, 65536, 327680, 13, 131072, 327680, 13, 196608, 327680, 13, 262144, 327680, 13, 327680, 327680, 13, 393216, 327680, 13, 458752, 327680, 13, 524288, 327680, 13, 589824, 327680, 13, 65537, 327680, 13, 131073, 327680, 13, 196609, 327680, 13, 262145, 327680, 13, 327681, 327680, 13, 393217, 327680, 13, 458753, 327680, 13, 524289, 327680, 13, 589825, 327680, 13, 65538, 327680, 13, 131074, 327680, 13, 196610, 327680, 13, 262146, 327680, 13, 327682, 327680, 13, 393218, 327680, 13, 458754, 327680, 13, 524290, 327680, 13, 589826, 327680, 13, 65539, 327680, 13, 131075, 327680, 13, 196611, 327680, 13, 262147, 327680, 13, 327683, 327680, 13, 393219, 327680, 13, 458755, 327680, 13, 524291, 327680, 13, 589827, 327680, 13, 65540, 327680, 13, 131076, 327680, 13, 196612, 327680, 13, 262148, 327680, 13, 327684, 327680, 13, 393220, 327680, 13, 458756, 327680, 13, 524292, 327680, 13, 589828, 327680, 13, 65541, 327680, 13, 131077, 327680, 13, 196613, 327680, 13, 262149, 327680, 13, 327685, 327680, 13, 393221, 327680, 13, 458757, 327680, 13, 524293, 327680, 13, 589829, 327680, 13, 65542, 327680, 13, 131078, 327680, 13, 196614, 327680, 13, 262150, 327680, 13, 327686, 327680, 13, 393222, 327680, 13, 458758, 327680, 13, 524294, 327680, 13, 589830, 327680, 13, 65543, 327680, 13, 131079, 327680, 13, 196615, 327680, 13, 262151, 327680, 13, 327687, 327680, 13, 393223, 327680, 13, 458759, 327680, 13, 524295, 327680, 13, 589831, 327680, 13, 65544, 327680, 13, 131080, 327680, 13, 196616, 327680, 13, 262152, 327680, 13, 327688, 327680, 13, 393224, 327680, 13, 458760, 327680, 13, 524296, 327680, 13, 589832, 327680, 13, 65545, 327680, 13, 131081, 327680, 13, 196617, 327680, 13, 262153, 327680, 13, 327689, 327680, 13, 393225, 327680, 13, 458761, 327680, 13, 524297, 327680, 13, 589833, 327680, 13, 65546, 327680, 13, 131082, 327680, 13, 196618, 327680, 13, 262154, 327680, 13, 327690, 327680, 13, 393226, 327680, 13, 458762, 327680, 13, 524298, 327680, 13, 589834, 327680, 13, 65547, 327680, 13, 131083, 327680, 13, 196619, 327680, 13, 262155, 327680, 13, 327691, 327680, 13, 393227, 327680, 13, 458763, 327680, 13, 524299, 327680, 13, 589835, 327680, 13, 131084, 327680, 13, 196620, 327680, 13, 262156, 327680, 13, 327692, 327680, 13, 393228, 327680, 13, 458764, 327680, 13, 524300, 327680, 13, 589836, 327680, 13, 131085, 327680, 13, 196621, 327680, 13, 262157, 327680, 13, 327693, 327680, 13, 393229, 327680, 13, 458765, 327680, 13, 524301, 327680, 13, 589837, 327680, 13, 131086, 327680, 13, 196622, 327680, 13, 262158, 327680, 13, 327694, 327680, 13, 393230, 327680, 13, 458766, 327680, 13, 524302, 327680, 13, 589838, 327680, 13, 131087, 327680, 13, 196623, 327680, 13, 262159, 327680, 13, 327695, 327680, 13, 393231, 327680, 13, 458767, 327680, 13, 524303, 327680, 13, 589839, 327680, 13, 131088, 327680, 13, 196624, 327680, 13, 262160, 327680, 13, 327696, 327680, 13, 393232, 327680, 13, 458768, 327680, 13, 524304, 327680, 13, 589840, 327680, 13, 131089, 327680, 13, 196625, 327680, 13, 262161, 327680, 13, 327697, 327680, 13, 393233, 327680, 13, 458769, 327680, 13, 524305, 327680, 13, 589841, 327680, 13, 65554, 327680, 13, 131090, 327680, 13, 196626, 327680, 13, 262162, 327680, 13, 327698, 327680, 13, 393234, 327680, 13, 458770, 327680, 13, 524306, 327680, 13, 589842, 327680, 13, 65555, 327680, 13, 131091, 327680, 13, 196627, 327680, 13, 262163, 327680, 13, 327699, 327680, 13, 393235, 327680, 13, 458771, 327680, 13, 524307, 327680, 13, 589843, 327680, 13, 327700, 327680, 13, 393236, 327680, 13, 458772, 327680, 13, 524308, 327680, 13, 589844, 327680, 13, 327701, 327680, 13, 393237, 327680, 13, 458773, 327680, 13, 524309, 327680, 13, 589845, 327680, 13, 196605, 262144, 13, 262141, 262144, 13, 327677, 262144, 13, 393213, 262144, 13, 458749, 262144, 13, 524285, 262144, 13, 589821, 262144, 13, 655357, 262144, 13, 327702, 393216, 13, 393238, 393216, 13, 458774, 393216, 13, 524310, 393216, 13, 589846, 393216, 13, 720894, 327680, 13, 786430, 327680, 13, 720895, 327680, 13, 786431, 327680, 13, 655360, 327680, 13, 720896, 327680, 13, 655361, 327680, 13, 720897, 327680, 13, 655362, 327680, 13, 720898, 327680, 13, 655363, 327680, 13, 720899, 327680, 13, 655364, 327680, 13, 720900, 327680, 13, 655365, 327680, 13, 720901, 327680, 13, 655366, 327680, 13, 720902, 327680, 13, 655367, 327680, 13, 720903, 327680, 13, 655368, 327680, 13, 720904, 327680, 13, 655369, 327680, 13, 720905, 327680, 13, 655370, 327680, 13, 720906, 327680, 13, 655371, 327680, 13, 720907, 327680, 13, 655372, 327680, 13, 720908, 327680, 13, 655373, 327680, 13, 720909, 327680, 13, 655374, 327680, 13, 720910, 327680, 13, 655375, 327680, 13, 720911, 327680, 13, 655376, 327680, 13, 720912, 327680, 13, 655377, 327680, 13, 720913, 327680, 13, 655378, 327680, 13, 720914, 327680, 13, 655379, 327680, 13, 720915, 327680, 13, 655380, 327680, 13, 720916, 327680, 13, 655381, 327680, 13, 720917, 327680, 13, 720893, 262144, 13, 786429, 262144, 13, 655382, 393216, 13, 720918, 393216, 13, 65548, 327680, 13, 65553, 327680, 13, 65552, 327680, 13, 65551, 327680, 13, 65550, 327680, 13, 65549, 327680, 13, 851966, 327680, 13, 917502, 327680, 13, 851967, 327680, 13, 917503, 327680, 13, 786432, 327680, 13, 851968, 327680, 13, 786433, 327680, 13, 851969, 327680, 13, 786434, 327680, 13, 851970, 327680, 13, 786435, 327680, 13, 851971, 327680, 13, 786436, 327680, 13, 851972, 327680, 13, 786437, 327680, 13, 851973, 327680, 13, 786438, 327680, 13, 851974, 327680, 13, 786439, 327680, 13, 851975, 327680, 13, 786440, 327680, 13, 851976, 327680, 13, 786441, 327680, 13, 851977, 327680, 13, 786442, 327680, 13, 851978, 327680, 13, 786443, 327680, 13, 851979, 327680, 13, 786444, 327680, 13, 851980, 327680, 13, 786445, 327680, 13, 851981, 327680, 13, 786446, 327680, 13, 851982, 327680, 13, 786447, 327680, 13, 851983, 327680, 13, 786448, 327680, 13, 851984, 327680, 13, 786449, 327680, 13, 851985, 327680, 13, 786450, 327680, 13, 851986, 327680, 13, 786451, 327680, 13, 851987, 327680, 13, 786452, 327680, 13, 851988, 327680, 13, 786453, 327680, 13, 851989, 327680, 13, 851965, 262144, 13, 917501, 262144, 13, 786454, 393216, 13, 851990, 393216, 13)
-
-[node name="TileMap" type="TileMap" parent="Ysort"]
-position = Vector2(-235, -240)
-tile_set = SubResource("TileSet_4h1gy")
-cell_quadrant_size = 32
-format = 2
-layer_0/tile_data = PackedInt32Array(131069, 0, 0, 131071, 65536, 0, 65536, 65536, 0, 65537, 65536, 0, 65538, 65536, 0, 65540, 65536, 0, 65541, 65536, 0, 65542, 65536, 0, 65543, 65536, 0, 65544, 65536, 0, 65545, 65536, 0, 65546, 65536, 0, 65547, 65536, 0, 65548, 65536, 0, 65549, 65536, 0, 65550, 65536, 0, 65551, 65536, 0, 65552, 65536, 0, 65553, 65536, 0, 65554, 65536, 0, 65555, 131072, 0, 262141, 0, 2, 262142, 65536, 2, 262143, 65536, 2, 196608, 65536, 2, 196609, 65536, 2, 196610, 65536, 2, 196611, 65536, 2, 196612, 65536, 2, 196613, 65536, 2, 196614, 65536, 2, 196615, 65536, 2, 196616, 65536, 2, 196617, 65536, 2, 196618, 65536, 2, 196619, 65536, 2, 196620, 65536, 2, 196621, 65536, 2, 196622, 65536, 2, 196623, 65536, 2, 196624, 65536, 2, 196625, 65536, 2, 196627, 131072, 2)
-
 [node name="CustomerSpawner" parent="Ysort" instance=ExtResource("10_e33pq")]
 position = Vector2(-106, 63)
+
+[node name="TableTop" parent="Ysort" instance=ExtResource("20_mdnw7")]
+position = Vector2(-73, -157)
 
 [node name="ExitSpot" parent="Ysort" instance=ExtResource("11_vgak2")]
 position = Vector2(-29, 19)
 
 [node name="Camera2D" type="Camera2D" parent="Ysort"]
-position = Vector2(-68, -134)
-zoom = Vector2(0.85, 0.85)
+position = Vector2(-97, -129)
+zoom = Vector2(0.75, 0.75)
 
 [node name="MenuBoard" type="Sprite2D" parent="Ysort"]
-position = Vector2(-57, -200)
+position = Vector2(-14, -203)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("23_0c7m3")
 
-[node name="Stove" type="AnimatedSprite2D" parent="."]
-position = Vector2(-66, -124)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_ilny7")
-animation = &"animate"
+[node name="Door" type="Sprite2D" parent="Ysort"]
+position = Vector2(-208, -194)
+texture = ExtResource("24_v6y3p")
 
-[node name="CoffeePot" type="AnimatedSprite2D" parent="."]
-position = Vector2(-27, -125)
-scale = Vector2(0.6, 0.6)
-sprite_frames = SubResource("SpriteFrames_6clxm")
-animation = &"animate"
+[node name="Decorations" type="Node2D" parent="Ysort"]
+position = Vector2(-130, -151)
+scale = Vector2(0.3, 0.3)
+
+[node name="Shelf" type="Sprite2D" parent="Ysort/Decorations"]
+position = Vector2(-146.667, -83.3333)
+scale = Vector2(3.33333, 3.33333)
+texture = ExtResource("30_xo0xy")
+
+[node name="Milkcartoon8" type="Sprite2D" parent="Ysort/Decorations"]
+position = Vector2(-137.333, -17.3333)
+texture = ExtResource("31_brgy3")
+
+[node name="Milkcartoon1" type="Sprite2D" parent="Ysort/Decorations"]
+position = Vector2(-164, -114)
+texture = ExtResource("32_cnc0d")
+
+[node name="Milkcartoon2" type="Sprite2D" parent="Ysort/Decorations"]
+position = Vector2(-147.333, -114)
+texture = ExtResource("33_mr3n0")
+
+[node name="Milkcartoon3" type="Sprite2D" parent="Ysort/Decorations"]
+position = Vector2(-130.667, -114)
+texture = ExtResource("34_c80rl")
+
+[node name="Milkcartoon4" type="Sprite2D" parent="Ysort/Decorations"]
+position = Vector2(-164, -67.3333)
+texture = ExtResource("35_la87l")
+
+[node name="Milkcartoon5" type="Sprite2D" parent="Ysort/Decorations"]
+position = Vector2(-147.333, -67.3333)
+texture = ExtResource("36_dt0ei")
+
+[node name="Milkcartoon6" type="Sprite2D" parent="Ysort/Decorations"]
+position = Vector2(-130.667, -67.3333)
+texture = ExtResource("37_tn51j")
+
+[node name="Milkcartoon7" type="Sprite2D" parent="Ysort/Decorations"]
+position = Vector2(-154, -17.3333)
+texture = ExtResource("38_veygw")
+
+[node name="FlowerVase4" type="Sprite2D" parent="Ysort/Decorations"]
+position = Vector2(-143.333, -200)
+scale = Vector2(3.33333, 3.33333)
+texture = ExtResource("39_2dtur")
+
+[node name="FlowerVase2" type="Sprite2D" parent="Ysort/Decorations"]
+position = Vector2(-360, -106.667)
+scale = Vector2(3.33333, 3.33333)
+texture = ExtResource("35_758k3")
+
+[node name="KitchenTableTops" type="Node2D" parent="Ysort"]
+position = Vector2(-111, -140)
+scale = Vector2(0.3, 0.3)
+
+[node name="Honey" type="Sprite2D" parent="Ysort/KitchenTableTops"]
+position = Vector2(-115, -124)
+texture = ExtResource("25_gw46y")
+
+[node name="JellyBlue" type="Sprite2D" parent="Ysort/KitchenTableTops"]
+position = Vector2(-92, -124)
+texture = ExtResource("26_7otyr")
+
+[node name="JellyGreen" type="Sprite2D" parent="Ysort/KitchenTableTops"]
+position = Vector2(-70, -124)
+texture = ExtResource("27_a48r3")
+
+[node name="JellyRed" type="Sprite2D" parent="Ysort/KitchenTableTops"]
+position = Vector2(-138, -124)
+texture = ExtResource("28_pcw7g")
+
+[node name="WoodenSpoonSets" type="Sprite2D" parent="Ysort/KitchenTableTops"]
+position = Vector2(20, -146.667)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("29_djlry")
+
+[node name="FlowerVase" type="Sprite2D" parent="."]
+position = Vector2(-223, -57)
+texture = ExtResource("41_gchie")
+
+[node name="FlowerVase3" type="Sprite2D" parent="."]
+position = Vector2(-198, -52)
+texture = ExtResource("42_ibyam")
 
 [node name="NightBlossomPictureFrame" type="Sprite2D" parent="."]
 position = Vector2(-103, -150)

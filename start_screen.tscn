@@ -308,4 +308,4 @@ texture = ExtResource("37_4y15y")
 position = Vector2(0, 81)
 sprite_frames = SubResource("SpriteFrames_e8dgx")
 animation = &"animate"
-frame_progress = 0.838903
+frame_progress = 0.859613

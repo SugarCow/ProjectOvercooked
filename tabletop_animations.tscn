@@ -1,0 +1,229 @@
+[gd_scene load_steps=52 format=3 uid="uid://cp7pk6x3cq243"]
+
+[ext_resource type="Script" path="res://tabletop_animations.gd" id="1_l82ho"]
+[ext_resource type="Texture2D" uid="uid://o78f8u4pngh0" path="res://assets/overcookedAssets/MenuStove/MenuStove1.png" id="2_pb252"]
+[ext_resource type="Texture2D" uid="uid://dgs4kcwkm4y1s" path="res://assets/overcookedAssets/MenuStove/MenuStove2.png" id="3_w1a6i"]
+[ext_resource type="Texture2D" uid="uid://cqlmfmra1k0pe" path="res://assets/overcookedAssets/MenuStove/MenuStove3.png" id="4_f3xuy"]
+[ext_resource type="Texture2D" uid="uid://cew35kok28m4y" path="res://assets/overcookedAssets/MenuStove/MenuStove4.png" id="5_m5gu1"]
+[ext_resource type="Texture2D" uid="uid://cdit2uv2lfd74" path="res://assets/overcookedAssets/MenuStove/MenuStove5.png" id="6_ibcxl"]
+[ext_resource type="Texture2D" uid="uid://c3nstqtrv1efm" path="res://assets/overcookedAssets/MenuStove/MenuStove6.png" id="7_2br80"]
+[ext_resource type="Texture2D" uid="uid://b7m3o44qcddjn" path="res://assets/overcookedAssets/MenuStove/MenuStove7.png" id="8_weymn"]
+[ext_resource type="Texture2D" uid="uid://4stm4mabac4n" path="res://assets/overcookedAssets/MenuStove/MenuStove8.png" id="9_1m2jf"]
+[ext_resource type="Texture2D" uid="uid://mf1almd1ilrs" path="res://assets/overcookedAssets/MenuStove/MenuStove9.png" id="10_afwek"]
+[ext_resource type="Texture2D" uid="uid://bs6umsmbs2x6q" path="res://assets/overcookedAssets/MenuStove/MenuStove10.png" id="11_85ope"]
+[ext_resource type="Texture2D" uid="uid://c2wlhv6x5iryg" path="res://assets/overcookedAssets/MenuStove/MenuStove11.png" id="12_v04nl"]
+[ext_resource type="Texture2D" uid="uid://b1d7umtqryhk0" path="res://assets/overcookedAssets/MenuStove/MenuStove12.png" id="13_1mwcl"]
+[ext_resource type="Texture2D" uid="uid://bjvwmugpmjgoi" path="res://assets/overcookedAssets/MenuStove/MenuStove13.png" id="14_4mwas"]
+[ext_resource type="Texture2D" uid="uid://dene1sfbmfot1" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot1.png" id="15_6jfdf"]
+[ext_resource type="Texture2D" uid="uid://83rad3opu36p" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot2.png" id="16_buefw"]
+[ext_resource type="Texture2D" uid="uid://ca4yvjny657fm" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot3.png" id="17_w2jss"]
+[ext_resource type="Texture2D" uid="uid://76glrlkix6cj" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot4.png" id="18_ds7j4"]
+[ext_resource type="Texture2D" uid="uid://frdrw0l2ykue" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot5.png" id="19_jerrk"]
+[ext_resource type="Texture2D" uid="uid://botiesrrjihka" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot6.png" id="20_n3p55"]
+[ext_resource type="Texture2D" uid="uid://cixnnib0myk3h" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot7.png" id="21_1cbab"]
+[ext_resource type="Texture2D" uid="uid://djwsfydepm1lu" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot8.png" id="22_ltrc1"]
+[ext_resource type="Texture2D" uid="uid://bp1cbei8eqtb2" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot9.png" id="23_yvdpj"]
+[ext_resource type="Texture2D" uid="uid://biswo3pyi6lq5" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot10.png" id="24_y81le"]
+[ext_resource type="Texture2D" uid="uid://cwfmeb4ic07s4" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot11.png" id="25_210nb"]
+[ext_resource type="Texture2D" uid="uid://bupasnlucw378" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot12.png" id="26_soqr2"]
+[ext_resource type="Texture2D" uid="uid://ct0u7vnvubahj" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot13.png" id="27_cose4"]
+[ext_resource type="Texture2D" uid="uid://hbm1qtvf7mcs" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot14.png" id="28_a85ib"]
+[ext_resource type="Texture2D" uid="uid://bpms5sguuoybd" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot15.png" id="29_a3v22"]
+[ext_resource type="Texture2D" uid="uid://diaqkqnmruyc0" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot16.png" id="30_g5d4p"]
+[ext_resource type="Texture2D" uid="uid://bjta5th6rup41" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot17.png" id="31_wqkg6"]
+[ext_resource type="Texture2D" uid="uid://bwv3h2il3hr5y" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot18.png" id="32_0lljj"]
+[ext_resource type="Texture2D" uid="uid://bfmmcqso431vl" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot19.png" id="33_bbmie"]
+[ext_resource type="Texture2D" uid="uid://djyt4fd76f76m" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot20.png" id="34_jfsiw"]
+[ext_resource type="Texture2D" uid="uid://l0xfokr2a4c4" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot21.png" id="35_xnepq"]
+[ext_resource type="Texture2D" uid="uid://baenlj0si0l48" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot22.png" id="36_n5gqp"]
+[ext_resource type="Texture2D" uid="uid://db5umhrky8ucu" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot23.png" id="37_3wsmt"]
+[ext_resource type="Texture2D" uid="uid://dyo3ljgsfv6lq" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot24.png" id="38_0q2oc"]
+[ext_resource type="Texture2D" uid="uid://chnrl3822dpu8" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot25.png" id="39_3ffdc"]
+[ext_resource type="Texture2D" uid="uid://b50ydbrhhranh" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot26.png" id="40_3hvyl"]
+[ext_resource type="Texture2D" uid="uid://xbus3p8pmd8c" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot27.png" id="41_sotom"]
+[ext_resource type="Texture2D" uid="uid://dchlh027ladbo" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot28.png" id="42_qjapu"]
+[ext_resource type="Texture2D" uid="uid://cxpejm0udr5nj" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot29.png" id="43_cppkp"]
+[ext_resource type="Texture2D" uid="uid://cgspw1lxsdxcf" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot30.png" id="44_ghsje"]
+[ext_resource type="Texture2D" uid="uid://dul4kxodp24ky" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot31.png" id="45_g4nui"]
+[ext_resource type="Texture2D" uid="uid://bych8f0t1kb4w" path="res://assets/overcookedAssets/coffee Pot/Coffee Pot32.png" id="46_o7wea"]
+[ext_resource type="Texture2D" uid="uid://6strmtkjt4q" path="res://assets/overcookedAssets/stackedCups.png" id="47_0pfr3"]
+[ext_resource type="Texture2D" uid="uid://c7yarp7ia1b1t" path="res://assets/overcookedAssets/coffeBag.png" id="48_h34gm"]
+[ext_resource type="Texture2D" uid="uid://usplix02cmfm" path="res://assets/overcookedAssets/cuttingBoardWithKnife.png" id="49_s18tm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0vjbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pb252")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w1a6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f3xuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m5gu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ibcxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2br80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_weymn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1m2jf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_afwek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_85ope")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v04nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1mwcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4mwas")
+}],
+"loop": true,
+"name": &"animate",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcytf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_6jfdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_buefw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_w2jss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ds7j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jerrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_n3p55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1cbab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ltrc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_yvdpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_y81le")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_210nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_soqr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_cose4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_a85ib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_a3v22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_g5d4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_wqkg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_0lljj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_bbmie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_jfsiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_xnepq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_n5gqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_3wsmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_0q2oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_3ffdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_3hvyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_sotom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_qjapu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_cppkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ghsje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_g4nui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_o7wea")
+}],
+"loop": true,
+"name": &"animate",
+"speed": 5.0
+}]
+
+[node name="TableTop" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_l82ho")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -42)
+sprite_frames = SubResource("SpriteFrames_0vjbe")
+animation = &"animate"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(48, -40)
+sprite_frames = SubResource("SpriteFrames_dcytf")
+animation = &"animate"
+
+[node name="StackedCups" type="Sprite2D" parent="."]
+position = Vector2(94, -36)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("47_0pfr3")
+
+[node name="CoffeBag" type="Sprite2D" parent="."]
+position = Vector2(74, -34)
+texture = ExtResource("48_h34gm")
+
+[node name="CuttingBoardWithKnife" type="Sprite2D" parent="."]
+position = Vector2(154, -22)
+texture = ExtResource("49_s18tm")

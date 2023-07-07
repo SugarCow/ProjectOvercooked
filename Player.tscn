@@ -2456,16 +2456,15 @@ graph_offset = Vector2(-99.4181, 46.4564)
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_u1cfi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldhdd"]
-size = Vector2(19.5, 20)
+size = Vector2(37.75, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkqel"]
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(1, -21)
 script = ExtResource("1_6nk1q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -4)
+position = Vector2(0, -26.5)
 sprite_frames = SubResource("SpriteFrames_00ce8")
 animation = &"walk_right"
 
@@ -2489,7 +2488,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 15)
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_ecalq")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -2508,14 +2507,14 @@ parameters/idle/blend_position = Vector2(-0.000640631, 0.0419161)
 parameters/walk/blend_position = Vector2(0, 0)
 
 [node name="pivotPoint" type="Marker2D" parent="."]
-position = Vector2(-1, 9)
+position = Vector2(0, -14)
 rotation = 1.5708
 
 [node name="Grab" type="Area2D" parent="pivotPoint"]
 collision_mask = 2178
 
 [node name="GrabBox" type="CollisionShape2D" parent="pivotPoint/Grab"]
-position = Vector2(10, -4.76837e-07)
+position = Vector2(19.125, 0)
 shape = SubResource("RectangleShape2D_ldhdd")
 disabled = true
 

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf48tc3kvvydl"]
+[gd_scene load_steps=6 format=3 uid="uid://cf48tc3kvvydl"]
 
+[ext_resource type="Texture2D" uid="uid://dut0dwgmy21t3" path="res://assets/overcookedAssets/leftCounter.png" id="1_o6ttd"]
 [ext_resource type="Texture2D" uid="uid://o7pgm8h2mhwv" path="res://assets/overcookedAssets/middleCounter.png" id="2_xml7g"]
 [ext_resource type="Texture2D" uid="uid://rfqgk2uw6fr6" path="res://assets/overcookedAssets/rightCounter.png" id="3_2l4x0"]
 [ext_resource type="PackedScene" uid="uid://bexha0qchx7wq" path="res://wating_spot.tscn" id="4_jcytm"]
@@ -30,3 +31,7 @@ position = Vector2(139, 44)
 
 [node name="WatingSpot6" parent="." instance=ExtResource("4_jcytm")]
 position = Vector2(170, 45)
+
+[node name="LeftCounter" type="Sprite2D" parent="."]
+position = Vector2(38.453, 12.419)
+texture = ExtResource("1_o6ttd")
