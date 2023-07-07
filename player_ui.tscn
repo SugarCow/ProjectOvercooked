@@ -1,149 +1,41 @@
-[gd_scene load_steps=30 format=3 uid="uid://d17xvb6h63qsc"]
+[gd_scene load_steps=3 format=3 uid="uid://d17xvb6h63qsc"]
 
-[ext_resource type="Texture2D" uid="uid://cyb43nux7whd2" path="res://assets/overcookedAssets/Hourglass/Hourglass1.png" id="1_34miw"]
-[ext_resource type="Texture2D" uid="uid://cer70aa2o3r7m" path="res://assets/overcookedAssets/Hourglass/Hourglass2.png" id="2_7l05b"]
-[ext_resource type="Texture2D" uid="uid://cbjjunepgxhke" path="res://assets/overcookedAssets/Hourglass/Hourglass3.png" id="3_sblur"]
-[ext_resource type="Texture2D" uid="uid://cbvlte2ji0ul6" path="res://assets/overcookedAssets/Hourglass/Hourglass4.png" id="4_seayi"]
-[ext_resource type="Texture2D" uid="uid://du58sa05qsc06" path="res://assets/overcookedAssets/Hourglass/Hourglass5.png" id="5_wslf8"]
-[ext_resource type="Texture2D" uid="uid://b51vk4e27a8ag" path="res://assets/overcookedAssets/Hourglass/Hourglass6.png" id="6_c3qr2"]
-[ext_resource type="Texture2D" uid="uid://dxeaujsqpfgg7" path="res://assets/overcookedAssets/Hourglass/Hourglass7.png" id="7_k8c2m"]
-[ext_resource type="Texture2D" uid="uid://lxl3y0vd2boy" path="res://assets/overcookedAssets/Hourglass/Hourglass8.png" id="8_btp5j"]
-[ext_resource type="Texture2D" uid="uid://cc31gd4nmubpo" path="res://assets/overcookedAssets/Hourglass/Hourglass9.png" id="9_c4x2b"]
-[ext_resource type="Texture2D" uid="uid://c5hnvaefqhkx6" path="res://assets/overcookedAssets/Hourglass/Hourglass10.png" id="10_3kidd"]
-[ext_resource type="Texture2D" uid="uid://dmqsuj6i7jtys" path="res://assets/overcookedAssets/Hourglass/Hourglass11.png" id="11_ga0ds"]
-[ext_resource type="Texture2D" uid="uid://cg22abiwdnft3" path="res://assets/overcookedAssets/Hourglass/Hourglass12.png" id="12_uq7bo"]
-[ext_resource type="Texture2D" uid="uid://bp3e3dnqxneom" path="res://assets/overcookedAssets/Hourglass/Hourglass13.png" id="13_r4r1p"]
-[ext_resource type="Texture2D" uid="uid://3ra0l8o4e27q" path="res://assets/overcookedAssets/Hourglass/Hourglass14.png" id="14_kj0ja"]
-[ext_resource type="Texture2D" uid="uid://8bmr41lpesde" path="res://assets/overcookedAssets/Hourglass/Hourglass15.png" id="15_0ew0k"]
-[ext_resource type="Texture2D" uid="uid://b3mwo66ysjtda" path="res://assets/overcookedAssets/Hourglass/Hourglass16.png" id="16_nar5j"]
-[ext_resource type="Texture2D" uid="uid://de3s683tq0vcm" path="res://assets/overcookedAssets/Hourglass/Hourglass17.png" id="17_oc146"]
-[ext_resource type="Texture2D" uid="uid://d1g5myjx6y3b0" path="res://assets/overcookedAssets/Hourglass/Hourglass18.png" id="18_1l4w1"]
-[ext_resource type="Texture2D" uid="uid://cuagkqhb5mluh" path="res://assets/overcookedAssets/Hourglass/Hourglass19.png" id="19_b0xjf"]
-[ext_resource type="Texture2D" uid="uid://ccnyje8yg21nr" path="res://assets/overcookedAssets/Hourglass/Hourglass20.png" id="20_fn7nt"]
-[ext_resource type="Texture2D" uid="uid://cgvwyvtcreqjv" path="res://assets/overcookedAssets/Hourglass/Hourglass21.png" id="21_qq2bo"]
-[ext_resource type="Texture2D" uid="uid://dj0hn1x8bpw72" path="res://assets/overcookedAssets/Hourglass/Hourglass22.png" id="22_g8igt"]
-[ext_resource type="Texture2D" uid="uid://dn6gdf6jsl3e7" path="res://assets/overcookedAssets/Hourglass/Hourglass23.png" id="23_m3sym"]
-[ext_resource type="Texture2D" uid="uid://20koefpmejgy" path="res://assets/overcookedAssets/Hourglass/Hourglass24.png" id="24_mescm"]
-[ext_resource type="Texture2D" uid="uid://bi3lu12mkkm20" path="res://assets/overcookedAssets/Hourglass/Hourglass25.png" id="25_k438r"]
-[ext_resource type="Texture2D" uid="uid://bxx22tjsrvs31" path="res://assets/overcookedAssets/Hourglass/Hourglass26.png" id="26_bgyv6"]
-[ext_resource type="Texture2D" uid="uid://cmamnukm6fbdt" path="res://assets/overcookedAssets/Hourglass/Hourglass27.png" id="27_oob2g"]
-[ext_resource type="Texture2D" uid="uid://cf1ucbeeig4du" path="res://assets/overcookedAssets/Hourglass/Hourglass28.png" id="28_tmbra"]
+[ext_resource type="Script" path="res://player_ui.gd" id="1_k4i8k"]
+[ext_resource type="Texture2D" uid="uid://d3cgihapge82w" path="res://assets/Coin.png" id="29_3rt8e"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ya6ep"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_34miw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_7l05b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_sblur")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_seayi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_wslf8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_c3qr2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_k8c2m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_btp5j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_c4x2b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_3kidd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_ga0ds")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_uq7bo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_r4r1p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_kj0ja")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_0ew0k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_nar5j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_oc146")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_1l4w1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_b0xjf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_fn7nt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_qq2bo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_g8igt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_m3sym")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_mescm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_k438r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_bgyv6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_oob2g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_tmbra")
-}],
-"loop": true,
-"name": &"animate",
-"speed": 15.0
-}]
-
-[node name="PlayerUI" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_top = 1.0
-offset_right = 1.0
-offset_bottom = 2.0
-scale = Vector2(3.2687, 2.58317)
+[node name="PlayerUI" type="CanvasLayer"]
+scale = Vector2(3.007, 2.379)
+transform = Transform2D(3.007, 0, 0, 2.379, 0, 0)
+script = ExtResource("1_k4i8k")
 
 [node name="Control" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-metadata/_edit_use_anchors_ = true
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="HourGlass" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(572.093, 425.446)
-sprite_frames = SubResource("SpriteFrames_ya6ep")
-animation = &"animate"
-frame_progress = 0.537833
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = -5.65347
+offset_top = 77.3434
+offset_right = 59.3465
+offset_bottom = 168.343
+scale = Vector2(0.569, 0.569)
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Coin" type="Sprite2D" parent="Control/MarginContainer/VBoxContainer"]
+position = Vector2(-8.64029, 12.0208)
+scale = Vector2(0.4, 0.513)
+texture = ExtResource("29_3rt8e")
+
+[node name="Coin2" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2

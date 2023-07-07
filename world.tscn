@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cjnxjxkowniau"]
+[gd_scene load_steps=53 format=3 uid="uid://cjnxjxkowniau"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_5tvjk"]
 [ext_resource type="PackedScene" uid="uid://cjivxvu7256ui" path="res://Player.tscn" id="1_xffki"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://bdn32hpk1uxw5" path="res://assets/overcookedAssets/FlowerVase4.png" id="39_2dtur"]
 [ext_resource type="Texture2D" uid="uid://cdoe0lukp77o8" path="res://assets/overcookedAssets/FlowerVase.png" id="41_gchie"]
 [ext_resource type="Texture2D" uid="uid://5ah4v2y82hr7" path="res://assets/overcookedAssets/FlowerVase3.png" id="42_ibyam"]
+[ext_resource type="PackedScene" uid="uid://d17xvb6h63qsc" path="res://player_ui.tscn" id="43_08cqf"]
 [ext_resource type="Texture2D" uid="uid://cos1cbewgmoaw" path="res://assets/overcookedAssets/NightBlossomPictureFrame.png" id="69_nv3hv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7myph"]
@@ -107,9 +108,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="World" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uirnh"]
+size = Vector2(23, 29)
+
+[node name="World" type="Node2D" node_paths=PackedStringArray("player", "ui")]
 position = Vector2(229, 190)
 script = ExtResource("1_5tvjk")
+player = NodePath("Ysort/Player")
+ui = NodePath("PlayerUI")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-228, -189)
@@ -228,6 +234,13 @@ position = Vector2(-146.667, -83.3333)
 scale = Vector2(3.33333, 3.33333)
 texture = ExtResource("30_xo0xy")
 
+[node name="Area2D" type="Area2D" parent="Ysort/Decorations/Shelf"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ysort/Decorations/Shelf/Area2D"]
+position = Vector2(-0.5, 24.151)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_uirnh")
+
 [node name="Milkcartoon8" type="Sprite2D" parent="Ysort/Decorations"]
 position = Vector2(-137.333, -17.3333)
 texture = ExtResource("31_brgy3")
@@ -302,6 +315,8 @@ texture = ExtResource("41_gchie")
 [node name="FlowerVase3" type="Sprite2D" parent="."]
 position = Vector2(-198, -52)
 texture = ExtResource("42_ibyam")
+
+[node name="PlayerUI" parent="." instance=ExtResource("43_08cqf")]
 
 [node name="NightBlossomPictureFrame" type="Sprite2D" parent="."]
 position = Vector2(-103, -150)

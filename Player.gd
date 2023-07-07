@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 
 @onready var anim_tree = $AnimationTree
@@ -17,6 +18,7 @@ extends CharacterBody2D
 @export var dash_finished = true
 
 
+signal collected (collectable)
 
 
 const dash_cooldown = 60
@@ -27,7 +29,7 @@ var holding_plate = false
 var current_order
 var object
 var mouse_left_down: bool = false
-var coin: float = 0.0
+
 # Called when the node enters the scene tree for the first time.
 enum { 
 	WALK,
@@ -242,6 +244,7 @@ func grab_object(area):
 		
 	elif area.name == "Money":
 		$MoneySound.play()
+		collect(area)
 		area.queue_free()
 	else:
 		my_object = area
@@ -283,6 +286,7 @@ func drop_item():
 	$AnimatedSprite2D/HoldItem.visible = false
 
 
-
+func collect(collectable):
+	collected.emit(collectable)
 
 
